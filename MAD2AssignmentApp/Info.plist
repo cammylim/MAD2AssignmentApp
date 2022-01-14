@@ -21,5 +21,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BalsamiqSans-Regular.ttf</string>
+		<string>BalsamiqSans-Bold.ttf</string>
+	</array>
 </dict>
 </plist>
