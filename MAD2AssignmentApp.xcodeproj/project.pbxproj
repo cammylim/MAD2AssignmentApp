@@ -16,6 +16,7 @@
 		D6489DEC27909E8200B485EB /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6489DEB27909E4400B485EB /* BalsamiqSans-Bold.ttf */; };
 		D6489DED27909E8600B485EB /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6489DE827909E2800B485EB /* BalsamiqSans-Regular.ttf */; };
 		D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1EFF52790723800FE3AEE /* LoginViewController.swift */; };
+		D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D6489DE827909E2800B485EB /* BalsamiqSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Regular.ttf"; sourceTree = "<group>"; };
 		D6489DEB27909E4400B485EB /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
 		D6D1EFF52790723800FE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D6F7128B27910E7800D23DD5 /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				C1A0D97F279059A8002DF70E /* LaunchScreen.storyboard */,
 				C1A0D982279059A8002DF70E /* Info.plist */,
 				D6D1EFF52790723800FE3AEE /* LoginViewController.swift */,
+				D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */,
 			);
 			path = MAD2AssignmentApp;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */,
+				D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */,
 				C1A0D979279059A7002DF70E /* ViewController.swift in Sources */,
 				C1A0D975279059A7002DF70E /* AppDelegate.swift in Sources */,
 				C1A0D977279059A7002DF70E /* SceneDelegate.swift in Sources */,
@@ -380,6 +384,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D6F7128B27910E7800D23DD5 /* DiaryApp.xcdatamodel */,
+			);
+			currentVersion = D6F7128B27910E7800D23DD5 /* DiaryApp.xcdatamodel */;
+			path = DiaryApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C1A0D969279059A7002DF70E /* Project object */;
 }
