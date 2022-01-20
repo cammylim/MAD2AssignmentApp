@@ -310,6 +310,10 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="1" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="moodEntry:" destination="C0u-lT-0ub" eventType="touchUpInside" id="Xak-S3-SXH"/>
+                                    <segue destination="tqt-yz-tRq" kind="show" identifier="moodDiaryDetail" id="AJj-m6-9HT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ud1-RJ-ZyM"/>
@@ -503,6 +507,9 @@
             <point key="canvasLocation" x="1693.5999999999999" y="767.73399014778329"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="AJj-m6-9HT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="arrowtriangle.backward" catalog="system" width="128" height="113"/>

@@ -27,6 +27,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
+        print(selectedDay!)
         feelingsCollectionView.reloadData()
         
     }
@@ -41,7 +42,6 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeelingsCollectionViewCell", for: indexPath) as! FeelingsCell
-        print(feelingsList[indexPath.row].feelings_name!)
         cell.setup(with: feelingsList[indexPath.row])
         return cell
     }

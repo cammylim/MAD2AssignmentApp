@@ -30,6 +30,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setMonthView()
 
     }
+    @IBAction func moodEntry(_ sender: Any) {
+        self.performSegue(withIdentifier: "moodDiaryDetail", sender: self)
+        
+    }
     func setCellsView(){
         let width = (collectionView.frame.size.width - 2) / 8
         let height = (collectionView.frame.size.height - 2) / 8
@@ -82,6 +86,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 return
             }
             dayVC.selectedDay = self.totalDays[indexPath.row]
+            dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
+            dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
+        }
+        else if (segue.identifier == "moodDiaryDetail"){
+            guard let dayVC = segue.destination as? DayViewController else{
+                return
+            }
+            dayVC.selectedDay = String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
             dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
             dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
         }
