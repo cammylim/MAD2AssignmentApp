@@ -16,6 +16,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collectionView: UICollectionView!
     
     var selectedDate = Date()
+    var selectedDay:String?
+    var selectedMonth:String?
+    var selectedYear:String?
     var totalDays = [String]()
     
     override func viewDidLoad() {
@@ -65,17 +68,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedData = totalDays[indexPath.item]
         self.performSegue(withIdentifier: "diaryDetail", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "diaryDetail"){
+            let indexPaths = self.collectionView.indexPathsForSelectedItems!
+            let indexPath = indexPaths[0]
             guard let dayVC = segue.destination as? DayViewController else{
                 return
             }
-            dayVC.selectedDay = selectedDate
+            dayVC.selectedDay = self.totalDays[indexPath.row]
+            dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
+            dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
         }
     }
     

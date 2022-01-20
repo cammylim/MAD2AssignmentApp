@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 
 class DayViewController:UIViewController{
-    var selectedDay = Date()
+    
+    var selectedDay:String?
+    var selectedMonth:String?
+    var selectedYear:String?
     @IBOutlet weak var day: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        day.text = DiaryCalendar().dayText(date: selectedDay)
+        day.text = selectedMonth! + " " + selectedDay! + " " + selectedYear!
     }
 }
