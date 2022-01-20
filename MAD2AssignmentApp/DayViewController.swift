@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DayViewController:UIViewController{
+class DayViewController:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     var selectedDay:String?
     var selectedMonth:String?
@@ -27,13 +27,18 @@ class DayViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
-        
+        feelingsCollectionView.reloadData()
         
     }
+    
+    @IBAction func closeDiary(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(feelingsList.count)
         return feelingsList.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeelingsCollectionViewCell", for: indexPath) as! FeelingsCell
         print(feelingsList[indexPath.row].feelings_name!)
@@ -44,6 +49,6 @@ class DayViewController:UIViewController{
 
 extension ViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 157, height: 73)
+        return CGSize(width: 141, height: 85)
     }
 }

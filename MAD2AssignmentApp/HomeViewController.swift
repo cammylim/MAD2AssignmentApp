@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.reloadData()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        totalDays.count
+        return totalDays.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaCell", for: indexPath) as! DiaryCell
