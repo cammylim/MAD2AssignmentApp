@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var selectedDate = Date()
@@ -19,6 +21,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home-bg.svg")!);
+        dayLabel.text = DiaryCalendar().dayText(date: selectedDate)
+        dateLabel.text = DiaryCalendar().monthText(date: selectedDate) + " " + String(DiaryCalendar().weekDay(date: selectedDate))
         setCellsView()
         setMonthView()
 
@@ -59,6 +63,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.day.text = totalDays[indexPath.item]
         
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedData = totalDays[indexPath.item]
+        self.performSegue(withIdentifier: "diaryDetail", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "diaryDetail"){
+            guard let dayVC = segue.destination as? DayViewController else{
+                return
+            }
+            dayVC.selectedDay = selectedDate
+        }
     }
     
     @IBAction func previousMonth(_ sender: Any) {

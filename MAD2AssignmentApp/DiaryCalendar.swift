@@ -17,6 +17,11 @@ class DiaryCalendar{
     func minusMonth(date:Date) -> Date{
         return diary.date(byAdding: .month, value: -1, to: date)!
     }
+    func dayText(date:Date)->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: date)
+    }
     func monthText(date:Date)->String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "LLLL"

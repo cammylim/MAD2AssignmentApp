@@ -124,8 +124,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="home-profile"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv0-sT-PYx">
-                                <rect key="frame" x="26.000000000000007" y="76" width="115.66666666666669" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tuesday," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv0-sT-PYx">
+                                <rect key="frame" x="26" y="76" width="241" height="36"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -262,6 +262,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="day" destination="gKQ-kE-wWf" id="jgb-Ju-eaD"/>
+                                            <segue destination="tqt-yz-tRq" kind="show" identifier="diaryDetail" id="Jb4-BW-nCN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -347,12 +348,42 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="QBU-D6-XI7" id="BtU-nh-5AH"/>
+                        <outlet property="dateLabel" destination="sHu-hE-xVg" id="QfZ-Mv-lxc"/>
+                        <outlet property="dayLabel" destination="mv0-sT-PYx" id="4o7-PE-Nx8"/>
                         <outlet property="monthLabel" destination="6Sb-QU-1kl" id="3zN-nU-Grz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmD-Ow-32w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="861.60000000000002" y="767.73399014778329"/>
+        </scene>
+        <!--Day View Controller-->
+        <scene sceneID="Jtk-gL-Obk">
+            <objects>
+                <viewController id="tqt-yz-tRq" customClass="DayViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fqv-IW-rlD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KZ-ej-B6n">
+                                <rect key="frame" x="112" y="115" width="151" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g4j-Nq-Jxt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Njm-ut-ZmP"/>
+                    <connections>
+                        <outlet property="day" destination="7KZ-ej-B6n" id="0Ps-BL-2dJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kad-OS-2Es" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693.5999999999999" y="767.73399014778329"/>
         </scene>
     </scenes>
     <resources>

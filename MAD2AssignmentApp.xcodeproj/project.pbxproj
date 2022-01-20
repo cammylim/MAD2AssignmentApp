@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C13FB7A527992F5800838B18 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FB7A427992F5800838B18 /* DayViewController.swift */; };
 		C1935EF627959458009C18A9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1935EF527959458009C18A9 /* HomeViewController.swift */; };
 		C1935EFD2795B3F8009C18A9 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1935EFC2795B3F7009C18A9 /* DiaryCell.swift */; };
 		C1935EFF2795BB53009C18A9 /* DiaryCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1935EFE2795BB53009C18A9 /* DiaryCalendar.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C13FB7A427992F5800838B18 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		C1935EF527959458009C18A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C1935EFC2795B3F7009C18A9 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		C1935EFE2795BB53009C18A9 /* DiaryCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCalendar.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				C1A0D982279059A8002DF70E /* Info.plist */,
 				D6D1EFF52790723800FE3AEE /* LoginViewController.swift */,
 				C1935EF527959458009C18A9 /* HomeViewController.swift */,
+				C13FB7A427992F5800838B18 /* DayViewController.swift */,
 				D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */,
 				C1935EFC2795B3F7009C18A9 /* DiaryCell.swift */,
 				C1935EFE2795BB53009C18A9 /* DiaryCalendar.swift */,
@@ -177,6 +180,7 @@
 				C1A0D975279059A7002DF70E /* AppDelegate.swift in Sources */,
 				C1A0D977279059A7002DF70E /* SceneDelegate.swift in Sources */,
 				C1935EF627959458009C18A9 /* HomeViewController.swift in Sources */,
+				C13FB7A527992F5800838B18 /* DayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
