@@ -10,8 +10,14 @@
         <attribute name="diary_feeling" optional="YES" attributeType="String"/>
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataUser" inverseName="has" inverseEntity="CoreDataUser"/>
         <relationship name="hasActivities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataActivities" inverseName="existsIn" inverseEntity="CoreDataActivities"/>
+        <relationship name="hasFeelings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataFeelings" inverseName="existsIn" inverseEntity="CoreDataFeelings"/>
         <relationship name="hasReflect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataReflection" inverseName="existsIn" inverseEntity="CoreDataReflection"/>
         <relationship name="hasSpecial" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataSpecial" inverseName="existsIn" inverseEntity="CoreDataSpecial"/>
+    </entity>
+    <entity name="CoreDataFeelings" representedClassName="CoreDataFeelings" syncable="YES" codeGenerationType="class">
+        <attribute name="feeling_image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="feeling_name" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasFeelings" inverseEntity="CoreDataDiary"/>
     </entity>
     <entity name="CoreDataReflection" representedClassName="CoreDataReflection" syncable="YES" codeGenerationType="class">
         <attribute name="ref_body" optional="YES" attributeType="String"/>
@@ -31,10 +37,11 @@
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="existsIn" inverseEntity="CoreDataDiary"/>
     </entity>
     <elements>
-        <element name="CoreDataUser" positionX="-280.8585815429688" positionY="-161.2470397949219" width="128" height="103"/>
-        <element name="CoreDataDiary" positionX="-78.2078857421875" positionY="-157.9867858886719" width="128" height="133"/>
-        <element name="CoreDataActivities" positionX="-73.286376953125" positionY="-42.51351928710938" width="128" height="88"/>
-        <element name="CoreDataSpecial" positionX="91.32763671875" positionY="-53.986328125" width="128" height="103"/>
-        <element name="CoreDataReflection" positionX="125.836181640625" positionY="40.56228637695312" width="128" height="88"/>
+        <element name="CoreDataUser" positionX="-284.2162170410156" positionY="-269.2606201171875" width="128" height="103"/>
+        <element name="CoreDataDiary" positionX="-64.67291259765625" positionY="-322.2344207763672" width="128" height="148"/>
+        <element name="CoreDataActivities" positionX="-248.6298217773438" positionY="-70.61215209960938" width="128" height="88"/>
+        <element name="CoreDataSpecial" positionX="79.9268798828125" positionY="-79.22637939453125" width="128" height="103"/>
+        <element name="CoreDataReflection" positionX="-69.5731201171875" positionY="-76.49169921875" width="128" height="88"/>
+        <element name="CoreDataFeelings" positionX="173.3076782226562" positionY="-296.7184295654297" width="128" height="88"/>
     </elements>
 </model>

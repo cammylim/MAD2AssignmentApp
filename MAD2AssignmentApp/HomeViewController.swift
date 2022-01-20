@@ -24,8 +24,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home-bg.svg")!);
-        dayLabel.text = DiaryCalendar().dayText(date: selectedDate)
-        dateLabel.text = DiaryCalendar().monthText(date: selectedDate) + " " + String(DiaryCalendar().weekDay(date: selectedDate))
+        dayLabel.text = DiaryCalendar().dayText(date: selectedDate) + ","
+        dateLabel.text = DiaryCalendar().monthText(date: selectedDate) + " " + String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
         setCellsView()
         setMonthView()
 
@@ -64,7 +64,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaCell", for: indexPath) as! DiaryCell
         cell.day.text = totalDays[indexPath.item]
-        
+        if (totalDays[indexPath.item] != ""){
+            cell.layer.cornerRadius = 13.0
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
