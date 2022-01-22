@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C100EFAF279BE8AF00B9E881 /* Day2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100EFAE279BE8AF00B9E881 /* Day2ViewController.swift */; };
+		C100EFBB279BEF4300B9E881 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100EFB7279BEF4300B9E881 /* CloseButton.swift */; };
+		C100EFBC279BEF4300B9E881 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100EFB8279BEF4300B9E881 /* TagView.swift */; };
+		C100EFBD279BEF4300B9E881 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100EFBA279BEF4300B9E881 /* TagListView.swift */; };
 		C13FB7A527992F5800838B18 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FB7A427992F5800838B18 /* DayViewController.swift */; };
 		C13FB7A72799659700838B18 /* FeelingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FB7A62799659700838B18 /* FeelingsCell.swift */; };
 		C13FB7A92799697C00838B18 /* Feelings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FB7A82799697C00838B18 /* Feelings.swift */; };
@@ -26,6 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C100EFAE279BE8AF00B9E881 /* Day2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2ViewController.swift; sourceTree = "<group>"; };
+		C100EFB7279BEF4300B9E881 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		C100EFB8279BEF4300B9E881 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		C100EFB9279BEF4300B9E881 /* TagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListView.h; sourceTree = "<group>"; };
+		C100EFBA279BEF4300B9E881 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		C13FB7A427992F5800838B18 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		C13FB7A62799659700838B18 /* FeelingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsCell.swift; sourceTree = "<group>"; };
 		C13FB7A82799697C00838B18 /* Feelings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feelings.swift; sourceTree = "<group>"; };
@@ -87,11 +96,16 @@
 				D6D1EFF52790723800FE3AEE /* LoginViewController.swift */,
 				C1935EF527959458009C18A9 /* HomeViewController.swift */,
 				C13FB7A427992F5800838B18 /* DayViewController.swift */,
+				C100EFAE279BE8AF00B9E881 /* Day2ViewController.swift */,
 				D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */,
 				C1935EFC2795B3F7009C18A9 /* DiaryCell.swift */,
 				C1935EFE2795BB53009C18A9 /* DiaryCalendar.swift */,
 				C13FB7A62799659700838B18 /* FeelingsCell.swift */,
 				C13FB7A82799697C00838B18 /* Feelings.swift */,
+				C100EFB7279BEF4300B9E881 /* CloseButton.swift */,
+				C100EFB9279BEF4300B9E881 /* TagListView.h */,
+				C100EFBA279BEF4300B9E881 /* TagListView.swift */,
+				C100EFB8279BEF4300B9E881 /* TagView.swift */,
 			);
 			path = MAD2AssignmentApp;
 			sourceTree = "<group>";
@@ -184,9 +198,13 @@
 				C1935EFD2795B3F8009C18A9 /* DiaryCell.swift in Sources */,
 				D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */,
 				C1A0D979279059A7002DF70E /* ViewController.swift in Sources */,
+				C100EFBB279BEF4300B9E881 /* CloseButton.swift in Sources */,
+				C100EFAF279BE8AF00B9E881 /* Day2ViewController.swift in Sources */,
 				C1A0D975279059A7002DF70E /* AppDelegate.swift in Sources */,
 				C1A0D977279059A7002DF70E /* SceneDelegate.swift in Sources */,
+				C100EFBD279BEF4300B9E881 /* TagListView.swift in Sources */,
 				C13FB7A92799697C00838B18 /* Feelings.swift in Sources */,
+				C100EFBC279BEF4300B9E881 /* TagView.swift in Sources */,
 				C1935EF627959458009C18A9 /* HomeViewController.swift in Sources */,
 				C13FB7A527992F5800838B18 /* DayViewController.swift in Sources */,
 			);

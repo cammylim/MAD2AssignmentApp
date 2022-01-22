@@ -464,6 +464,9 @@
                                     <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                     <color key="baseBackgroundColor" red="1" green="0.83921568627450982" blue="0.83921568627450982" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="qEi-zZ-ouq" kind="show" id="oM7-Lg-Gte"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 1/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-l2-NUE">
                                 <rect key="frame" x="115" y="688" width="145" height="18"/>
@@ -506,7 +509,123 @@
             </objects>
             <point key="canvasLocation" x="1693.5999999999999" y="767.73399014778329"/>
         </scene>
+        <!--Day2 View Controller-->
+        <scene sceneID="fZE-nE-ZtX">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="qEi-zZ-ouq" customClass="Day2ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Doi-UC-t0P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyd-VJ-rNG">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Diary Entry" id="gRh-J2-2z0">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="eNJ-OY-qW3">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BB2-eg-yUe">
+                                                <rect key="frame" x="16" y="5" width="83" height="34.333333333333336"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system" title=""/>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" style="plain" id="gUW-YB-e5Y">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="cno-vd-KLJ">
+                                                <rect key="frame" x="276" y="5" width="83" height="34.333333333333336"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" title=""/>
+                                            </button>
+                                            <color key="tintColor" systemColor="labelColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What did you do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NZ-Le-tqz">
+                                <rect key="frame" x="31" y="123" width="312" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="312" id="6qI-Om-EG2"/>
+                                    <constraint firstAttribute="height" constant="36" id="FzI-Xf-aWg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="30"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFZ-3t-Il8" customClass="TagListView" customModule="MAD2AssignmentApp" customModuleProvider="target">
+                                <rect key="frame" x="31" y="189" width="312" height="295"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="312" id="IUb-TN-iqU"/>
+                                    <constraint firstAttribute="height" constant="295" id="pfI-1M-iwW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
+                                        <color key="value" red="0.82745098039215681" green="0.89803921568627454" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBorderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minWidth">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E3H-mp-25t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wyd-VJ-rNG" firstAttribute="trailing" secondItem="E3H-mp-25t" secondAttribute="trailing" id="0LX-3T-MbI"/>
+                            <constraint firstItem="wyd-VJ-rNG" firstAttribute="leading" secondItem="E3H-mp-25t" secondAttribute="leading" id="BHz-dW-yYs"/>
+                            <constraint firstItem="E3H-mp-25t" firstAttribute="trailing" secondItem="0NZ-Le-tqz" secondAttribute="trailing" constant="32" id="Lnd-q8-69K"/>
+                            <constraint firstItem="VFZ-3t-Il8" firstAttribute="top" secondItem="Doi-UC-t0P" secondAttribute="topMargin" constant="145" id="QeR-Nr-vyi"/>
+                            <constraint firstItem="wyd-VJ-rNG" firstAttribute="top" secondItem="E3H-mp-25t" secondAttribute="top" id="TeP-eI-iUy"/>
+                            <constraint firstItem="VFZ-3t-Il8" firstAttribute="leading" secondItem="E3H-mp-25t" secondAttribute="leading" constant="31" id="YzD-RD-76Y"/>
+                            <constraint firstItem="E3H-mp-25t" firstAttribute="trailing" secondItem="VFZ-3t-Il8" secondAttribute="trailing" constant="32" id="gQn-cL-aXm"/>
+                            <constraint firstItem="0NZ-Le-tqz" firstAttribute="top" secondItem="wyd-VJ-rNG" secondAttribute="bottom" constant="35" id="jOs-7g-WkK"/>
+                            <constraint firstItem="0NZ-Le-tqz" firstAttribute="leading" secondItem="E3H-mp-25t" secondAttribute="leading" constant="31" id="tHB-gh-Z0K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fi1-2P-95l"/>
+                    <connections>
+                        <outlet property="tagListView" destination="VFZ-3t-Il8" id="3Xi-7I-izR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5U-d4-TCD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2492" y="768"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="VFZ-3t-Il8">
+            <size key="intrinsicContentSize" width="312" height="22"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
     </inferredMetricsTieBreakers>
@@ -514,6 +633,7 @@
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="arrowtriangle.backward" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.right" catalog="system" width="128" height="113"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="home-profile" width="54" height="54"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
