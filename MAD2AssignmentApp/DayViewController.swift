@@ -27,7 +27,6 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
-        print(selectedDay!)
         feelingsCollectionView.reloadData()
         
     }

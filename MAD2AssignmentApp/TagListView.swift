@@ -449,7 +449,7 @@ open class TagListView: UIView {
     
     @objc func tagPressed(_ sender: TagView!) {
         sender.onTap?(sender)
-        delegate?.tagPressed?(sender.currentTitle ?? "", tagView: sender, sender: self)
+        delegate?.tagPressed?(sender.currentTitle ?? "Pressed", tagView: sender, sender: self)
     }
     
     @objc func removeButtonPressed(_ closeButton: CloseButton!) {
