@@ -41,6 +41,11 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
         
     }
     @IBAction func addOthersButton(_ sender: Any) {
+        if (otherTagsField.text != nil){
+            tagView = tagListView.addTag(otherTagsField.text!)
+            self.tagListView.tagPressed(tagView)
+            tagView.isSelected = false
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

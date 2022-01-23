@@ -96,7 +96,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "diaryDetail", sender: self)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
