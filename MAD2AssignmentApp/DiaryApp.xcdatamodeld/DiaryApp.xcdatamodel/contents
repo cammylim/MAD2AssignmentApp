@@ -3,13 +3,13 @@
     <entity name="CoreDataActivities" representedClassName="CoreDataActivities" syncable="YES" codeGenerationType="class">
         <attribute name="act_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="act_name" optional="YES" attributeType="String"/>
-        <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasActivities" inverseEntity="CoreDataDiary"/>
+        <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataUser" inverseName="hasTags" inverseEntity="CoreDataUser"/>
     </entity>
     <entity name="CoreDataDiary" representedClassName="CoreDataDiary" syncable="YES" codeGenerationType="class">
         <attribute name="diary_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="diary_feeling" optional="YES" attributeType="String"/>
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataUser" inverseName="has" inverseEntity="CoreDataUser"/>
-        <relationship name="hasActivities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataActivities" inverseName="existsIn" inverseEntity="CoreDataActivities"/>
+        <relationship name="hasActivities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataActivities"/>
         <relationship name="hasFeelings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataFeelings" inverseName="existsIn" inverseEntity="CoreDataFeelings"/>
         <relationship name="hasReflect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataReflection" inverseName="existsIn" inverseEntity="CoreDataReflection"/>
         <relationship name="hasSpecial" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataSpecial" inverseName="existsIn" inverseEntity="CoreDataSpecial"/>
@@ -35,13 +35,14 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="user_id" optional="YES" attributeType="String"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="existsIn" inverseEntity="CoreDataDiary"/>
+        <relationship name="hasTags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataActivities" inverseName="existsIn" inverseEntity="CoreDataActivities"/>
     </entity>
     <elements>
-        <element name="CoreDataUser" positionX="-284.2162170410156" positionY="-269.2606201171875" width="128" height="103"/>
-        <element name="CoreDataDiary" positionX="-64.67291259765625" positionY="-322.2344207763672" width="128" height="148"/>
         <element name="CoreDataActivities" positionX="-248.6298217773438" positionY="-70.61215209960938" width="128" height="88"/>
-        <element name="CoreDataSpecial" positionX="79.9268798828125" positionY="-79.22637939453125" width="128" height="103"/>
-        <element name="CoreDataReflection" positionX="-69.5731201171875" positionY="-76.49169921875" width="128" height="88"/>
+        <element name="CoreDataDiary" positionX="-64.67291259765625" positionY="-322.2344207763672" width="128" height="148"/>
         <element name="CoreDataFeelings" positionX="173.3076782226562" positionY="-296.7184295654297" width="128" height="88"/>
+        <element name="CoreDataReflection" positionX="-69.5731201171875" positionY="-76.49169921875" width="128" height="88"/>
+        <element name="CoreDataSpecial" positionX="79.9268798828125" positionY="-79.22637939453125" width="128" height="103"/>
+        <element name="CoreDataUser" positionX="-284.2162170410156" positionY="-269.2606201171875" width="128" height="118"/>
     </elements>
 </model>

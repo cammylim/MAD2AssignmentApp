@@ -20,7 +20,6 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
         tagListView.delegate = self
         tagListView.textFont = UIFont(name: "BalsamiqSans-Regular", size: 16)!
-
         setTags()
     }
     
@@ -30,12 +29,9 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
         while i < tagList!.count {
             tagView = tagListView.addTag(tagList[i])
             self.tagListView.tagPressed(tagView)
-            
             tagView.isSelected = false
             i += 1
         }
-        
-        
     }
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
