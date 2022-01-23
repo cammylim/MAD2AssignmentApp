@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
             // add user to coredata
             let user = User(name: nameField.text!, dob: dateFormatter.date(from: dobField.text!)!)
             userDAL.AddUser(user: user)
+            UserDefaults.standard.hasOnboarded = true
             
             // go to home page
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

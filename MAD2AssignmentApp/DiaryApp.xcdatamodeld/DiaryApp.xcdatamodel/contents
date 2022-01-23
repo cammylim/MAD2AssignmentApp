@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreDataActivities" representedClassName="CoreDataActivities" syncable="YES" codeGenerationType="class">
         <attribute name="act_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="act_name" optional="YES" attributeType="String"/>
@@ -32,8 +32,8 @@
     </entity>
     <entity name="CoreDataUser" representedClassName="CoreDataUser" syncable="YES" codeGenerationType="class">
         <attribute name="user_dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="user_id" optional="YES" attributeType="String"/>
         <attribute name="user_name" optional="YES" attributeType="String"/>
+        <attribute name="user_picture" optional="YES" attributeType="Binary"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="existsIn" inverseEntity="CoreDataDiary"/>
         <relationship name="hasTags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataActivities" inverseName="existsIn" inverseEntity="CoreDataActivities"/>
     </entity>
@@ -43,6 +43,6 @@
         <element name="CoreDataFeelings" positionX="142.3425903320312" positionY="-326.0684356689453" width="128" height="88"/>
         <element name="CoreDataReflection" positionX="-94.1304931640625" positionY="-85.95648193359375" width="128" height="88"/>
         <element name="CoreDataSpecial" positionX="144.1470336914062" positionY="-133.4464416503906" width="128" height="103"/>
-        <element name="CoreDataUser" positionX="-273.6988220214844" positionY="-369.1681518554688" width="128" height="118"/>
+        <element name="CoreDataUser" positionX="-273.6988220214844" positionY="-369.1681518554688" width="128" height="104"/>
     </elements>
 </model>
