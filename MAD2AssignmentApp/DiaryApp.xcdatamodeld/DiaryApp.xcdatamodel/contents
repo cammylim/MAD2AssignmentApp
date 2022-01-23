@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreDataActivities" representedClassName="CoreDataActivities" syncable="YES" codeGenerationType="class">
         <attribute name="act_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="act_name" optional="YES" attributeType="String"/>
@@ -33,15 +33,14 @@
     <entity name="CoreDataUser" representedClassName="CoreDataUser" syncable="YES" codeGenerationType="class">
         <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="user_id" optional="YES" attributeType="String"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="existsIn" inverseEntity="CoreDataDiary"/>
     </entity>
     <elements>
-        <element name="CoreDataUser" positionX="-284.2162170410156" positionY="-269.2606201171875" width="128" height="103"/>
+        <element name="CoreDataActivities" positionX="-293.9263916015626" positionY="-179.9668884277344" width="128" height="88"/>
         <element name="CoreDataDiary" positionX="-64.67291259765625" positionY="-322.2344207763672" width="128" height="148"/>
-        <element name="CoreDataActivities" positionX="-248.6298217773438" positionY="-70.61215209960938" width="128" height="88"/>
-        <element name="CoreDataSpecial" positionX="79.9268798828125" positionY="-79.22637939453125" width="128" height="103"/>
-        <element name="CoreDataReflection" positionX="-69.5731201171875" positionY="-76.49169921875" width="128" height="88"/>
-        <element name="CoreDataFeelings" positionX="173.3076782226562" positionY="-296.7184295654297" width="128" height="88"/>
+        <element name="CoreDataFeelings" positionX="142.3425903320312" positionY="-326.0684356689453" width="128" height="88"/>
+        <element name="CoreDataReflection" positionX="-94.1304931640625" positionY="-85.95648193359375" width="128" height="88"/>
+        <element name="CoreDataSpecial" positionX="144.1470336914062" positionY="-133.4464416503906" width="128" height="103"/>
+        <element name="CoreDataUser" positionX="-297.7826843261719" positionY="-322.10107421875" width="128" height="88"/>
     </elements>
 </model>

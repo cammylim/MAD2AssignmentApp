@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C0u-lT-0ub">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLs-9q-KuI">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -64,20 +64,26 @@
                                 <color key="textColor" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DD/MM/YYYY" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM8-uO-mgu">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 01-01-1999" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM8-uO-mgu">
                                 <rect key="frame" x="24" y="273" width="327" height="34"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ4-J0-2QR">
-                                <rect key="frame" x="24" y="357" width="327" height="35"/>
+                                <rect key="frame" x="24" y="357" width="327" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Ocl-CF-pIy"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" title="Get Started" imagePadding="4">
                                     <imageReference key="image" image="arrow.forward" catalog="system" symbolScale="large"/>
-                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="18"/>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                     <color key="baseForegroundColor" red="0.24705882352941178" green="0.23921568627450979" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="baseBackgroundColor" red="1" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginBtn:" destination="tLs-9q-KuI" eventType="touchUpInside" id="WyH-nL-gvI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NOk-DB-yWL"/>
@@ -103,6 +109,10 @@
                             <constraint firstItem="ukN-mB-FjC" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="uzT-Jv-79i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dobField" destination="YM8-uO-mgu" id="OZh-RP-loM"/>
+                        <outlet property="nameField" destination="ukN-mB-FjC" id="WZZ-6D-3QJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGe-bW-wuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +121,7 @@
         <!--Home View Controller-->
         <scene sceneID="7jZ-nf-PJk">
             <objects>
-                <viewController id="C0u-lT-0ub" customClass="HomeViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Content" id="C0u-lT-0ub" customClass="HomeViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KXI-Da-IKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,7 +288,7 @@
                                     <constraint firstAttribute="width" constant="42" id="jMQ-cM-3Ik"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="arrowtriangle.right" catalog="system">
+                                <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -293,7 +303,7 @@
                                     <constraint firstAttribute="height" constant="30" id="dNE-Vf-xJh"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="arrowtriangle.backward" catalog="system">
+                                <buttonConfiguration key="configuration" style="filled" image="chevron.left" catalog="system">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -301,13 +311,16 @@
                                     <action selector="previousMonth:" destination="C0u-lT-0ub" eventType="touchUpInside" id="K08-gq-Pid"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqT-Lr-2Yr">
-                                <rect key="frame" x="90" y="643" width="195" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqT-Lr-2Yr">
+                                <rect key="frame" x="24" y="619" width="327" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="lI5-Zp-iYk"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Mood Entry">
+                                <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" title="Mood Entry" imagePadding="4">
+                                    <imageReference key="image" image="smiley" catalog="system" symbolScale="large"/>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" red="0.2473189831" green="0.23745346070000001" blue="0.32943052049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" red="1" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -331,6 +344,7 @@
                             <constraint firstItem="6Sb-QU-1kl" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="250" id="M1r-6b-tQg"/>
                             <constraint firstItem="7Wn-av-Cze" firstAttribute="leading" secondItem="6Sb-QU-1kl" secondAttribute="trailing" constant="15" id="Nay-4O-z6E"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="QBU-D6-XI7" secondAttribute="bottom" constant="183" id="QBk-KW-tYR"/>
+                            <constraint firstItem="LqT-Lr-2Yr" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="24" id="QXW-FG-D2k"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="UeX-CY-rQm" secondAttribute="trailing" constant="37" id="Slg-aY-jRt"/>
                             <constraint firstItem="W86-B5-yW9" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="252" id="THf-5j-pPL"/>
                             <constraint firstItem="UeX-CY-rQm" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="37" id="VS8-VH-WUc"/>
@@ -340,12 +354,14 @@
                             <constraint firstItem="ype-ez-jVy" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="26" id="Yih-ur-7eR"/>
                             <constraint firstItem="tGj-yP-hf9" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="142" id="bht-4u-hwi"/>
                             <constraint firstItem="tGj-yP-hf9" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="37" id="fdI-hV-Qk1"/>
+                            <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="LqT-Lr-2Yr" secondAttribute="trailing" constant="24" id="gQT-Re-bF5"/>
                             <constraint firstItem="UeX-CY-rQm" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="283" id="hmz-Iv-0tF"/>
                             <constraint firstItem="sHu-hE-xVg" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="70" id="k8e-1o-Mpf"/>
                             <constraint firstItem="7Wn-av-Cze" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="252" id="l69-ft-lpX"/>
                             <constraint firstItem="ype-ez-jVy" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="114" id="lU6-11-woZ"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="QBU-D6-XI7" secondAttribute="trailing" constant="37" id="n5f-mq-k2n"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="Wkc-Aa-yiC" secondAttribute="bottom" constant="648" id="oRJ-xk-gD9"/>
+                            <constraint firstItem="LqT-Lr-2Yr" firstAttribute="top" secondItem="QBU-D6-XI7" secondAttribute="bottom" constant="24" id="olN-Bd-JvL"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="7Wn-av-Cze" secondAttribute="trailing" constant="37" id="sdq-9Y-LdK"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="tGj-yP-hf9" secondAttribute="bottom" constant="492" id="yk6-zD-cic"/>
                         </constraints>
@@ -512,9 +528,10 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
-        <image name="arrowtriangle.backward" catalog="system" width="128" height="113"/>
-        <image name="arrowtriangle.right" catalog="system" width="128" height="113"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="home-profile" width="54" height="54"/>
+        <image name="smiley" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
