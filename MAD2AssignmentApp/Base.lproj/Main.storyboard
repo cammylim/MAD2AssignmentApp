@@ -513,7 +513,7 @@
                                     <constraint firstAttribute="height" constant="42" id="frV-Oj-K2L"/>
                                     <constraint firstAttribute="width" constant="317" id="mf0-M6-B5y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="25"/>
                                 <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -542,7 +542,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12f-Bi-5Qn">
                                                     <rect key="frame" x="10" y="63" width="121" height="17"/>
                                                     <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="14"/>
-                                                    <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vnV-cq-avw">
@@ -585,13 +585,16 @@
                                     <constraint firstAttribute="width" constant="328" id="pqt-wn-Akg"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next ">
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Next " imagePadding="5">
                                     <backgroundConfiguration key="background" cornerRadius="10">
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                     <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="zLJ-pF-M91" kind="show" id="b0Q-6b-i0b"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 1/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-l2-NUE">
                                 <rect key="frame" x="115" y="688" width="145" height="18"/>
@@ -601,7 +604,7 @@
                                     <constraint firstAttribute="width" constant="145" id="CVB-kZ-V7d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
-                                <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -637,7 +640,7 @@
         <!--Day2 View Controller-->
         <scene sceneID="L0Y-BR-jQf">
             <objects>
-                <viewController id="zLJ-pF-M91" customClass="Day2ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="zLJ-pF-M91" customClass="Day2ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbm-tA-1i7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -648,8 +651,16 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Diary Entry" id="VGp-hp-KT1">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="46w-rr-rQd"/>
-                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="Qfg-jd-0dn"/>
+                                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="46w-rr-rQd">
+                                            <connections>
+                                                <action selector="backButton:" destination="zLJ-pF-M91" id="mqP-a8-bc0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="Qfg-jd-0dn">
+                                            <connections>
+                                                <action selector="closeButton:" destination="zLJ-pF-M91" id="ZTO-nF-ehL"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -661,12 +672,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfL-2t-BGB" customClass="TagListView" customModule="MAD2AssignmentApp" customModuleProvider="target">
-                                <rect key="frame" x="37" y="196" width="300" height="327"/>
+                                <rect key="frame" x="37" y="196" width="300" height="277"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="MDP-As-DRt"/>
-                                    <constraint firstAttribute="height" constant="327" id="eia-j8-qsa"/>
+                                    <constraint firstAttribute="height" constant="277" id="eia-j8-qsa"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -679,7 +690,7 @@
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
+                                        <real key="value" value="13"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -699,21 +710,128 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="removeIconLineColor">
                                         <color key="value" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minWidth">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
+                                        <color key="value" red="0.82745098039215681" green="0.89803921568627454" blue="1" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What did you do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-rU-Rzz">
+                                <rect key="frame" x="29" y="125" width="317" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="317" id="6Jb-wR-RYU"/>
+                                    <constraint firstAttribute="height" constant="36" id="aTe-Wg-uaZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="25"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPv-Tp-y0H">
+                                <rect key="frame" x="37" y="486" width="47" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="gnQ-05-aPl"/>
+                                    <constraint firstAttribute="height" constant="18" id="haW-Q0-hsj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Swimming" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-KC-4OD">
+                                <rect key="frame" x="37" y="505" width="300" height="48"/>
+                                <color key="backgroundColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="cFy-46-FAq"/>
+                                    <constraint firstAttribute="height" constant="48" id="gSF-In-bXM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8P-cV-KWC">
+                                <rect key="frame" x="37" y="561" width="300" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="0fK-T5-8cV"/>
+                                    <constraint firstAttribute="width" constant="300" id="Ggb-xx-coH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" imagePlacement="trailing" title="Add" imagePadding="5">
+                                    <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
+                                        <color key="strokeColor" red="1" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="1" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addOthersButton:" destination="zLJ-pF-M91" eventType="touchUpInside" id="yFe-hG-q0S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqw-MQ-Rwt">
+                                <rect key="frame" x="23" y="714" width="328" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="kgs-QS-xYj"/>
+                                    <constraint firstAttribute="height" constant="64" id="ukF-72-sqc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Next " imagePadding="5">
+                                    <backgroundConfiguration key="background" cornerRadius="10">
+                                        <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="0.8980392157" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 2/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mja-9e-HO8">
+                                <rect key="frame" x="113" y="688" width="148" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="CvD-vC-C7R"/>
+                                    <constraint firstAttribute="height" constant="18" id="b5g-Ns-A0N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.34509803921568627" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CYO-Ej-Kum"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="mja-9e-HO8" secondAttribute="trailing" constant="114" id="33J-G3-b05"/>
+                            <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="u8P-cV-KWC" secondAttribute="trailing" constant="38" id="49m-MJ-rA2"/>
+                            <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="Vqw-MQ-Rwt" secondAttribute="trailing" constant="24" id="7v5-jf-6Tz"/>
+                            <constraint firstItem="bg6-rU-Rzz" firstAttribute="top" secondItem="O9M-nu-W1H" secondAttribute="bottom" constant="37" id="8Eb-4n-K6N"/>
+                            <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="LPv-Tp-y0H" secondAttribute="trailing" constant="291" id="9Zf-fo-jaR"/>
+                            <constraint firstItem="mja-9e-HO8" firstAttribute="top" secondItem="CYO-Ej-Kum" secondAttribute="top" constant="644" id="Gbn-jm-By3"/>
                             <constraint firstItem="O9M-nu-W1H" firstAttribute="top" secondItem="CYO-Ej-Kum" secondAttribute="top" id="Nu2-XN-Xty"/>
                             <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="OfL-2t-BGB" secondAttribute="trailing" constant="38" id="R14-2D-WKG"/>
+                            <constraint firstItem="Vqw-MQ-Rwt" firstAttribute="bottom" secondItem="CYO-Ej-Kum" secondAttribute="bottom" id="U1f-M9-CIW"/>
+                            <constraint firstItem="mja-9e-HO8" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="113" id="VC0-pi-Evr"/>
+                            <constraint firstItem="Vqw-MQ-Rwt" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="23" id="Vs3-uJ-zFm"/>
+                            <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="RA4-KC-4OD" secondAttribute="trailing" constant="38" id="adb-hl-l2Y"/>
                             <constraint firstItem="O9M-nu-W1H" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" id="ate-5V-Ekf"/>
+                            <constraint firstItem="RA4-KC-4OD" firstAttribute="top" secondItem="Kbm-tA-1i7" secondAttribute="topMargin" constant="461" id="byp-7b-m5H"/>
+                            <constraint firstItem="LPv-Tp-y0H" firstAttribute="top" secondItem="Kbm-tA-1i7" secondAttribute="topMargin" constant="442" id="coC-vs-5sf"/>
+                            <constraint firstItem="u8P-cV-KWC" firstAttribute="top" secondItem="Kbm-tA-1i7" secondAttribute="topMargin" constant="517" id="hgT-Pp-BKQ"/>
                             <constraint firstItem="OfL-2t-BGB" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="37" id="j47-Yo-Xi6"/>
                             <constraint firstItem="O9M-nu-W1H" firstAttribute="trailing" secondItem="CYO-Ej-Kum" secondAttribute="trailing" id="kFU-bc-JKU"/>
                             <constraint firstItem="OfL-2t-BGB" firstAttribute="top" secondItem="O9M-nu-W1H" secondAttribute="bottom" constant="108" id="pbL-Wc-1Dt"/>
+                            <constraint firstItem="bg6-rU-Rzz" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="29" id="qfv-bz-Aeq"/>
+                            <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="bg6-rU-Rzz" secondAttribute="trailing" constant="29" id="sal-8S-W9w"/>
+                            <constraint firstItem="RA4-KC-4OD" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="37" id="tZF-tR-RkP"/>
+                            <constraint firstItem="u8P-cV-KWC" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="37" id="w8s-9z-QKL"/>
+                            <constraint firstItem="LPv-Tp-y0H" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="37" id="wpf-Wt-gcm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="l02-ZA-GX7"/>
                     <connections>
+                        <outlet property="otherTagsField" destination="RA4-KC-4OD" id="FBi-nV-s4c"/>
                         <outlet property="tagListView" destination="OfL-2t-BGB" id="Lg0-S2-NBN"/>
                     </connections>
                 </viewController>
@@ -724,16 +842,18 @@
     </scenes>
     <designables>
         <designable name="OfL-2t-BGB">
-            <size key="intrinsicContentSize" width="300" height="16"/>
+            <size key="intrinsicContentSize" width="300" height="28"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="home-profile" width="54" height="54"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

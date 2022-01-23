@@ -14,6 +14,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
     var tag:String?
     var tagView:TagView!
     @IBOutlet weak var tagListView: TagListView!
+    @IBOutlet weak var otherTagsField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +34,23 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
             i += 1
         }
     }
+    @IBAction func closeButton(_ sender: Any) {
+    }
+    @IBAction func backButton(_ sender: Any) {
+    }
+    @IBAction func addOthersButton(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
-        }
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag pressed: \(title), \(sender)")
         tagView.isSelected = !tagView.isSelected
-        }
+    }
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-            print("Tag Remove pressed: \(title), \(sender)")
-            sender.removeTagView(tagView)
-        }
+        print("Tag Remove pressed: \(title), \(sender)")
+        sender.removeTagView(tagView)
+    }
 }
 
