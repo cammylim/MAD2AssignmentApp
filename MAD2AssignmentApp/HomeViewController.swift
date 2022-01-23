@@ -14,18 +14,21 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var greetingLabel: UILabel!
     
     var selectedDate = Date()
     var selectedDay:String?
     var selectedMonth:String?
     var selectedYear:String?
     var totalDays = [String]()
+    let userDAL:UserDataAccessLayer = UserDataAccessLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home-bg.svg")!);
         dayLabel.text = DiaryCalendar().dayText(date: selectedDate) + ","
         dateLabel.text = DiaryCalendar().monthText(date: selectedDate) + " " + String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
+        setGreetingView()
         setCellsView()
         setMonthView()
 
@@ -33,6 +36,24 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func moodEntry(_ sender: Any) {
         self.performSegue(withIdentifier: "moodDiaryDetail", sender: self)
         
+    }
+    func setGreetingView(){
+        var greetTime:String = ""
+        var greetName:String = ""
+        if (DiaryCalendar().hour(date: selectedDate) < 12){
+            greetTime = "Good Morning, "
+        }
+        else if (DiaryCalendar().hour(date: selectedDate) < 17){
+            greetTime = "Good Afternoon, "
+        }
+        else if (DiaryCalendar().hour(date: selectedDate) < 19){
+            greetTime = "Good Evening, "
+        }
+        else{
+            greetTime = "Good Night, "
+        }
+        greetName = userDAL.RetrieveUser().name!
+        greetingLabel.text = greetTime + greetName
     }
     func setCellsView(){
         let width = (collectionView.frame.size.width - 2) / 8
