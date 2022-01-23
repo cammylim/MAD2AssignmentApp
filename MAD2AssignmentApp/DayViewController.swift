@@ -44,6 +44,15 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         cell.setup(with: feelingsList[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! FeelingsCell
+        if (cell.backgroundColor == UIColor.clear){
+            cell.layer.cornerRadius = 8
+            cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
+        }else{cell.backgroundColor = UIColor.clear}
+        
+    }
 }
 
 extension ViewController:UICollectionViewDelegateFlowLayout{

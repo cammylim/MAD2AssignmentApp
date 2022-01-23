@@ -31,9 +31,9 @@
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasSpecial" inverseEntity="CoreDataDiary"/>
     </entity>
     <entity name="CoreDataUser" representedClassName="CoreDataUser" syncable="YES" codeGenerationType="class">
-        <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="user_dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="user_id" optional="YES" attributeType="String"/>
+        <attribute name="user_name" optional="YES" attributeType="String"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="existsIn" inverseEntity="CoreDataDiary"/>
         <relationship name="hasTags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataActivities" inverseName="existsIn" inverseEntity="CoreDataActivities"/>
     </entity>
