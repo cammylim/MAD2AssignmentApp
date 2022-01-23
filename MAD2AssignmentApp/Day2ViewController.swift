@@ -35,8 +35,10 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
         }
     }
     @IBAction func closeButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func backButton(_ sender: Any) {
+        
     }
     @IBAction func addOthersButton(_ sender: Any) {
     }
