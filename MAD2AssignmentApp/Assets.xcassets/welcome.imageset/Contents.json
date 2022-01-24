@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "login-vector.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "welcome.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
