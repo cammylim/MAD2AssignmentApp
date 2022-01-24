@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -162,7 +163,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. John" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ukN-mB-FjC">
                                 <rect key="frame" x="24" y="471" width="327" height="48"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="myQ-C7-IXC"/>
                                 </constraints>
@@ -177,7 +178,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 01-01-1999" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM8-uO-mgu">
                                 <rect key="frame" x="24" y="571" width="327" height="48"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="kFf-E7-PRc"/>
                                 </constraints>
@@ -908,7 +909,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Egg Sandwitch for Breakfast" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-YP-sPM">
                                 <rect key="frame" x="29" y="540" width="317" height="48"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="M4E-zQ-8ES"/>
                                 </constraints>
@@ -944,6 +945,13 @@
                                     <constraint firstAttribute="width" constant="317" id="SeO-CS-5St"/>
                                     <constraint firstAttribute="height" constant="233" id="ap4-M6-wXW"/>
                                 </constraints>
+                                <imageReference key="image" image="photo-placeholder" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any special moments? Add a picture!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xh-aQ-cmH">
                                 <rect key="frame" x="29" y="125" width="317" height="60"/>
@@ -959,36 +967,41 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Woodlands" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W54-mf-big">
                                 <rect key="frame" x="29" y="622" width="317" height="48"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="VyB-P4-SGJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82d-S0-B6D">
-                                <rect key="frame" x="23" y="716" width="328" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZC-9f-Z49">
+                                <rect key="frame" x="23" y="714" width="328" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="K47-Ir-Vtz"/>
+                                    <constraint firstAttribute="width" constant="328" id="ncB-W5-nwQ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next">
-                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                    <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                     <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="nextBtn:" destination="gRo-Pj-wwX" eventType="touchUpInside" id="ygW-8E-AKH"/>
+                                    <segue destination="zVL-Iv-Vwf" kind="show" id="AIB-XH-ef4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3VH-fg-FZb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YZC-9f-Z49" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="23" id="0Tj-sa-Xv8"/>
                             <constraint firstItem="HG9-Il-eQs" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" id="2w6-XW-xeV"/>
                             <constraint firstItem="jV1-LL-l24" firstAttribute="top" secondItem="0xh-aQ-cmH" secondAttribute="bottom" constant="30" id="3e1-XH-X7h"/>
                             <constraint firstItem="0xh-aQ-cmH" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="Faz-4d-Pqc"/>
                             <constraint firstItem="HG9-Il-eQs" firstAttribute="trailing" secondItem="3VH-fg-FZb" secondAttribute="trailing" id="GOF-di-x99"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="YZC-9f-Z49" secondAttribute="trailing" constant="24" id="Icc-ka-nU3"/>
                             <constraint firstItem="0xh-aQ-cmH" firstAttribute="top" secondItem="HG9-Il-eQs" secondAttribute="bottom" constant="37" id="JSe-Ko-o6y"/>
                             <constraint firstItem="W54-mf-big" firstAttribute="top" secondItem="gwQ-g7-HH3" secondAttribute="bottom" constant="4" id="JbH-F1-jhI"/>
                             <constraint firstItem="Hkr-YP-sPM" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="Lni-yJ-HDM"/>
@@ -1004,6 +1017,7 @@
                             <constraint firstItem="AHm-R5-flP" firstAttribute="top" secondItem="W54-mf-big" secondAttribute="bottom" constant="24" id="iKh-qd-eYH"/>
                             <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="gnd-GL-E7j" secondAttribute="trailing" constant="29" id="jmi-xJ-Wq0"/>
                             <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="W54-mf-big" secondAttribute="trailing" constant="29" id="p2h-ps-GuO"/>
+                            <constraint firstItem="YZC-9f-Z49" firstAttribute="bottom" secondItem="3VH-fg-FZb" secondAttribute="bottom" id="pPt-cu-wzw"/>
                             <constraint firstItem="M1T-SI-sHn" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="qCc-aL-Pli"/>
                             <constraint firstItem="Hkr-YP-sPM" firstAttribute="top" secondItem="M1T-SI-sHn" secondAttribute="bottom" constant="4" id="qJR-Fj-aRc"/>
                             <constraint firstItem="HG9-Il-eQs" firstAttribute="top" secondItem="3VH-fg-FZb" secondAttribute="top" id="t4r-Zk-irn"/>
@@ -1022,6 +1036,114 @@
             </objects>
             <point key="canvasLocation" x="1733.5999999999999" y="1579.8029556650247"/>
         </scene>
+        <!--Day4 View Controller-->
+        <scene sceneID="5v4-An-Ybd">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="zVL-Iv-Vwf" customClass="Day4ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UKG-Dv-cPn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJh-ZR-dAT">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Diary Entry" id="ZWK-zr-orH">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="ff5-WQ-MLJ"/>
+                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="TnE-kL-Fqw"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Reflection (Optional)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvG-Zp-dMW">
+                                <rect key="frame" x="29" y="125" width="317" height="60"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="25"/>
+                                <color key="textColor" red="0.19741320609999999" green="0.42728644609999999" blue="0.76477223630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv2-z9-wPc">
+                                <rect key="frame" x="29" y="215" width="30" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.19741320609999999" green="0.42728644609999999" blue="0.76477223630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGN-hP-j3T">
+                                <rect key="frame" x="29" y="297" width="35" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.19741320609999999" green="0.42728644609999999" blue="0.76477223630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add title here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Y0-4j-ymJ">
+                                <rect key="frame" x="29" y="237" width="317" height="48"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="l7e-8j-Y0o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Add body here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2v1-Lv-ArL">
+                                <rect key="frame" x="29" y="319" width="317" height="200"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Olq-5H-C91"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sv3-5P-aMn">
+                                <rect key="frame" x="23" y="714" width="328" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="UPY-0K-IOR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                        <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 4/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTL-CI-GNn">
+                                <rect key="frame" x="113" y="688" width="149" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.23501825330000001" green="0.46340066190000001" blue="0.78045696019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pfZ-SO-saz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pfZ-SO-saz" firstAttribute="trailing" secondItem="gTL-CI-GNn" secondAttribute="trailing" constant="113" id="64L-0o-2pj"/>
+                            <constraint firstItem="2v1-Lv-ArL" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" constant="29" id="981-he-iGV"/>
+                            <constraint firstItem="gTL-CI-GNn" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" constant="113" id="9H7-7Z-irZ"/>
+                            <constraint firstItem="pfZ-SO-saz" firstAttribute="trailing" secondItem="2v1-Lv-ArL" secondAttribute="trailing" constant="29" id="GcP-ck-oxi"/>
+                            <constraint firstItem="sJh-ZR-dAT" firstAttribute="trailing" secondItem="pfZ-SO-saz" secondAttribute="trailing" id="LNs-Nm-xCx"/>
+                            <constraint firstItem="DGN-hP-j3T" firstAttribute="top" secondItem="2Y0-4j-ymJ" secondAttribute="bottom" constant="12" id="MKB-AQ-LoA"/>
+                            <constraint firstItem="Wv2-z9-wPc" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" constant="29" id="Oqr-Q2-tIl"/>
+                            <constraint firstItem="lvG-Zp-dMW" firstAttribute="top" secondItem="sJh-ZR-dAT" secondAttribute="bottom" constant="37" id="PCY-qr-p3f"/>
+                            <constraint firstItem="DGN-hP-j3T" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" constant="29" id="RvE-Np-bNT"/>
+                            <constraint firstItem="sJh-ZR-dAT" firstAttribute="top" secondItem="pfZ-SO-saz" secondAttribute="top" id="VKR-NA-CNS"/>
+                            <constraint firstItem="2Y0-4j-ymJ" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" constant="29" id="WBu-5g-BzZ"/>
+                            <constraint firstItem="lvG-Zp-dMW" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" constant="29" id="XX2-uv-bYY"/>
+                            <constraint firstItem="pfZ-SO-saz" firstAttribute="trailing" secondItem="sv3-5P-aMn" secondAttribute="trailing" constant="24" id="Y5c-bu-niZ"/>
+                            <constraint firstItem="2v1-Lv-ArL" firstAttribute="top" secondItem="DGN-hP-j3T" secondAttribute="bottom" constant="4" id="ZNJ-Lt-M62"/>
+                            <constraint firstItem="Wv2-z9-wPc" firstAttribute="top" secondItem="lvG-Zp-dMW" secondAttribute="bottom" constant="30" id="Zov-pb-Opl"/>
+                            <constraint firstItem="sv3-5P-aMn" firstAttribute="bottom" secondItem="pfZ-SO-saz" secondAttribute="bottom" id="bbb-UW-K6B"/>
+                            <constraint firstItem="sv3-5P-aMn" firstAttribute="top" secondItem="gTL-CI-GNn" secondAttribute="bottom" constant="8" symbolic="YES" id="gB1-Dh-UL4"/>
+                            <constraint firstItem="sv3-5P-aMn" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" constant="23" id="lyc-n8-p57"/>
+                            <constraint firstItem="sJh-ZR-dAT" firstAttribute="leading" secondItem="pfZ-SO-saz" secondAttribute="leading" id="qfX-HX-09e"/>
+                            <constraint firstItem="pfZ-SO-saz" firstAttribute="trailing" secondItem="lvG-Zp-dMW" secondAttribute="trailing" constant="29" id="r9s-oJ-iPo"/>
+                            <constraint firstItem="pfZ-SO-saz" firstAttribute="trailing" secondItem="2Y0-4j-ymJ" secondAttribute="trailing" constant="29" id="x28-l9-zzu"/>
+                            <constraint firstItem="2Y0-4j-ymJ" firstAttribute="top" secondItem="Wv2-z9-wPc" secondAttribute="bottom" constant="4" id="yJT-ud-xHn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="arm-l6-vVZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPm-KS-vRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="1579.8029556650247"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="OfL-2t-BGB">
@@ -1036,11 +1158,15 @@
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="home-profile" width="54" height="54"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="photo-placeholder" width="317" height="233"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="welcome" width="1445" height="1417"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1050,6 +1176,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

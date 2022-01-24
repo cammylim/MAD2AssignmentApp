@@ -28,6 +28,7 @@
 		D643BAC4279D738E001066E7 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */; };
 		D6489DEC27909E8200B485EB /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6489DEB27909E4400B485EB /* BalsamiqSans-Bold.ttf */; };
 		D6489DED27909E8600B485EB /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6489DE827909E2800B485EB /* BalsamiqSans-Regular.ttf */; };
+		D655E9CE279F172800768087 /* Day4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D655E9CD279F172800768087 /* Day4ViewController.swift */; };
 		D656EC22279D8F6100BE6FCE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */; };
 		D656EC24279D8FC700BE6FCE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */; };
 		D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67C5C91279EAE4000806D36 /* Day3ViewController.swift */; };
@@ -62,6 +63,7 @@
 		D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6489DE827909E2800B485EB /* BalsamiqSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Regular.ttf"; sourceTree = "<group>"; };
 		D6489DEB27909E4400B485EB /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
+		D655E9CD279F172800768087 /* Day4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4ViewController.swift; sourceTree = "<group>"; };
 		D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		D67C5C91279EAE4000806D36 /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				C13FB7A427992F5800838B18 /* DayViewController.swift */,
 				C16F2F90279D5B6600DCA4D2 /* Day2ViewController.swift */,
 				D67C5C91279EAE4000806D36 /* Day3ViewController.swift */,
+				D655E9CD279F172800768087 /* Day4ViewController.swift */,
 				D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */,
 				C1935EFC2795B3F7009C18A9 /* DiaryCell.swift */,
 				C1935EFE2795BB53009C18A9 /* DiaryCalendar.swift */,
@@ -236,6 +239,7 @@
 				C1A0D975279059A7002DF70E /* AppDelegate.swift in Sources */,
 				C1A0D977279059A7002DF70E /* SceneDelegate.swift in Sources */,
 				D6CD867A279D203600E934BD /* User.swift in Sources */,
+				D655E9CE279F172800768087 /* Day4ViewController.swift in Sources */,
 				D656EC22279D8F6100BE6FCE /* UIViewController+Extension.swift in Sources */,
 				C13FB7A92799697C00838B18 /* Feelings.swift in Sources */,
 				D656EC24279D8FC700BE6FCE /* UserDefaults+Extension.swift in Sources */,
