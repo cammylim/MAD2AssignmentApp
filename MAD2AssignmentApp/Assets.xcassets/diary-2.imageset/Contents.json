@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "diary-4.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Logo 80x80.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },

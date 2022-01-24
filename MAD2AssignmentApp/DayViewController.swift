@@ -15,11 +15,11 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     var selectedYear:String?
     
     let feelingsList:[Feelings] = [
-        Feelings(feelings_name: "Ecstatic", feelings_image: UIImage(named:"diary_5.svg")!),
-        Feelings(feelings_name: "Happy", feelings_image: UIImage(named:"diary_4.svg")!),
-        Feelings(feelings_name: "Neutral", feelings_image: UIImage(named:"diary_3.svg")!),
-        Feelings(feelings_name: "Upset", feelings_image: UIImage(named:"diary_2.svg")!),
-        Feelings(feelings_name: "Sad", feelings_image: UIImage(named:"diary_1.svg")!)
+        Feelings(feelings_name: "Ecstatic", feelings_image: UIImage(named:"diary-5.svg")!),
+        Feelings(feelings_name: "Happy", feelings_image: UIImage(named:"diary-4.svg")!),
+        Feelings(feelings_name: "Neutral", feelings_image: UIImage(named:"diary-3.svg")!),
+        Feelings(feelings_name: "Upset", feelings_image: UIImage(named:"diary-2.svg")!),
+        Feelings(feelings_name: "Sad", feelings_image: UIImage(named:"diary-1.svg")!)
     ]
     
     @IBOutlet weak var feelingsCollectionView: UICollectionView!
