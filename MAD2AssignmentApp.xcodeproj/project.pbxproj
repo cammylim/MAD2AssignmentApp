@@ -30,6 +30,7 @@
 		D6489DED27909E8600B485EB /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6489DE827909E2800B485EB /* BalsamiqSans-Regular.ttf */; };
 		D656EC22279D8F6100BE6FCE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */; };
 		D656EC24279D8FC700BE6FCE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */; };
+		D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67C5C91279EAE4000806D36 /* Day3ViewController.swift */; };
 		D6CD867A279D203600E934BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CD8679279D203600E934BD /* User.swift */; };
 		D6CD867C279D22C400E934BD /* UserDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CD867B279D22C400E934BD /* UserDataAccessLayer.swift */; };
 		D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1EFF52790723800FE3AEE /* LoginViewController.swift */; };
@@ -63,6 +64,7 @@
 		D6489DEB27909E4400B485EB /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
 		D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		D67C5C91279EAE4000806D36 /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		D6CD8679279D203600E934BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6CD867B279D22C400E934BD /* UserDataAccessLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataAccessLayer.swift; sourceTree = "<group>"; };
 		D6D1EFF52790723800FE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C1935EF527959458009C18A9 /* HomeViewController.swift */,
 				C13FB7A427992F5800838B18 /* DayViewController.swift */,
 				C16F2F90279D5B6600DCA4D2 /* Day2ViewController.swift */,
+				D67C5C91279EAE4000806D36 /* Day3ViewController.swift */,
 				D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */,
 				C1935EFC2795B3F7009C18A9 /* DiaryCell.swift */,
 				C1935EFE2795BB53009C18A9 /* DiaryCalendar.swift */,
@@ -125,8 +128,7 @@
 				D643BABE279D6359001066E7 /* OnBoardingViewController.swift */,
 				D643BAC1279D7127001066E7 /* OnBoardingSlide.swift */,
 				D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */,
-				D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */,
-				D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */,
+				D656EC27279E8C3400BE6FCE /* extension */,
 			);
 			path = MAD2AssignmentApp;
 			sourceTree = "<group>";
@@ -138,6 +140,15 @@
 				D6489DE827909E2800B485EB /* BalsamiqSans-Regular.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		D656EC27279E8C3400BE6FCE /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */,
+				D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				C16F2F95279D5B7A00DCA4D2 /* TagView.swift in Sources */,
 				C1935EF627959458009C18A9 /* HomeViewController.swift in Sources */,
 				C13FB7A527992F5800838B18 /* DayViewController.swift in Sources */,
+				D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */,
 				D643BABF279D635A001066E7 /* OnBoardingViewController.swift in Sources */,
 				D6CD867C279D22C400E934BD /* UserDataAccessLayer.swift in Sources */,
 				C16F2F96279D5B7A00DCA4D2 /* TagListView.swift in Sources */,
@@ -386,6 +398,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MAD2AssignmentApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = diaryme;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -400,7 +413,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,6 +427,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MAD2AssignmentApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = diaryme;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -428,7 +442,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

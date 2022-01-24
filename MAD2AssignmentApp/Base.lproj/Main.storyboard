@@ -224,12 +224,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGe-bW-wuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.399999999999999" y="768.4729064039409"/>
+            <point key="canvasLocation" x="862" y="98"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="7jZ-nf-PJk">
             <objects>
-                <viewController storyboardIdentifier="Content" id="C0u-lT-0ub" customClass="HomeViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Content" modalPresentationStyle="fullScreen" id="C0u-lT-0ub" customClass="HomeViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KXI-Da-IKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,6 +285,11 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-QU-1kl">
                                 <rect key="frame" x="94" y="294" width="187" height="32"/>
@@ -425,7 +430,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Zys-fJ-H8D"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Mood Entry">
+                                <buttonConfiguration key="configuration" style="plain" title="Enter Mood">
                                     <backgroundConfiguration key="background" cornerRadius="10">
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
@@ -475,6 +480,7 @@
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="tGj-yP-hf9" secondAttribute="bottom" constant="492" id="yk6-zD-cic"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="M8f-96-nUb"/>
                     <connections>
                         <outlet property="collectionView" destination="QBU-D6-XI7" id="BtU-nh-5AH"/>
                         <outlet property="dateLabel" destination="sHu-hE-xVg" id="QfZ-Mv-lxc"/>
@@ -485,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmD-Ow-32w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861.60000000000002" y="767.73399014778329"/>
+            <point key="canvasLocation" x="20" y="791"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="Jtk-gL-Obk">
@@ -585,7 +591,7 @@
                                     <constraint firstAttribute="width" constant="328" id="pqt-wn-Akg"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Next " imagePadding="5">
+                                <buttonConfiguration key="configuration" style="plain" title="Next ">
                                     <backgroundConfiguration key="background" cornerRadius="10">
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
@@ -635,12 +641,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kad-OS-2Es" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693.5999999999999" y="767.73399014778329"/>
+            <point key="canvasLocation" x="20" y="1580"/>
         </scene>
         <!--Day2 View Controller-->
         <scene sceneID="L0Y-BR-jQf">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="zLJ-pF-M91" customClass="Day2ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="zLJ-pF-M91" customClass="Day2ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbm-tA-1i7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -659,6 +665,7 @@
                                         <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="Qfg-jd-0dn">
                                             <connections>
                                                 <action selector="closeButton:" destination="zLJ-pF-M91" id="ZTO-nF-ehL"/>
+                                                <segue destination="C0u-lT-0ub" kind="showDetail" id="jnt-EA-bbn"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -756,18 +763,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8P-cV-KWC">
-                                <rect key="frame" x="37" y="561" width="300" height="64"/>
+                                <rect key="frame" x="37" y="561" width="300" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="0fK-T5-8cV"/>
+                                    <constraint firstAttribute="height" constant="48" id="0fK-T5-8cV"/>
                                     <constraint firstAttribute="width" constant="300" id="Ggb-xx-coH"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" imagePlacement="trailing" title="Add" imagePadding="5">
                                     <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
-                                        <color key="strokeColor" red="1" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="strokeColor" red="1" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="1" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseForegroundColor" red="1" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -781,13 +788,16 @@
                                     <constraint firstAttribute="height" constant="64" id="ukF-72-sqc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Next " imagePadding="5">
+                                <buttonConfiguration key="configuration" style="plain" title="Next ">
                                     <backgroundConfiguration key="background" cornerRadius="10">
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                     <color key="baseForegroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="0.8980392157" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="gRo-Pj-wwX" kind="show" id="3Vj-3W-ult"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 2/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mja-9e-HO8">
                                 <rect key="frame" x="113" y="688" width="148" height="18"/>
@@ -851,17 +861,158 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcU-tu-l5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445.5999999999999" y="767.73399014778329"/>
+            <point key="canvasLocation" x="862" y="1580"/>
+        </scene>
+        <!--Day3 View Conroller-->
+        <scene sceneID="oag-aj-zqK">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="gRo-Pj-wwX" customClass="Day3ViewConroller" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jdh-iW-o88">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HG9-Il-eQs">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Diary Entry" id="Qnl-sV-Izq">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="SVD-U8-34s"/>
+                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="uHo-db-avv">
+                                            <connections>
+                                                <segue destination="C0u-lT-0ub" kind="showDetail" id="yU7-Vo-V04"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82d-S0-B6D">
+                                <rect key="frame" x="29" y="719" width="317" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                        <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextBtn:" destination="gRo-Pj-wwX" eventType="touchUpInside" id="ygW-8E-AKH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwQ-g7-HH3">
+                                <rect key="frame" x="29" y="586" width="59" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Egg Sandwitch for Breakfast" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-YP-sPM">
+                                <rect key="frame" x="29" y="540" width="317" height="34"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1T-SI-sHn">
+                                <rect key="frame" x="29" y="518" width="53" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-GL-E7j">
+                                <rect key="frame" x="219" y="460" width="127" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo" catalog="system" title="Add Photo" imagePadding="4" titleAlignment="leading">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                        <color key="strokeColor" red="1" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                    <color key="baseForegroundColor" red="1" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="uploadBtn:" destination="gRo-Pj-wwX" eventType="touchUpInside" id="bdI-eO-J9C"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jV1-LL-l24">
+                                <rect key="frame" x="29" y="215" width="317" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="317" id="SeO-CS-5St"/>
+                                    <constraint firstAttribute="height" constant="233" id="ap4-M6-wXW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any special moments? Add a picture!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xh-aQ-cmH">
+                                <rect key="frame" x="29" y="125" width="317" height="60"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="25"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHm-R5-flP">
+                                <rect key="frame" x="113" y="692" width="149" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Woodlands" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W54-mf-big">
+                                <rect key="frame" x="29" y="608" width="317" height="34"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3VH-fg-FZb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HG9-Il-eQs" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" id="2w6-XW-xeV"/>
+                            <constraint firstItem="jV1-LL-l24" firstAttribute="top" secondItem="0xh-aQ-cmH" secondAttribute="bottom" constant="30" id="3e1-XH-X7h"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="M1T-SI-sHn" secondAttribute="trailing" constant="293" id="59x-cL-M0a"/>
+                            <constraint firstItem="0xh-aQ-cmH" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="Faz-4d-Pqc"/>
+                            <constraint firstItem="HG9-Il-eQs" firstAttribute="trailing" secondItem="3VH-fg-FZb" secondAttribute="trailing" id="GOF-di-x99"/>
+                            <constraint firstItem="0xh-aQ-cmH" firstAttribute="top" secondItem="HG9-Il-eQs" secondAttribute="bottom" constant="37" id="JSe-Ko-o6y"/>
+                            <constraint firstItem="W54-mf-big" firstAttribute="top" secondItem="gwQ-g7-HH3" secondAttribute="bottom" constant="4" id="JbH-F1-jhI"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="gwQ-g7-HH3" secondAttribute="trailing" constant="287" id="Lnh-4t-Y5t"/>
+                            <constraint firstItem="Hkr-YP-sPM" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="Lni-yJ-HDM"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="Hkr-YP-sPM" secondAttribute="trailing" constant="29" id="Lsv-4k-ToD"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="0xh-aQ-cmH" secondAttribute="trailing" constant="29" id="OLY-ms-eRm"/>
+                            <constraint firstItem="gwQ-g7-HH3" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="TYn-LX-peT"/>
+                            <constraint firstItem="gnd-GL-E7j" firstAttribute="top" secondItem="jV1-LL-l24" secondAttribute="bottom" constant="12" id="Ujh-ll-VZh"/>
+                            <constraint firstItem="gwQ-g7-HH3" firstAttribute="top" secondItem="Hkr-YP-sPM" secondAttribute="bottom" constant="12" id="YvW-nG-V6n"/>
+                            <constraint firstItem="W54-mf-big" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="bJe-N4-RmE"/>
+                            <constraint firstItem="jV1-LL-l24" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="dQB-6V-n34"/>
+                            <constraint firstItem="M1T-SI-sHn" firstAttribute="top" secondItem="jV1-LL-l24" secondAttribute="bottom" constant="70" id="e58-wa-UEZ"/>
+                            <constraint firstItem="AHm-R5-flP" firstAttribute="top" secondItem="W54-mf-big" secondAttribute="bottom" constant="50" id="epI-GY-zUL"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="AHm-R5-flP" secondAttribute="trailing" constant="113" id="fna-sk-Ebv"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="gnd-GL-E7j" secondAttribute="trailing" constant="29" id="jmi-xJ-Wq0"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="W54-mf-big" secondAttribute="trailing" constant="29" id="p2h-ps-GuO"/>
+                            <constraint firstItem="M1T-SI-sHn" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="qCc-aL-Pli"/>
+                            <constraint firstItem="Hkr-YP-sPM" firstAttribute="top" secondItem="M1T-SI-sHn" secondAttribute="bottom" constant="4" id="qJR-Fj-aRc"/>
+                            <constraint firstItem="HG9-Il-eQs" firstAttribute="top" secondItem="3VH-fg-FZb" secondAttribute="top" id="t4r-Zk-irn"/>
+                            <constraint firstItem="AHm-R5-flP" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="113" id="vsJ-nN-UFa"/>
+                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="jV1-LL-l24" secondAttribute="trailing" constant="29" id="zaR-lB-XZR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IXU-Gx-l2N"/>
+                    <connections>
+                        <outlet property="captionField" destination="Hkr-YP-sPM" id="HI4-d8-aWb"/>
+                        <outlet property="imageUpload" destination="jV1-LL-l24" id="LcB-f9-OrQ"/>
+                        <outlet property="locationField" destination="W54-mf-big" id="Rgf-8p-vI9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hoa-EJ-T4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="1580"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="OfL-2t-BGB">
+            <size key="intrinsicContentSize" width="300" height="28"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
+        <segue reference="yU7-Vo-V04"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="home-profile" width="54" height="54"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
