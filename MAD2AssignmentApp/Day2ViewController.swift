@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Day2ViewController:UIViewController, TagListViewDelegate{
+class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDelegate {
     
     var tagList:[String]!
     var tag:String?
@@ -22,6 +22,37 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
         tagListView.delegate = self
         tagListView.textFont = UIFont(name: "BalsamiqSans-Regular", size: 16)!
         setTags()
+        
+        // keyboard - shift view up
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    // keyboard - shift view up
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    // keyboard - shift view up
+    @objc func keyboardWillChange(notification: Notification) {
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if (notification.name == UIResponder.keyboardWillShowNotification) ||
+            (notification.name == UIResponder.keyboardWillChangeFrameNotification) {
+            view.frame.origin.y = -keyboardRect.height
+        } else {
+            view.frame.origin.y = 0
+        }
+    }
+    
+    // hide keyboard when tap on empty space
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func setTags(){
@@ -45,6 +76,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate{
             tagView = tagListView.addTag(otherTagsField.text!)
             self.tagListView.tagPressed(tagView)
             tagView.isSelected = false
+            otherTagsField.text = ""
         }
     }
     override func didReceiveMemoryWarning() {

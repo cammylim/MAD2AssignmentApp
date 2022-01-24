@@ -161,18 +161,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. John" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ukN-mB-FjC">
-                                <rect key="frame" x="24" y="471" width="327" height="34"/>
+                                <rect key="frame" x="24" y="471" width="327" height="48"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="myQ-C7-IXC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your date of birth?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hf-CI-Bsn">
-                                <rect key="frame" x="24" y="525" width="327" height="24"/>
+                                <rect key="frame" x="24" y="539" width="327" height="24"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                 <color key="textColor" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 01-01-1999" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM8-uO-mgu">
-                                <rect key="frame" x="24" y="557" width="327" height="34"/>
+                                <rect key="frame" x="24" y="571" width="327" height="48"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="kFf-E7-PRc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -655,7 +663,7 @@
         <!--Day2 View Controller-->
         <scene sceneID="L0Y-BR-jQf">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="zLJ-pF-M91" customClass="Day2ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="zLJ-pF-M91" customClass="Day2ViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbm-tA-1i7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -674,7 +682,6 @@
                                         <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="Qfg-jd-0dn">
                                             <connections>
                                                 <action selector="closeButton:" destination="zLJ-pF-M91" id="ZTO-nF-ehL"/>
-                                                <segue destination="C0u-lT-0ub" kind="showDetail" id="jnt-EA-bbn"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -757,13 +764,13 @@
                                     <constraint firstAttribute="width" constant="47" id="gnQ-05-aPl"/>
                                     <constraint firstAttribute="height" constant="18" id="haW-Q0-hsj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
                                 <color key="textColor" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Swimming" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-KC-4OD">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Swimming" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-KC-4OD">
                                 <rect key="frame" x="37" y="505" width="300" height="48"/>
-                                <color key="backgroundColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="cFy-46-FAq"/>
                                     <constraint firstAttribute="height" constant="48" id="gSF-In-bXM"/>
@@ -783,7 +790,7 @@
                                         <color key="strokeColor" red="1" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="1" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -875,7 +882,7 @@
         <!--Day3 View Conroller-->
         <scene sceneID="oag-aj-zqK">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="gRo-Pj-wwX" customClass="Day3ViewConroller" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="gRo-Pj-wwX" customClass="Day3ViewConroller" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jdh-iW-o88">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -886,40 +893,46 @@
                                 <items>
                                     <navigationItem title="Diary Entry" id="Qnl-sV-Izq">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="SVD-U8-34s"/>
-                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="uHo-db-avv">
-                                            <connections>
-                                                <segue destination="C0u-lT-0ub" kind="showDetail" id="yU7-Vo-V04"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="uHo-db-avv"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwQ-g7-HH3">
-                                <rect key="frame" x="29" y="586" width="59" height="18"/>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <rect key="frame" x="29" y="600" width="66" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="ydP-iw-Emg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Egg Sandwitch for Breakfast" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-YP-sPM">
-                                <rect key="frame" x="29" y="540" width="317" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Egg Sandwitch for Breakfast" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-YP-sPM">
+                                <rect key="frame" x="29" y="540" width="317" height="48"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="M4E-zQ-8ES"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1T-SI-sHn">
-                                <rect key="frame" x="29" y="518" width="53" height="18"/>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <rect key="frame" x="29" y="518" width="59" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="2Fk-Kn-bT8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-GL-E7j">
                                 <rect key="frame" x="219" y="460" width="127" height="34"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="photo" catalog="system" title="Add Photo" imagePadding="4" titleAlignment="leading">
-                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                <buttonConfiguration key="configuration" style="plain" image="photo" catalog="system" imagePlacement="trailing" title="Add Photo" imagePadding="4" titleAlignment="automatic">
+                                    <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
                                         <color key="strokeColor" red="1" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
-                                    <color key="baseForegroundColor" red="1" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="uploadBtn:" destination="gRo-Pj-wwX" eventType="touchUpInside" id="bdI-eO-J9C"/>
@@ -939,13 +952,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHm-R5-flP">
-                                <rect key="frame" x="113" y="690" width="149" height="18"/>
+                                <rect key="frame" x="113" y="694" width="149" height="18"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Woodlands" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W54-mf-big">
-                                <rect key="frame" x="29" y="608" width="317" height="34"/>
+                                <rect key="frame" x="29" y="622" width="317" height="48"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="VyB-P4-SGJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -970,12 +987,10 @@
                         <constraints>
                             <constraint firstItem="HG9-Il-eQs" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" id="2w6-XW-xeV"/>
                             <constraint firstItem="jV1-LL-l24" firstAttribute="top" secondItem="0xh-aQ-cmH" secondAttribute="bottom" constant="30" id="3e1-XH-X7h"/>
-                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="M1T-SI-sHn" secondAttribute="trailing" constant="293" id="59x-cL-M0a"/>
                             <constraint firstItem="0xh-aQ-cmH" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="Faz-4d-Pqc"/>
                             <constraint firstItem="HG9-Il-eQs" firstAttribute="trailing" secondItem="3VH-fg-FZb" secondAttribute="trailing" id="GOF-di-x99"/>
                             <constraint firstItem="0xh-aQ-cmH" firstAttribute="top" secondItem="HG9-Il-eQs" secondAttribute="bottom" constant="37" id="JSe-Ko-o6y"/>
                             <constraint firstItem="W54-mf-big" firstAttribute="top" secondItem="gwQ-g7-HH3" secondAttribute="bottom" constant="4" id="JbH-F1-jhI"/>
-                            <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="gwQ-g7-HH3" secondAttribute="trailing" constant="287" id="Lnh-4t-Y5t"/>
                             <constraint firstItem="Hkr-YP-sPM" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="Lni-yJ-HDM"/>
                             <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="Hkr-YP-sPM" secondAttribute="trailing" constant="29" id="Lsv-4k-ToD"/>
                             <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="0xh-aQ-cmH" secondAttribute="trailing" constant="29" id="OLY-ms-eRm"/>
@@ -985,8 +1000,8 @@
                             <constraint firstItem="W54-mf-big" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="bJe-N4-RmE"/>
                             <constraint firstItem="jV1-LL-l24" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="dQB-6V-n34"/>
                             <constraint firstItem="M1T-SI-sHn" firstAttribute="top" secondItem="jV1-LL-l24" secondAttribute="bottom" constant="70" id="e58-wa-UEZ"/>
-                            <constraint firstItem="AHm-R5-flP" firstAttribute="top" secondItem="W54-mf-big" secondAttribute="bottom" constant="48" id="epI-GY-zUL"/>
                             <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="AHm-R5-flP" secondAttribute="trailing" constant="113" id="fna-sk-Ebv"/>
+                            <constraint firstItem="AHm-R5-flP" firstAttribute="top" secondItem="W54-mf-big" secondAttribute="bottom" constant="24" id="iKh-qd-eYH"/>
                             <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="gnd-GL-E7j" secondAttribute="trailing" constant="29" id="jmi-xJ-Wq0"/>
                             <constraint firstItem="3VH-fg-FZb" firstAttribute="trailing" secondItem="W54-mf-big" secondAttribute="trailing" constant="29" id="p2h-ps-GuO"/>
                             <constraint firstItem="M1T-SI-sHn" firstAttribute="leading" secondItem="3VH-fg-FZb" secondAttribute="leading" constant="29" id="qCc-aL-Pli"/>
@@ -1015,7 +1030,6 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Jb4-BW-nCN"/>
-        <segue reference="jnt-EA-bbn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>

@@ -49,8 +49,8 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     
     // hide keyboard when tap on empty space
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-       }
+        self.view.endEditing(true)
+   }
 
     
     // upload image
