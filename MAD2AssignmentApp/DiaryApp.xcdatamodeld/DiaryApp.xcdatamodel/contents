@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreDataActivities" representedClassName="CoreDataActivities" syncable="YES" codeGenerationType="class">
+        <attribute name="act_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="act_name" optional="YES" attributeType="String"/>
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasActivities" inverseEntity="CoreDataDiary"/>
     </entity>
@@ -14,17 +15,20 @@
         <relationship name="hasSpecial" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataSpecial" inverseName="existsIn" inverseEntity="CoreDataSpecial"/>
     </entity>
     <entity name="CoreDataFeelings" representedClassName="CoreDataFeelings" syncable="YES" codeGenerationType="class">
+        <attribute name="feeling_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="feeling_image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="feeling_name" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasFeelings" inverseEntity="CoreDataDiary"/>
     </entity>
     <entity name="CoreDataReflection" representedClassName="CoreDataReflection" syncable="YES" codeGenerationType="class">
         <attribute name="ref_body" optional="YES" attributeType="String"/>
+        <attribute name="ref_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="ref_title" optional="YES" attributeType="String"/>
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasReflect" inverseEntity="CoreDataDiary"/>
     </entity>
     <entity name="CoreDataSpecial" representedClassName="CoreDataSpecial" syncable="YES" codeGenerationType="class">
         <attribute name="special_caption" optional="YES" attributeType="String"/>
+        <attribute name="special_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="special_image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="special_location" optional="YES" attributeType="String"/>
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasSpecial" inverseEntity="CoreDataDiary"/>
@@ -36,11 +40,11 @@
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="existsIn" inverseEntity="CoreDataDiary"/>
     </entity>
     <elements>
-        <element name="CoreDataActivities" positionX="-263.3796997070312" positionY="-176.5696105957032" width="128" height="73"/>
+        <element name="CoreDataActivities" positionX="-263.3796997070312" positionY="-176.5696105957032" width="128" height="88"/>
         <element name="CoreDataDiary" positionX="-53.771484375" positionY="-392.0086364746094" width="128" height="148"/>
-        <element name="CoreDataFeelings" positionX="142.3425903320312" positionY="-326.0684356689453" width="128" height="88"/>
-        <element name="CoreDataReflection" positionX="-94.1304931640625" positionY="-85.95648193359375" width="128" height="88"/>
-        <element name="CoreDataSpecial" positionX="144.1470336914062" positionY="-133.4464416503906" width="128" height="103"/>
+        <element name="CoreDataFeelings" positionX="142.3425903320312" positionY="-326.0684356689453" width="128" height="103"/>
+        <element name="CoreDataReflection" positionX="-94.1304931640625" positionY="-85.95648193359375" width="128" height="103"/>
+        <element name="CoreDataSpecial" positionX="144.1470336914062" positionY="-133.4464416503906" width="128" height="118"/>
         <element name="CoreDataUser" positionX="-273.6988220214844" positionY="-369.1681518554688" width="128" height="103"/>
     </elements>
 </model>
