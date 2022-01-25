@@ -83,6 +83,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         monthLabel.text = DiaryCalendar().monthText(date: selectedDate)+" "+DiaryCalendar().yearText(date: selectedDate)
         collectionView.reloadData()
     }
+    
+    //Collection View Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return totalDays.count
     }

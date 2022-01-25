@@ -10,11 +10,13 @@ import UIKit
 
 class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDelegate {
     
-    var tagList:[String]!
+    var tagList:[Activities]!
+    var newActivity:Activities?
     var tag:String?
     var tagView:TagView!
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var otherTagsField: UITextField!
+    let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +57,12 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         self.view.endEditing(true)
     }
     
+    //set the activity tags into view
     func setTags(){
-        tagList = ["Shopping", "Exercise", "Gardening"]
+        tagList = diaryDAL.RetrieveAllActivities()
         var i = 0
         while i < tagList!.count {
-            tagView = tagListView.addTag(tagList[i])
+            tagView = tagListView.addTag(tagList[i].act_name!)
             self.tagListView.tagPressed(tagView)
             tagView.isSelected = false
             i += 1
@@ -73,7 +76,9 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     }
     @IBAction func addOthersButton(_ sender: Any) {
         if (otherTagsField.text != nil){
-            tagView = tagListView.addTag(otherTagsField.text!)
+            newActivity = Activities(act_name: otherTagsField.text!)
+            //diaryDAL.addActivitiestoUser(user: diaryDAL.RetrieveUser(), activity: newActivity!)
+            tagView = tagListView.addTag((newActivity?.act_name!)!)
             self.tagListView.tagPressed(tagView)
             tagView.isSelected = false
             otherTagsField.text = ""
@@ -89,6 +94,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     }
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")
+        //diaryDAL.removeActivitiesfromUser(user: diaryDAL.RetrieveUser(), activity: <#T##Activities#>)
         sender.removeTagView(tagView)
     }
 }

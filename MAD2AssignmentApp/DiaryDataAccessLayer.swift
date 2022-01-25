@@ -146,23 +146,42 @@ class DiaryDataAccessLayer {
         return actList
     }
     
-    func addActivitiestoUser(user:User, activity:Activities){
-        var uList:[NSManagedObject]=[]
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
-        if(UserExist()){
-            fetchRequest.predicate = NSPredicate(format: "user_name == %@", user.name!)
-            let entity = NSEntityDescription.entity(forEntityName: "CoreDataActivities", in: context)!
-            let cdActivity = NSManagedObject(entity: entity, insertInto: context) as! CoreDataActivities
-            cdActivity.act_name = activity.act_name
-            do{
-                uList = try context.fetch(fetchRequest)
-                let u = uList[0] as! CoreDataUser
-                u.addToHasTags(cdActivity)
-                try context.save()
-            } catch let error as NSError{
-                print("Could not add. \(error) \(error.userInfo)")
-            }
-        }
-    }
+//    func addActivitiestoUser(user:User, activity:Activities){
+//        var uList:[NSManagedObject]=[]
+//        let context = appDelegate.persistentContainer.viewContext
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
+//        if(UserExist()){
+//            fetchRequest.predicate = NSPredicate(format: "user_name == %@", user.name!)
+//            let entity = NSEntityDescription.entity(forEntityName: "CoreDataActivities", in: context)!
+//            let cdActivity = NSManagedObject(entity: entity, insertInto: context) as! CoreDataActivities
+//            cdActivity.act_name = activity.act_name
+//            do{
+//                uList = try context.fetch(fetchRequest)
+//                let u = uList[0] as! CoreDataUser
+//                u.addToHasTags(cdActivity)
+//                try context.save()
+//            } catch let error as NSError{
+//                print("Could not add. \(error) \(error.userInfo)")
+//            }
+//        }
+//    }
+//    func removeActivitiesfromUser(user:User, activity:Activities){
+//        var uList:[NSManagedObject]=[]
+//        let context = appDelegate.persistentContainer.viewContext
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
+//        if(UserExist()){
+//            fetchRequest.predicate = NSPredicate(format: "user_name == %@", user.name!)
+//            let entity = NSEntityDescription.entity(forEntityName: "CoreDataActivities", in: context)!
+//            let cdActivity = NSManagedObject(entity: entity, insertInto: context) as! CoreDataActivities
+//            cdActivity.act_name = activity.act_name
+//            do{
+//                uList = try context.fetch(fetchRequest)
+//                let u = uList[0] as! CoreDataUser
+//                u.removeFromHasTags(cdActivity)
+//                try context.save()
+//            } catch let error as NSError{
+//                print("Could not remove. \(error) \(error.userInfo)")
+//            }
+//        }
+//    }
 }
