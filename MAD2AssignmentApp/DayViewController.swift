@@ -14,21 +14,22 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     var selectedMonth:String?
     var selectedYear:String?
     var selectedDate:Date?
+    var feelingsList:[Feelings]=[]
     
     
-    let feelingsList:[Feelings] = [
-        Feelings(feeling_name: "Ecstatic", feeling_image: "diary-5", feeling_date: selectedDate!),
-        Feelings(feeling_name: "Happy", feeling_image: "diary-4", feeling_date: selectedDate!),
-        Feelings(feeling_name: "Neutral", feeling_image: "diary-3", feeling_date: selectedDate!),
-        Feelings(feeling_name: "Upset", feeling_image: "diary-2", feeling_date: selectedDate!),
-        Feelings(feeling_name: "Sad", feeling_image: "diary-1", feeling_date: selectedDate!),
-    ]
     
     @IBOutlet weak var feelingsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
+        feelingsList = [
+            Feelings(feeling_name: "Ecstatic", feeling_image: "diary-5", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Happy", feeling_image: "diary-4", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Neutral", feeling_image: "diary-3", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Upset", feeling_image: "diary-2", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Sad", feeling_image: "diary-1", feeling_date: selectedDate!),
+        ]
         feelingsCollectionView.reloadData()
         
     }
