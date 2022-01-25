@@ -99,15 +99,14 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ku-UD-S5R">
-                                <rect key="frame" x="112.66666666666669" y="688" width="150" height="50"/>
+                                <rect key="frame" x="24" y="714" width="327" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="cJM-MQ-dPR"/>
-                                    <constraint firstAttribute="width" constant="150" id="qiZ-ie-JNB"/>
+                                    <constraint firstAttribute="height" constant="64" id="cJM-MQ-dPR"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next">
-                                    <backgroundConfiguration key="background" cornerRadius="10">
-                                        <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                     <color key="baseForegroundColor" red="0.2473189831" green="0.23745346070000001" blue="0.32943052049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -117,7 +116,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9nP-ji-EBk">
-                                <rect key="frame" x="110.33333333333333" y="647" width="154.66666666666669" height="25"/>
+                                <rect key="frame" x="110.33333333333333" y="673" width="154.66666666666669" height="25"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
@@ -126,9 +125,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2ku-UD-S5R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BcO-jB-DjM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2ku-UD-S5R" secondAttribute="trailing" constant="24" id="MSR-3O-aXe"/>
                             <constraint firstItem="9nP-ji-EBk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WIi-m9-beM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2ku-UD-S5R" secondAttribute="bottom" constant="40" id="c0v-KF-P2F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2ku-UD-S5R" secondAttribute="bottom" id="c0v-KF-P2F"/>
                             <constraint firstItem="2ku-UD-S5R" firstAttribute="top" secondItem="9nP-ji-EBk" secondAttribute="bottom" constant="16" id="sPV-bU-LP4"/>
+                            <constraint firstItem="2ku-UD-S5R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="u4T-6n-U7x"/>
                         </constraints>
                     </view>
                     <connections>
@@ -168,7 +169,7 @@
                                     <constraint firstAttribute="height" constant="48" id="myQ-C7-IXC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your date of birth?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hf-CI-Bsn">
                                 <rect key="frame" x="24" y="539" width="327" height="24"/>
@@ -186,17 +187,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ4-J0-2QR">
-                                <rect key="frame" x="24" y="712" width="327" height="50"/>
+                                <rect key="frame" x="24" y="714" width="327" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8n0-IA-z3H"/>
+                                    <constraint firstAttribute="height" constant="64" id="8n0-IA-z3H"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Get Started">
-                                    <backgroundConfiguration key="background" cornerRadius="10">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.24705882352941178" green="0.23921568627450979" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginBtn:" destination="tLs-9q-KuI" eventType="touchUpInside" id="WyH-nL-gvI"/>
@@ -222,7 +223,7 @@
                             <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="ZZ4-J0-2QR" secondAttribute="trailing" constant="24" id="TsX-Mj-AZq"/>
                             <constraint firstItem="zfV-JY-Ieg" firstAttribute="top" secondItem="NOk-DB-yWL" secondAttribute="top" constant="32" id="Vl2-Dq-If6"/>
                             <constraint firstItem="alT-3b-fMY" firstAttribute="top" secondItem="c8p-kX-oPe" secondAttribute="bottom" constant="50" id="WTX-Cp-l8L"/>
-                            <constraint firstItem="NOk-DB-yWL" firstAttribute="bottom" secondItem="ZZ4-J0-2QR" secondAttribute="bottom" constant="16" id="ZFq-cZ-f5G"/>
+                            <constraint firstItem="NOk-DB-yWL" firstAttribute="bottom" secondItem="ZZ4-J0-2QR" secondAttribute="bottom" id="ZFq-cZ-f5G"/>
                             <constraint firstItem="YM8-uO-mgu" firstAttribute="top" secondItem="3Hf-CI-Bsn" secondAttribute="bottom" constant="8" id="b9U-66-KUN"/>
                             <constraint firstItem="c8p-kX-oPe" firstAttribute="top" secondItem="zfV-JY-Ieg" secondAttribute="bottom" constant="26" id="jxx-e5-khZ"/>
                             <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="YM8-uO-mgu" secondAttribute="trailing" constant="24" id="lSY-aS-Sg3"/>
@@ -253,12 +254,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkc-Aa-yiC">
-                                <rect key="frame" x="290" y="72" width="50" height="58"/>
+                                <rect key="frame" x="290" y="77" width="50" height="48.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="PUe-cc-qjz"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="home-profile"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <imageReference key="backgroundImage" image="person.circle" catalog="system" renderingMode="original"/>
+                                </state>
+                                <connections>
+                                    <segue destination="z3q-mf-Ojq" kind="show" id="ovg-MZ-K3I"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tuesday," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv0-sT-PYx">
                                 <rect key="frame" x="26" y="76" width="241" height="36"/>
@@ -285,19 +291,19 @@
                                 <rect key="frame" x="37" y="189" width="301" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote of the Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaZ-au-att">
-                                        <rect key="frame" x="0.0" y="8" width="301" height="18"/>
+                                        <rect key="frame" x="0.0" y="12" width="301" height="18"/>
                                         <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
                                         <color key="textColor" red="0.91423324083055557" green="0.62514513332127175" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djq-qI-1Wq">
-                                        <rect key="frame" x="8" y="38" width="285" height="17"/>
+                                        <rect key="frame" x="8" y="42" width="285" height="17"/>
                                         <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX0-bS-wVs">
-                                        <rect key="frame" x="8" y="60.999999999999993" width="285" height="14.666666666666664"/>
+                                        <rect key="frame" x="8" y="65" width="285" height="14.666666666666671"/>
                                         <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="12"/>
                                         <color key="textColor" red="0.2473189831" green="0.23745346070000001" blue="0.32943052049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -308,7 +314,7 @@
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstItem="VaZ-au-att" firstAttribute="top" secondItem="tGj-yP-hf9" secondAttribute="top" constant="8" id="An3-eX-eQv"/>
+                                    <constraint firstItem="VaZ-au-att" firstAttribute="top" secondItem="tGj-yP-hf9" secondAttribute="top" constant="12" id="An3-eX-eQv"/>
                                     <constraint firstItem="WX0-bS-wVs" firstAttribute="top" secondItem="Djq-qI-1Wq" secondAttribute="bottom" constant="6" id="CXu-sL-0Jg"/>
                                     <constraint firstItem="VaZ-au-att" firstAttribute="leading" secondItem="tGj-yP-hf9" secondAttribute="leading" id="DB5-xl-ZZs"/>
                                     <constraint firstAttribute="trailing" secondItem="VaZ-au-att" secondAttribute="trailing" id="Ny4-AX-Joi"/>
@@ -458,17 +464,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqT-Lr-2Yr">
-                                <rect key="frame" x="24" y="698" width="327" height="64"/>
+                                <rect key="frame" x="24" y="714" width="327" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Zys-fJ-H8D"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Enter Mood">
-                                    <backgroundConfiguration key="background" cornerRadius="10">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.2473189831" green="0.23745346070000001" blue="0.32943052049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="moodEntry:" destination="C0u-lT-0ub" eventType="touchUpInside" id="Xak-S3-SXH"/>
@@ -487,14 +493,14 @@
                             <constraint firstItem="UeX-CY-rQm" firstAttribute="centerX" secondItem="Ud1-RJ-ZyM" secondAttribute="centerX" id="Aoi-fM-v29"/>
                             <constraint firstItem="Wkc-Aa-yiC" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="290" id="Cf4-di-LNF"/>
                             <constraint firstItem="W86-B5-yW9" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="37" id="GJk-YE-w4q"/>
-                            <constraint firstItem="Wkc-Aa-yiC" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="28" id="Kzb-IC-V3W"/>
+                            <constraint firstItem="Wkc-Aa-yiC" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="32" id="Kzb-IC-V3W"/>
                             <constraint firstItem="6Sb-QU-1kl" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="275" id="M1r-6b-tQg"/>
                             <constraint firstItem="7Wn-av-Cze" firstAttribute="leading" secondItem="6Sb-QU-1kl" secondAttribute="trailing" constant="15" id="Nay-4O-z6E"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="QBU-D6-XI7" secondAttribute="bottom" constant="160" id="QBk-KW-tYR"/>
                             <constraint firstItem="LqT-Lr-2Yr" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="24" id="QXW-FG-D2k"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="UeX-CY-rQm" secondAttribute="trailing" constant="37" id="Slg-aY-jRt"/>
                             <constraint firstItem="W86-B5-yW9" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="277" id="THf-5j-pPL"/>
-                            <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="LqT-Lr-2Yr" secondAttribute="bottom" constant="16" id="UrC-iO-aWp"/>
+                            <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="LqT-Lr-2Yr" secondAttribute="bottom" id="UrC-iO-aWp"/>
                             <constraint firstItem="UeX-CY-rQm" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="37" id="VS8-VH-WUc"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="Wkc-Aa-yiC" secondAttribute="trailing" constant="35" id="VVQ-db-5hN"/>
                             <constraint firstItem="mv0-sT-PYx" firstAttribute="leading" secondItem="Ud1-RJ-ZyM" secondAttribute="leading" constant="26" id="Vvw-uk-EGj"/>
@@ -508,7 +514,7 @@
                             <constraint firstItem="7Wn-av-Cze" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="277" id="l69-ft-lpX"/>
                             <constraint firstItem="ype-ez-jVy" firstAttribute="top" secondItem="Ud1-RJ-ZyM" secondAttribute="top" constant="114" id="lU6-11-woZ"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="QBU-D6-XI7" secondAttribute="trailing" constant="37" id="n5f-mq-k2n"/>
-                            <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="Wkc-Aa-yiC" secondAttribute="bottom" constant="648" id="oRJ-xk-gD9"/>
+                            <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="Wkc-Aa-yiC" secondAttribute="bottom" constant="652" id="oRJ-xk-gD9"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="trailing" secondItem="7Wn-av-Cze" secondAttribute="trailing" constant="37" id="sdq-9Y-LdK"/>
                             <constraint firstItem="Ud1-RJ-ZyM" firstAttribute="bottom" secondItem="tGj-yP-hf9" secondAttribute="bottom" constant="475" id="yk6-zD-cic"/>
                         </constraints>
@@ -636,7 +642,7 @@
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="zLJ-pF-M91" kind="show" id="b0Q-6b-i0b"/>
@@ -814,10 +820,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" imagePlacement="trailing" title="Add" imagePadding="5">
                                     <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
-                                        <color key="strokeColor" red="1" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="strokeColor" red="0.95288306469999995" green="0.69811588530000002" blue="0.69409513469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -836,7 +842,7 @@
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="0.8980392157" colorSpace="calibratedRGB"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="gRo-Pj-wwX" kind="show" id="3Vj-3W-ult"/>
@@ -956,14 +962,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-GL-E7j">
-                                <rect key="frame" x="219" y="460" width="127" height="34"/>
+                                <rect key="frame" x="298" y="460" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Hhh-Or-a1R"/>
+                                    <constraint firstAttribute="width" constant="48" id="L75-dc-Uvj"/>
+                                </constraints>
+                                <color key="tintColor" red="0.95294117647058818" green="0.69803921568627447" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="photo" catalog="system" imagePlacement="trailing" title="Add Photo" imagePadding="4" titleAlignment="automatic">
+                                <buttonConfiguration key="configuration" style="plain" title="">
                                     <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
-                                        <color key="strokeColor" red="1" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <imageReference key="image" image="camera.circle.fill" catalog="system" renderingMode="template"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
-                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="uploadBtn:" destination="gRo-Pj-wwX" eventType="touchUpInside" id="bdI-eO-J9C"/>
@@ -1016,7 +1025,7 @@
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="zVL-Iv-Vwf" kind="show" id="AIB-XH-ef4"/>
@@ -1135,7 +1144,7 @@
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="KXE-S8-JQb" kind="show" id="6OA-rN-rGN"/>
@@ -1196,7 +1205,7 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNP-5l-4AC">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" red="0.82745098039215681" green="0.89803921568627454" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.83921568627450982" green="0.89803921568627454" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="9Y1-0E-vca">
                                         <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="ROO-6w-Zz2"/>
@@ -1215,7 +1224,7 @@
                                         <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary-done" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-99-nC9">
@@ -1242,6 +1251,235 @@
             </objects>
             <point key="canvasLocation" x="3424.8000000000002" y="1579.8029556650247"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="TYv-X1-1ox">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="z3q-mf-Ojq" customClass="ProfileViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SGq-sI-iDR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijp-Id-Kn5">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.83921568627450982" green="0.89803921568627454" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="18"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Profile" id="VGW-sY-qNq">
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="mFQ-sl-ZeP"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="InT-aD-uFs">
+                                <rect key="frame" x="87" y="139" width="200" height="198.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HqO-6W-s4T"/>
+                                    <constraint firstAttribute="width" constant="200" id="kpB-kV-e5x"/>
+                                </constraints>
+                                <imageReference key="image" image="person.circle" catalog="system" renderingMode="original"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoq-eL-CT7">
+                                <rect key="frame" x="24" y="378" width="327" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdQ-yR-dkH">
+                                <rect key="frame" x="24" y="400" width="327" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="MlC-mU-nxg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feJ-Kk-ql7">
+                                <rect key="frame" x="24" y="460" width="327" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01-01-1999" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-Zy-lCi">
+                                <rect key="frame" x="24" y="482" width="327" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="TTA-yK-DgI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="date-time"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWn-xB-VxF">
+                                <rect key="frame" x="24" y="714" width="327" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="qJa-qd-mne"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                        <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="4UB-gA-88h" kind="show" id="B3p-JJ-wwE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c1H-4x-QSw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xWn-xB-VxF" firstAttribute="leading" secondItem="c1H-4x-QSw" secondAttribute="leading" constant="24" id="1i2-xT-T0y"/>
+                            <constraint firstItem="InT-aD-uFs" firstAttribute="leading" secondItem="c1H-4x-QSw" secondAttribute="leading" constant="87" id="3bV-gm-NkX"/>
+                            <constraint firstItem="c1H-4x-QSw" firstAttribute="trailing" secondItem="feJ-Kk-ql7" secondAttribute="trailing" constant="24" id="6Id-L8-yt8"/>
+                            <constraint firstItem="c1H-4x-QSw" firstAttribute="bottom" secondItem="xWn-xB-VxF" secondAttribute="bottom" id="6js-ka-CkL"/>
+                            <constraint firstItem="Ijp-Id-Kn5" firstAttribute="trailing" secondItem="c1H-4x-QSw" secondAttribute="trailing" id="8qy-ql-hMr"/>
+                            <constraint firstItem="c1H-4x-QSw" firstAttribute="trailing" secondItem="xWn-xB-VxF" secondAttribute="trailing" constant="24" id="B3t-Qz-54V"/>
+                            <constraint firstItem="c1H-4x-QSw" firstAttribute="trailing" secondItem="jdQ-yR-dkH" secondAttribute="trailing" constant="24" id="CRf-Kx-ytn"/>
+                            <constraint firstItem="jdQ-yR-dkH" firstAttribute="top" secondItem="Yoq-eL-CT7" secondAttribute="bottom" constant="4" id="D0k-OU-3bf"/>
+                            <constraint firstItem="jdQ-yR-dkH" firstAttribute="leading" secondItem="c1H-4x-QSw" secondAttribute="leading" constant="24" id="DWJ-ca-0KW"/>
+                            <constraint firstItem="Ijp-Id-Kn5" firstAttribute="leading" secondItem="c1H-4x-QSw" secondAttribute="leading" id="HBY-Tz-PgE"/>
+                            <constraint firstItem="JSV-Zy-lCi" firstAttribute="leading" secondItem="c1H-4x-QSw" secondAttribute="leading" constant="24" id="ILg-cV-vPV"/>
+                            <constraint firstItem="c1H-4x-QSw" firstAttribute="trailing" secondItem="Yoq-eL-CT7" secondAttribute="trailing" constant="24" id="Lc8-5d-pUV"/>
+                            <constraint firstItem="c1H-4x-QSw" firstAttribute="trailing" secondItem="InT-aD-uFs" secondAttribute="trailing" constant="88" id="RP9-BB-q7d"/>
+                            <constraint firstItem="feJ-Kk-ql7" firstAttribute="top" secondItem="jdQ-yR-dkH" secondAttribute="bottom" constant="12" id="VS3-27-gZd"/>
+                            <constraint firstItem="Ijp-Id-Kn5" firstAttribute="top" secondItem="c1H-4x-QSw" secondAttribute="top" id="e86-kk-REP"/>
+                            <constraint firstItem="c1H-4x-QSw" firstAttribute="trailing" secondItem="JSV-Zy-lCi" secondAttribute="trailing" constant="24" id="fxJ-Ds-pSp"/>
+                            <constraint firstItem="feJ-Kk-ql7" firstAttribute="leading" secondItem="c1H-4x-QSw" secondAttribute="leading" constant="24" id="p3b-Ec-pmE"/>
+                            <constraint firstItem="InT-aD-uFs" firstAttribute="top" secondItem="Ijp-Id-Kn5" secondAttribute="bottom" constant="50" id="sLk-p0-Mtk"/>
+                            <constraint firstItem="Yoq-eL-CT7" firstAttribute="leading" secondItem="c1H-4x-QSw" secondAttribute="leading" constant="24" id="tAH-KB-tUn"/>
+                            <constraint firstItem="JSV-Zy-lCi" firstAttribute="top" secondItem="feJ-Kk-ql7" secondAttribute="bottom" constant="4" id="wKq-wB-698"/>
+                            <constraint firstItem="Yoq-eL-CT7" firstAttribute="top" secondItem="InT-aD-uFs" secondAttribute="bottom" constant="40" id="xp1-VI-iqL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ktn-gQ-RrM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dme-Uc-u66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="791"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="HZP-Qb-34t">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="4UB-gA-88h" customClass="EditProfileViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uar-LJ-bjz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T81-sY-O6R">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.83921568627450982" green="0.89803921568627454" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="18"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Edit Profile" id="OPC-1Z-yAr">
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="IME-MB-qwG"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CNC-f9-8y0">
+                                <rect key="frame" x="87" y="139" width="200" height="198.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="LPR-OY-66J"/>
+                                    <constraint firstAttribute="width" constant="200" id="hKk-8C-Lkq"/>
+                                </constraints>
+                                <imageReference key="image" image="person.circle" catalog="system" renderingMode="original"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3c-Rb-9QA">
+                                <rect key="frame" x="24" y="378" width="327" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ql-qJ-N6q">
+                                <rect key="frame" x="24" y="400" width="327" height="48"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="HrF-3H-uIi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-eD-izh">
+                                <rect key="frame" x="24" y="460" width="327" height="18"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01-01-1999" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4av-7M-7B2">
+                                <rect key="frame" x="24" y="482" width="327" height="48"/>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Ao3-Oy-wDS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="date-time"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwx-Ss-mvW">
+                                <rect key="frame" x="24" y="714" width="327" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="JcU-vX-aPS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                        <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZD-1D-JyX">
+                                <rect key="frame" x="247" y="290" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Tl8-ed-RbP"/>
+                                    <constraint firstAttribute="height" constant="48" id="ZzV-FQ-QH5"/>
+                                </constraints>
+                                <color key="tintColor" red="0.95294117647058818" green="0.69803921568627447" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="camera.circle.fill" catalog="system" renderingMode="template"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lR8-TC-LS4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L3c-Rb-9QA" firstAttribute="top" secondItem="CNC-f9-8y0" secondAttribute="bottom" constant="40" id="4Zx-Qo-l30"/>
+                            <constraint firstItem="CNC-f9-8y0" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="87" id="9Ic-oB-crn"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="L3c-Rb-9QA" secondAttribute="trailing" constant="24" id="Fo0-zo-qBQ"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="sxh-eD-izh" secondAttribute="trailing" constant="24" id="HSC-8g-u3e"/>
+                            <constraint firstItem="T81-sY-O6R" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" id="I3X-Fr-y09"/>
+                            <constraint firstItem="4Ql-qJ-N6q" firstAttribute="top" secondItem="L3c-Rb-9QA" secondAttribute="bottom" constant="4" id="KhE-Zy-eBP"/>
+                            <constraint firstItem="T81-sY-O6R" firstAttribute="trailing" secondItem="lR8-TC-LS4" secondAttribute="trailing" id="Mfl-At-7rM"/>
+                            <constraint firstItem="sxh-eD-izh" firstAttribute="top" secondItem="4Ql-qJ-N6q" secondAttribute="bottom" constant="12" id="QA4-bw-Wjd"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="DZD-1D-JyX" secondAttribute="trailing" constant="80" id="SbW-Fx-TUO"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="4av-7M-7B2" secondAttribute="trailing" constant="24" id="StU-1Z-Vph"/>
+                            <constraint firstItem="4Ql-qJ-N6q" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="VM6-KL-gv8"/>
+                            <constraint firstItem="4av-7M-7B2" firstAttribute="top" secondItem="sxh-eD-izh" secondAttribute="bottom" constant="4" id="WWB-vt-PAG"/>
+                            <constraint firstItem="DZD-1D-JyX" firstAttribute="top" secondItem="T81-sY-O6R" secondAttribute="bottom" constant="202" id="XEL-rK-lyO"/>
+                            <constraint firstItem="sxh-eD-izh" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="Zfu-HL-hFc"/>
+                            <constraint firstItem="CNC-f9-8y0" firstAttribute="top" secondItem="T81-sY-O6R" secondAttribute="bottom" constant="50" id="b3J-55-xP3"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="Zwx-Ss-mvW" secondAttribute="trailing" constant="24" id="dHj-TK-W7F"/>
+                            <constraint firstItem="L3c-Rb-9QA" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="fHr-Un-jfW"/>
+                            <constraint firstItem="Zwx-Ss-mvW" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="guL-qM-Y8F"/>
+                            <constraint firstItem="4av-7M-7B2" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="ib0-ps-frZ"/>
+                            <constraint firstItem="T81-sY-O6R" firstAttribute="top" secondItem="lR8-TC-LS4" secondAttribute="top" id="icF-PC-tsZ"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="bottom" secondItem="Zwx-Ss-mvW" secondAttribute="bottom" id="p8Z-O9-7cy"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="4Ql-qJ-N6q" secondAttribute="trailing" constant="24" id="tUs-zX-5js"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="CNC-f9-8y0" secondAttribute="trailing" constant="88" id="yZF-DO-CAo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Czs-DG-Ooy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aQ-Pr-9TQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="791"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="OfL-2t-BGB">
@@ -1253,11 +1491,11 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="diary-done" width="324" height="300"/>
-        <image name="home-profile" width="54" height="54"/>
-        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="photo-placeholder" width="317" height="233"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="welcome" width="1445" height="1417"/>

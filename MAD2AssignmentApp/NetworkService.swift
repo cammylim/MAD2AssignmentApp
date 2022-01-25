@@ -16,8 +16,6 @@ class NetworkService {
         let qurl = URL(string: url)!
         
         let task = session.dataTask(with: qurl) { (data, response, error) in
-            
-            
             DispatchQueue.main.async {
                 do {
                     let quotes = try JSONDecoder().decode(Quote.self, from: data!)
