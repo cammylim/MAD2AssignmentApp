@@ -174,4 +174,51 @@ class DiaryDataAccessLayer {
             }
         }
     }
+    
+    func addSpecialtoDiary(diary:Diary, special:Special){
+        var dList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
+        if(UserExist()){
+            fetchRequest.predicate = NSPredicate(format: "diary_date == %@", diary.date! as CVarArg)
+            let entity = NSEntityDescription.entity(forEntityName: "CoreDataSpecial", in: context)!
+            let cdSpecial = NSManagedObject(entity: entity, insertInto: context) as! CoreDataSpecial
+            cdSpecial.special_caption = special.special_caption
+            cdSpecial.special_location = special.special_location
+            cdSpecial.special_date = special.special_date
+            cdSpecial.special_image = special.special_image?.pngData()
+            do{
+                dList = try context.fetch(fetchRequest)
+                let d = dList[0] as! CoreDataDiary
+                d.addToHasSpecial(cdSpecial)
+                
+                try context.save()
+            } catch let error as NSError{
+                print("Could not add. \(error) \(error.userInfo)")
+            }
+        }
+    }
+    
+    func addReflectiontoDiary(diary:Diary, ref:Reflection){
+        var dList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
+        if(UserExist()){
+            fetchRequest.predicate = NSPredicate(format: "diary_date == %@", diary.date! as CVarArg)
+            let entity = NSEntityDescription.entity(forEntityName: "CoreDataReflection", in: context)!
+            let cdRef = NSManagedObject(entity: entity, insertInto: context) as! CoreDataReflection
+            cdRef.ref_title = ref.ref_title
+            cdRef.ref_body = ref.ref_body
+            cdRef.ref_date = ref.ref_date
+            do{
+                dList = try context.fetch(fetchRequest)
+                let d = dList[0] as! CoreDataDiary
+                d.addToHasReflect(cdRef)
+                
+                try context.save()
+            } catch let error as NSError{
+                print("Could not add. \(error) \(error.userInfo)")
+            }
+        }
+    }
 }

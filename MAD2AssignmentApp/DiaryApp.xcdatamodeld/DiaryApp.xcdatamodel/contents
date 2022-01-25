@@ -11,8 +11,8 @@
         <relationship name="existsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataUser" inverseName="has" inverseEntity="CoreDataUser"/>
         <relationship name="hasActivities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataActivities" inverseName="actExistsIn" inverseEntity="CoreDataActivities"/>
         <relationship name="hasFeelings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataFeelings" inverseName="feelingsExistIn" inverseEntity="CoreDataFeelings"/>
-        <relationship name="hasReflect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataReflection" inverseName="refExistsIn" inverseEntity="CoreDataReflection"/>
-        <relationship name="hasSpecial" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataSpecial" inverseName="speExistsIn" inverseEntity="CoreDataSpecial"/>
+        <relationship name="hasReflect" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataReflection" inverseName="refExistsIn" inverseEntity="CoreDataReflection"/>
+        <relationship name="hasSpecial" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataSpecial" inverseName="speExistsIn" inverseEntity="CoreDataSpecial"/>
     </entity>
     <entity name="CoreDataFeelings" representedClassName="CoreDataFeelings" syncable="YES" codeGenerationType="class">
         <attribute name="feeling_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
