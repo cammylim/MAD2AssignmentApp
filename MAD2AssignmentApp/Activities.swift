@@ -9,8 +9,10 @@ import Foundation
 
 class Activities{
     var act_name:String?
+    var act_date:Date?
     
-    init(act_name:String){
+    init(act_name:String, act_date:Date){
         self.act_name = act_name
+        self.act_date = act_date
     }
 }
