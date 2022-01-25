@@ -14,7 +14,12 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     var selectedMonth:String?
     var selectedYear:String?
     var selectedDate:Date?
-    var feelingsList:[Feelings]=[]
+    var feelingsList:[Feelings] = []
+    var selectedFeeling:String = ""
+    var diary:Diary?
+    
+    var diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
+    
     @IBOutlet weak var feelingsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -48,10 +53,29 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! FeelingsCell
         if (cell.backgroundColor == UIColor.clear){
-            cell.layer.cornerRadius = 8
-            cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
-        }else{cell.backgroundColor = UIColor.clear}
-        
+            if(selectedFeeling==""){
+                selectedFeeling = cell.feelingsLabel.text!
+                cell.layer.cornerRadius = 8
+                cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
+            }
+        }else{
+            cell.backgroundColor = UIColor.clear
+            selectedFeeling = ""
+        }
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if(!(selectedFeeling=="")){
+            diary = Diary(feeling: selectedFeeling, date: selectedDate!)
+            var feeling:Feelings?
+            var i:Int = 0
+            while i < feelingsList.count{
+                if(selectedFeeling == feelingsList[i].feeling_name){feeling=feelingsList[i]}
+                i+=1
+            }
+            diaryDAL.addFeelingstoDiary(diary: diary!, feelings: feeling!)
+            return true
+        }
+        return false
     }
 }
 

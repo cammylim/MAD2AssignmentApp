@@ -16,7 +16,7 @@
     </entity>
     <entity name="CoreDataFeelings" representedClassName="CoreDataFeelings" syncable="YES" codeGenerationType="class">
         <attribute name="feeling_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="feeling_image" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="feeling_image" optional="YES" attributeType="String"/>
         <attribute name="feeling_name" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
         <relationship name="feelingsExistIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasFeelings" inverseEntity="CoreDataDiary"/>
     </entity>
