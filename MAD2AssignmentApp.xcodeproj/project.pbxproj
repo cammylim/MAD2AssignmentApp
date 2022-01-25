@@ -24,6 +24,8 @@
 		C1A0D97E279059A8002DF70E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1A0D97D279059A8002DF70E /* Assets.xcassets */; };
 		C1A0D981279059A8002DF70E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A0D97F279059A8002DF70E /* LaunchScreen.storyboard */; };
 		C1F07FFB279FD5B2009E2089 /* DiaryDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F07FFA279FD5B2009E2089 /* DiaryDataAccessLayer.swift */; };
+		C1F07FFD279FD6A6009E2089 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F07FFC279FD6A6009E2089 /* Diary.swift */; };
+		C1F07FFF279FEA4C009E2089 /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F07FFE279FEA4C009E2089 /* Activities.swift */; };
 		D643BABF279D635A001066E7 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643BABE279D6359001066E7 /* OnBoardingViewController.swift */; };
 		D643BAC2279D7127001066E7 /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643BAC1279D7127001066E7 /* OnBoardingSlide.swift */; };
 		D643BAC4279D738E001066E7 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */; };
@@ -59,6 +61,8 @@
 		C1A0D980279059A8002DF70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1A0D982279059A8002DF70E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1F07FFA279FD5B2009E2089 /* DiaryDataAccessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDataAccessLayer.swift; sourceTree = "<group>"; };
+		C1F07FFC279FD6A6009E2089 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		C1F07FFE279FEA4C009E2089 /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		D643BABE279D6359001066E7 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		D643BAC1279D7127001066E7 /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -118,12 +122,14 @@
 				D67C5C91279EAE4000806D36 /* Day3ViewController.swift */,
 				D655E9CD279F172800768087 /* Day4ViewController.swift */,
 				D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */,
+				C1F07FFA279FD5B2009E2089 /* DiaryDataAccessLayer.swift */,
 				C1935EFC2795B3F7009C18A9 /* DiaryCell.swift */,
 				C1935EFE2795BB53009C18A9 /* DiaryCalendar.swift */,
 				C13FB7A62799659700838B18 /* FeelingsCell.swift */,
 				C13FB7A82799697C00838B18 /* Feelings.swift */,
 				D6CD8679279D203600E934BD /* User.swift */,
-				C1F07FFA279FD5B2009E2089 /* DiaryDataAccessLayer.swift */,
+				C1F07FFC279FD6A6009E2089 /* Diary.swift */,
+				C1F07FFE279FEA4C009E2089 /* Activities.swift */,
 				C16F2F99279D5BC100DCA4D2 /* CloseButton.swift */,
 				C16F2F92279D5B7A00DCA4D2 /* TagListView.h */,
 				C16F2F94279D5B7A00DCA4D2 /* TagListView.swift */,
@@ -238,8 +244,10 @@
 				C1A0D979279059A7002DF70E /* ViewController.swift in Sources */,
 				C1F07FFB279FD5B2009E2089 /* DiaryDataAccessLayer.swift in Sources */,
 				C1A0D975279059A7002DF70E /* AppDelegate.swift in Sources */,
+				C1F07FFD279FD6A6009E2089 /* Diary.swift in Sources */,
 				C1A0D977279059A7002DF70E /* SceneDelegate.swift in Sources */,
 				D6CD867A279D203600E934BD /* User.swift in Sources */,
+				C1F07FFF279FEA4C009E2089 /* Activities.swift in Sources */,
 				D655E9CE279F172800768087 /* Day4ViewController.swift in Sources */,
 				D656EC22279D8F6100BE6FCE /* UIViewController+Extension.swift in Sources */,
 				C13FB7A92799697C00838B18 /* Feelings.swift in Sources */,
