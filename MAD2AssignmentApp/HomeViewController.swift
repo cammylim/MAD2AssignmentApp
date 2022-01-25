@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -22,6 +24,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var selectedYear:String?
     var totalDays = [String]()
     let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
+    var quotes = Quote()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,18 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setGreetingView()
         setCellsView()
         setMonthView()
+        
+        // quote of the day
+        NetworkService.sharedobj.getQuotes { (w) in
+            self.quotes = w
+            
+            if let randomquote = self.quotes.randomElement()
+            {
+                self.quoteLabel.text = "\(randomquote.text)"
+                self.authorLabel.text = "by \(randomquote.author!)"
+            }
+            
+        }
 
     }
     @IBAction func moodEntry(_ sender: Any) {

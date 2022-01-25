@@ -37,6 +37,8 @@
 		D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67C5C91279EAE4000806D36 /* Day3ViewController.swift */; };
 		D6CD867A279D203600E934BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CD8679279D203600E934BD /* User.swift */; };
 		D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1EFF52790723800FE3AEE /* LoginViewController.swift */; };
+		D6D2B0D1279FFFD500C29BD7 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2B0D0279FFFD500C29BD7 /* Quote.swift */; };
+		D6D2B0D3279FFFF400C29BD7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2B0D2279FFFF400C29BD7 /* NetworkService.swift */; };
 		D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		D67C5C91279EAE4000806D36 /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		D6CD8679279D203600E934BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6D1EFF52790723800FE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D6D2B0D0279FFFD500C29BD7 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		D6D2B0D2279FFFF400C29BD7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D6F7128B27910E7800D23DD5 /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,8 @@
 				D643BAC1279D7127001066E7 /* OnBoardingSlide.swift */,
 				D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */,
 				D656EC27279E8C3400BE6FCE /* extension */,
+				D6D2B0D0279FFFD500C29BD7 /* Quote.swift */,
+				D6D2B0D2279FFFF400C29BD7 /* NetworkService.swift */,
 			);
 			path = MAD2AssignmentApp;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 				D643BAC4279D738E001066E7 /* OnBoardingCollectionViewCell.swift in Sources */,
 				C1935EFD2795B3F8009C18A9 /* DiaryCell.swift in Sources */,
 				D643BAC2279D7127001066E7 /* OnBoardingSlide.swift in Sources */,
+				D6D2B0D3279FFFF400C29BD7 /* NetworkService.swift in Sources */,
 				C16F2F91279D5B6600DCA4D2 /* Day2ViewController.swift in Sources */,
 				D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */,
 				C1A0D979279059A7002DF70E /* ViewController.swift in Sources */,
@@ -255,6 +262,7 @@
 				C16F2F9A279D5BC100DCA4D2 /* CloseButton.swift in Sources */,
 				C16F2F95279D5B7A00DCA4D2 /* TagView.swift in Sources */,
 				C1935EF627959458009C18A9 /* HomeViewController.swift in Sources */,
+				D6D2B0D1279FFFD500C29BD7 /* Quote.swift in Sources */,
 				C13FB7A527992F5800838B18 /* DayViewController.swift in Sources */,
 				D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */,
 				D643BABF279D635A001066E7 /* OnBoardingViewController.swift in Sources */,
