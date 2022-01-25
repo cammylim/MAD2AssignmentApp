@@ -35,16 +35,22 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setCellsView()
         setMonthView()
         
-        // quote of the day
+        // quote of the day //TODO: save 1 quote to coredata for each day
         NetworkService.sharedobj.getQuotes { (w) in
             self.quotes = w
             
-            if let randomquote = self.quotes.randomElement()
+            if var randomquote = self.quotes.randomElement()
             {
+                while randomquote.text.count > 70 {
+                    randomquote = self.quotes.randomElement()!
+                }
                 self.quoteLabel.text = "\(randomquote.text)"
-                self.authorLabel.text = "by \(randomquote.author!)"
+                if (randomquote.author == nil) {
+                    self.authorLabel.text = "by anonymous"
+                } else {
+                    self.authorLabel.text = "by \(randomquote.author!)"
+                }
             }
-            
         }
 
     }
