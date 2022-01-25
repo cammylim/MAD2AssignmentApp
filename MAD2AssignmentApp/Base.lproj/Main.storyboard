@@ -536,8 +536,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-Ne-p8o">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-Ne-p8o">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="18"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Diary Entry" id="yDe-YO-cMb">
                                         <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="7Kp-P3-VRi">
@@ -689,10 +694,14 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9M-nu-W1H">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="18"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Diary Entry" id="VGp-hp-KT1">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="46w-rr-rQd">
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="46w-rr-rQd">
                                             <connections>
                                                 <action selector="backButton:" destination="zLJ-pF-M91" id="mqP-a8-bc0"/>
                                             </connections>
@@ -907,10 +916,14 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HG9-Il-eQs">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="18"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Diary Entry" id="Qnl-sV-Izq">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="SVD-U8-34s"/>
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="SVD-U8-34s"/>
                                         <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="uHo-db-avv"/>
                                     </navigationItem>
                                 </items>
@@ -1063,10 +1076,14 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJh-ZR-dAT">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="18"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Diary Entry" id="ZWK-zr-orH">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="ff5-WQ-MLJ"/>
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="ff5-WQ-MLJ"/>
                                         <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="TnE-kL-Fqw"/>
                                     </navigationItem>
                                 </items>
@@ -1120,6 +1137,9 @@
                                     <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                     <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="KXE-S8-JQb" kind="show" id="6OA-rN-rGN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 4/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTL-CI-GNn">
                                 <rect key="frame" x="113" y="688" width="149" height="18"/>
@@ -1156,10 +1176,71 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="arm-l6-vVZ"/>
+                    <connections>
+                        <outlet property="bodyLabel" destination="2v1-Lv-ArL" id="NMt-T1-Yft"/>
+                        <outlet property="titleLabel" destination="2Y0-4j-ymJ" id="0mD-w1-ipt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPm-KS-vRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2588" y="1579.8029556650247"/>
+        </scene>
+        <!--Day Done View Controller-->
+        <scene sceneID="B1P-b5-IgQ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="KXE-S8-JQb" customClass="DayDoneViewController" customModule="MAD2AssignmentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="az0-tL-C4P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNP-5l-4AC">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.82745098039215681" green="0.89803921568627454" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <items>
+                                    <navigationItem id="9Y1-0E-vca">
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="ROO-6w-Zz2"/>
+                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="iQl-Od-uUH"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEO-IT-Fv5">
+                                <rect key="frame" x="23" y="714" width="328" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="8ef-AR-Et0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Close">
+                                    <backgroundConfiguration key="background" cornerRadius="8">
+                                        <color key="backgroundColor" red="0.97422116989999996" green="0.84314388039999999" blue="0.84312754869999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.32912984490000002" green="0.31372618679999997" blue="0.31372442839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary-done" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-99-nC9">
+                                <rect key="frame" x="37" y="206" width="300" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nVT-Y5-TCa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4e2-99-nC9" firstAttribute="leading" secondItem="nVT-Y5-TCa" secondAttribute="leading" constant="37" id="7ca-Zr-zwU"/>
+                            <constraint firstItem="aEO-IT-Fv5" firstAttribute="leading" secondItem="nVT-Y5-TCa" secondAttribute="leading" constant="23" id="9iT-8D-Q7U"/>
+                            <constraint firstItem="4e2-99-nC9" firstAttribute="top" secondItem="BNP-5l-4AC" secondAttribute="bottom" constant="118" id="O9w-m0-xPp"/>
+                            <constraint firstItem="BNP-5l-4AC" firstAttribute="top" secondItem="nVT-Y5-TCa" secondAttribute="top" id="Tuk-sg-8OK"/>
+                            <constraint firstItem="nVT-Y5-TCa" firstAttribute="trailing" secondItem="aEO-IT-Fv5" secondAttribute="trailing" constant="24" id="eaJ-TH-OzG"/>
+                            <constraint firstItem="BNP-5l-4AC" firstAttribute="trailing" secondItem="nVT-Y5-TCa" secondAttribute="trailing" id="m61-vy-ELx"/>
+                            <constraint firstItem="BNP-5l-4AC" firstAttribute="leading" secondItem="nVT-Y5-TCa" secondAttribute="leading" id="nHK-Ct-vNS"/>
+                            <constraint firstItem="aEO-IT-Fv5" firstAttribute="bottom" secondItem="nVT-Y5-TCa" secondAttribute="bottom" id="sWi-1P-5DM"/>
+                            <constraint firstItem="nVT-Y5-TCa" firstAttribute="trailing" secondItem="4e2-99-nC9" secondAttribute="trailing" constant="38" id="uAw-tm-4C4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="L54-4i-mZv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmY-Be-qLU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3424.8000000000002" y="1579.8029556650247"/>
         </scene>
     </scenes>
     <designables>
@@ -1171,8 +1252,10 @@
         <segue reference="Jb4-BW-nCN"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="diary-done" width="324" height="300"/>
         <image name="home-profile" width="54" height="54"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo-placeholder" width="317" height="233"/>

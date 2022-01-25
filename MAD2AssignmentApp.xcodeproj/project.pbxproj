@@ -39,6 +39,7 @@
 		D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1EFF52790723800FE3AEE /* LoginViewController.swift */; };
 		D6D2B0D1279FFFD500C29BD7 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2B0D0279FFFD500C29BD7 /* Quote.swift */; };
 		D6D2B0D3279FFFF400C29BD7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2B0D2279FFFF400C29BD7 /* NetworkService.swift */; };
+		D6D2B0D527A00B2F00C29BD7 /* DayDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2B0D427A00B2F00C29BD7 /* DayDoneViewController.swift */; };
 		D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		D6D1EFF52790723800FE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6D2B0D0279FFFD500C29BD7 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		D6D2B0D2279FFFF400C29BD7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D6D2B0D427A00B2F00C29BD7 /* DayDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDoneViewController.swift; sourceTree = "<group>"; };
 		D6F7128B27910E7800D23DD5 /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				C1A0D976279059A7002DF70E /* SceneDelegate.swift */,
 				C1A0D978279059A7002DF70E /* ViewController.swift */,
 				C1A0D97A279059A7002DF70E /* Main.storyboard */,
+				D6D2B0D427A00B2F00C29BD7 /* DayDoneViewController.swift */,
 				C1A0D97D279059A8002DF70E /* Assets.xcassets */,
 				C1A0D97F279059A8002DF70E /* LaunchScreen.storyboard */,
 				C1A0D982279059A8002DF70E /* Info.plist */,
@@ -251,6 +254,7 @@
 				C1A0D979279059A7002DF70E /* ViewController.swift in Sources */,
 				C1F07FFB279FD5B2009E2089 /* DiaryDataAccessLayer.swift in Sources */,
 				C1A0D975279059A7002DF70E /* AppDelegate.swift in Sources */,
+				D6D2B0D527A00B2F00C29BD7 /* DayDoneViewController.swift in Sources */,
 				C1F07FFD279FD6A6009E2089 /* Diary.swift in Sources */,
 				C1A0D977279059A7002DF70E /* SceneDelegate.swift in Sources */,
 				D6CD867A279D203600E934BD /* User.swift in Sources */,
