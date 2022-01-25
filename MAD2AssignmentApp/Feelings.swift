@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 class Feelings {
-    var feelings_name:String?
-    var feelings_image:String?
-    var feelings_date:Date?
+    var feeling_name:String?
+    var feeling_image:String?
+    var feeling_date:Date?
     
-    init(feelings_name:String, feelings_image:String, feelings_date:Date){
-        self.feelings_name = feelings_name
-        self.feelings_image = feelings_image
-        self.feelings_date = feelings_date
+    init(feeling_name:String, feeling_image:String, feeling_date:Date){
+        self.feeling_name = feeling_name
+        self.feeling_image = feeling_image
+        self.feeling_date = feeling_date
     }
 }

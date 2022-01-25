@@ -35,6 +35,10 @@ class DiaryCalendar{
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: date)
     }
+    func StringtoDate(string:String)->Date{
+        let dateFormatter = DateFormatter()
+        return dateFormatter.date(from: string)!
+    }
     func totalDaysInMonth(date:Date)->Int{
         let range = diary.range(of: .day, in: .month, for: date)!
         return range.count

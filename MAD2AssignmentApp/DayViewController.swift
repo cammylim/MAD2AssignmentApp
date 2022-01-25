@@ -13,13 +13,15 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     var selectedDay:String?
     var selectedMonth:String?
     var selectedYear:String?
+    var selectedDate:Date?
+    
     
     let feelingsList:[Feelings] = [
-        Feelings(feelings_name: "Ecstatic", feelings_image: UIImage(named:"diary-5.svg")!),
-        Feelings(feelings_name: "Happy", feelings_image: UIImage(named:"diary-4.svg")!),
-        Feelings(feelings_name: "Neutral", feelings_image: UIImage(named:"diary-3.svg")!),
-        Feelings(feelings_name: "Upset", feelings_image: UIImage(named:"diary-2.svg")!),
-        Feelings(feelings_name: "Sad", feelings_image: UIImage(named:"diary-1.svg")!)
+        Feelings(feeling_name: "Ecstatic", feeling_image: "diary-5", feeling_date: selectedDate!),
+        Feelings(feeling_name: "Happy", feeling_image: "diary-4", feeling_date: selectedDate!),
+        Feelings(feeling_name: "Neutral", feeling_image: "diary-3", feeling_date: selectedDate!),
+        Feelings(feeling_name: "Upset", feeling_image: "diary-2", feeling_date: selectedDate!),
+        Feelings(feeling_name: "Sad", feeling_image: "diary-1", feeling_date: selectedDate!),
     ]
     
     @IBOutlet weak var feelingsCollectionView: UICollectionView!
@@ -36,7 +38,8 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feelingsList.count
+        //return feelingsList.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

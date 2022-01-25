@@ -107,6 +107,8 @@ class DiaryDataAccessLayer {
     
     //TODO: addimage/changeimage (profile pic)
     
+    
+    //Add Predicate Function - User
     func addDiaryToUser(user:User, diary:Diary){
         var uList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -128,8 +130,7 @@ class DiaryDataAccessLayer {
         }
     }
     
-    //Add Predicate Functions
-    
+    //Add Predicate Functions - Diary
     func addActivitiestoDiary(diary:Diary, activity:Activities){
         var dList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -150,6 +151,7 @@ class DiaryDataAccessLayer {
             }
         }
     }
+    
     func addFeelingstoDiary(diary:Diary, feelings:Feelings){
         var dList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -158,12 +160,13 @@ class DiaryDataAccessLayer {
             fetchRequest.predicate = NSPredicate(format: "diary_date == %@", diary.date! as CVarArg)
             let entity = NSEntityDescription.entity(forEntityName: "CoreDataFeelings", in: context)!
             let cdFeelings = NSManagedObject(entity: entity, insertInto: context) as! CoreDataFeelings
-            cdFeelings.feeling_name = feelings.feelings_name
-            cdFeelings.feeling_date = feelings.feelings_date
-            cdFeelings.feeling_image = feelings.feelings_image
+            cdFeelings.feeling_name = feelings.feeling_name
+            cdFeelings.feeling_date = feelings.feeling_date
+            cdFeelings.feeling_image = feelings.feeling_image
             do{
                 dList = try context.fetch(fetchRequest)
                 let d = dList[0] as! CoreDataDiary
+                d.addToHasFeelings(cdFeelings)
                 
                 try context.save()
             } catch let error as NSError{
@@ -171,5 +174,4 @@ class DiaryDataAccessLayer {
             }
         }
     }
-    
 }

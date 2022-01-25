@@ -14,7 +14,7 @@ class FeelingsCell:UICollectionViewCell{
     @IBOutlet weak var feelingsImage: UIImageView!
     
     func setup(with feelings:Feelings){
-        feelingsLabel.text = feelings.feelings_name
-        feelingsImage.image = feelings.feelings_image
+        feelingsLabel.text = feelings.feeling_name
+        feelingsImage.image = UIColor(patternImage: UIImage(named: feelings.feeling_image+".svg")!);
     }
 }

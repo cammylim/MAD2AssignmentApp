@@ -125,6 +125,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dayVC.selectedDay = self.totalDays[indexPath.row]
             dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
             dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
+            dayVC.selectedDate = DiaryCalendar().StringtoDate(string: selectedDay + "/" + selectedMonth + "/" + selectedYear)
         }
         else if (segue.identifier == "moodDiaryDetail"){
             guard let dayVC = segue.destination as? DayViewController else{
@@ -133,6 +134,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dayVC.selectedDay = String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
             dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
             dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
+            dayVC.selectedDate = selectedDate
         }
     }
     

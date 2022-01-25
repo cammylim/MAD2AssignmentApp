@@ -59,7 +59,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     
     //set the activity tags into view
     func setTags(){
-        tagList = diaryDAL.RetrieveAllActivities()
+        //tagList = diaryDAL.
         var i = 0
         while i < tagList!.count {
             tagView = tagListView.addTag(tagList[i].act_name!)
@@ -76,7 +76,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     }
     @IBAction func addOthersButton(_ sender: Any) {
         if (otherTagsField.text != nil){
-            newActivity = Activities(act_name: otherTagsField.text!)
+            //newActivity = Activities(act_name: otherTagsField.text!)
             //diaryDAL.addActivitiestoUser(user: diaryDAL.RetrieveUser(), activity: newActivity!)
             tagView = tagListView.addTag((newActivity?.act_name!)!)
             self.tagListView.tagPressed(tagView)
