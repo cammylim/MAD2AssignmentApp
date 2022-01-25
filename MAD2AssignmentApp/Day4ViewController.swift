@@ -10,6 +10,9 @@ import UIKit
 
 class Day4ViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var bodyLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
