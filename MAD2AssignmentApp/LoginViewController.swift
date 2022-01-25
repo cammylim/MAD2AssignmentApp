@@ -12,7 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dobField: UITextField!
-    let userDAL:UserDataAccessLayer = UserDataAccessLayer()
+    let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             // add user to coredata
             let user = User(name: nameField.text!, dob: dateFormatter.date(from: dobField.text!)!)
-            userDAL.AddUser(user: user)
+            diaryDAL.AddUser(user: user)
             UserDefaults.standard.hasOnboarded = true
             
             // go to home page

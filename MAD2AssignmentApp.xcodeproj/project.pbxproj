@@ -23,6 +23,7 @@
 		C1A0D97C279059A7002DF70E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A0D97A279059A7002DF70E /* Main.storyboard */; };
 		C1A0D97E279059A8002DF70E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1A0D97D279059A8002DF70E /* Assets.xcassets */; };
 		C1A0D981279059A8002DF70E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A0D97F279059A8002DF70E /* LaunchScreen.storyboard */; };
+		C1F07FFB279FD5B2009E2089 /* DiaryDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F07FFA279FD5B2009E2089 /* DiaryDataAccessLayer.swift */; };
 		D643BABF279D635A001066E7 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643BABE279D6359001066E7 /* OnBoardingViewController.swift */; };
 		D643BAC2279D7127001066E7 /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643BAC1279D7127001066E7 /* OnBoardingSlide.swift */; };
 		D643BAC4279D738E001066E7 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */; };
@@ -33,7 +34,6 @@
 		D656EC24279D8FC700BE6FCE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */; };
 		D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67C5C91279EAE4000806D36 /* Day3ViewController.swift */; };
 		D6CD867A279D203600E934BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CD8679279D203600E934BD /* User.swift */; };
-		D6CD867C279D22C400E934BD /* UserDataAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CD867B279D22C400E934BD /* UserDataAccessLayer.swift */; };
 		D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1EFF52790723800FE3AEE /* LoginViewController.swift */; };
 		D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6F7128A27910E7800D23DD5 /* DiaryApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -58,6 +58,7 @@
 		C1A0D97D279059A8002DF70E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A0D980279059A8002DF70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1A0D982279059A8002DF70E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F07FFA279FD5B2009E2089 /* DiaryDataAccessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDataAccessLayer.swift; sourceTree = "<group>"; };
 		D643BABE279D6359001066E7 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		D643BAC1279D7127001066E7 /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		D643BAC3279D738E001066E7 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		D67C5C91279EAE4000806D36 /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		D6CD8679279D203600E934BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D6CD867B279D22C400E934BD /* UserDataAccessLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataAccessLayer.swift; sourceTree = "<group>"; };
 		D6D1EFF52790723800FE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6F7128B27910E7800D23DD5 /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +123,7 @@
 				C13FB7A62799659700838B18 /* FeelingsCell.swift */,
 				C13FB7A82799697C00838B18 /* Feelings.swift */,
 				D6CD8679279D203600E934BD /* User.swift */,
-				D6CD867B279D22C400E934BD /* UserDataAccessLayer.swift */,
+				C1F07FFA279FD5B2009E2089 /* DiaryDataAccessLayer.swift */,
 				C16F2F99279D5BC100DCA4D2 /* CloseButton.swift */,
 				C16F2F92279D5B7A00DCA4D2 /* TagListView.h */,
 				C16F2F94279D5B7A00DCA4D2 /* TagListView.swift */,
@@ -236,6 +236,7 @@
 				C16F2F91279D5B6600DCA4D2 /* Day2ViewController.swift in Sources */,
 				D6F7128C27910E7800D23DD5 /* DiaryApp.xcdatamodeld in Sources */,
 				C1A0D979279059A7002DF70E /* ViewController.swift in Sources */,
+				C1F07FFB279FD5B2009E2089 /* DiaryDataAccessLayer.swift in Sources */,
 				C1A0D975279059A7002DF70E /* AppDelegate.swift in Sources */,
 				C1A0D977279059A7002DF70E /* SceneDelegate.swift in Sources */,
 				D6CD867A279D203600E934BD /* User.swift in Sources */,
@@ -249,7 +250,6 @@
 				C13FB7A527992F5800838B18 /* DayViewController.swift in Sources */,
 				D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */,
 				D643BABF279D635A001066E7 /* OnBoardingViewController.swift in Sources */,
-				D6CD867C279D22C400E934BD /* UserDataAccessLayer.swift in Sources */,
 				C16F2F96279D5B7A00DCA4D2 /* TagListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,7 +21,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var selectedMonth:String?
     var selectedYear:String?
     var totalDays = [String]()
-    let userDAL:UserDataAccessLayer = UserDataAccessLayer()
+    let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         else{
             greetTime = "Good Night, "
         }
-        greetName = userDAL.RetrieveUser().name!
+        greetName = diaryDAL.RetrieveUser().name!
         greetingLabel.text = greetTime + greetName
     }
     func setCellsView(){
