@@ -37,6 +37,8 @@ class DiaryCalendar{
     }
     func StringtoDate(string:String)->Date{
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "dd/MMMM/yyyy"
         return dateFormatter.date(from: string)!
     }
     func totalDaysInMonth(date:Date)->Int{

@@ -10,7 +10,7 @@ import UIKit
 
 class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDelegate {
     
-    var tagList:[Activities]!
+    var tagList:[String]?
     var newActivity:Activities?
     var tag:String?
     var tagView:TagView!
@@ -59,10 +59,10 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     
     //set the activity tags into view
     func setTags(){
-        //tagList = diaryDAL.
+        tagList = ["Shopping", "Exercising", "Gardening"]
         var i = 0
         while i < tagList!.count {
-            tagView = tagListView.addTag(tagList[i].act_name!)
+            tagView = tagListView.addTag(tagList![i])
             self.tagListView.tagPressed(tagView)
             tagView.isSelected = false
             i += 1
@@ -76,9 +76,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     }
     @IBAction func addOthersButton(_ sender: Any) {
         if (otherTagsField.text != nil){
-            //newActivity = Activities(act_name: otherTagsField.text!)
-            //diaryDAL.addActivitiestoUser(user: diaryDAL.RetrieveUser(), activity: newActivity!)
-            tagView = tagListView.addTag((newActivity?.act_name!)!)
+            tagView = tagListView.addTag(otherTagsField.text!)
             self.tagListView.tagPressed(tagView)
             tagView.isSelected = false
             otherTagsField.text = ""
@@ -94,7 +92,6 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     }
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")
-        //diaryDAL.removeActivitiesfromUser(user: diaryDAL.RetrieveUser(), activity: <#T##Activities#>)
         sender.removeTagView(tagView)
     }
 }

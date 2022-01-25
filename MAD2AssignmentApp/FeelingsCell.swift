@@ -15,6 +15,6 @@ class FeelingsCell:UICollectionViewCell{
     
     func setup(with feelings:Feelings){
         feelingsLabel.text = feelings.feeling_name
-        feelingsImage.image = UIColor(patternImage: UIImage(named: feelings.feeling_image+".svg")!);
+        feelingsImage.image = UIImage(named: feelings.feeling_image!+".svg")!
     }
 }

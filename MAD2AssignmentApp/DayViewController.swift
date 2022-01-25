@@ -15,9 +15,6 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     var selectedYear:String?
     var selectedDate:Date?
     var feelingsList:[Feelings]=[]
-    
-    
-    
     @IBOutlet weak var feelingsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -39,8 +36,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return feelingsList.count
-        return 1
+        return feelingsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
