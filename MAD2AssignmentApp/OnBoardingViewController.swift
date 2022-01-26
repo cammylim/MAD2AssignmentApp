@@ -31,9 +31,9 @@ class OnBoardingViewController: UIViewController {
         super.viewDidLoad()
         
         slides = [
-            OnBoardingSlide(title: "Feature #1", description: "Desc of feature", image: UIImage(named: "home-bg.svg")!),
-            OnBoardingSlide(title: "Feature #2", description: "Desc of feature", image: UIImage(named: "home-bg.svg")!),
-            OnBoardingSlide(title: "Feature #3", description: "Desc of feature", image: UIImage(named: "home-bg.svg")!)
+            OnBoardingSlide(title: "Mood of the Day", description: "Choose a mood every day to fill up your calendar with the colors of the sunset.", image: UIImage(named: "feature-1.svg")!),
+            OnBoardingSlide(title: "Snaps of Memories", description: "Save a glimpse of those fond and precious moments.", image: UIImage(named: "feature-2.svg")!),
+            OnBoardingSlide(title: "What a Day", description: "Keep in a reccord of the activities that you have taken part of.", image: UIImage(named: "feature-3.svg")!)
         ]
     }
 
