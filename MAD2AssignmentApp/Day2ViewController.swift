@@ -78,7 +78,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             guard segue.destination is HomeViewController else{
                 return
             }
-            diaryDAL.DeleteDiaryinUser(user: diaryDAL.RetrieveUser(), diary: diary!)
+            diaryDAL.deleteDiary(diary_date: selectedDate!)
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
