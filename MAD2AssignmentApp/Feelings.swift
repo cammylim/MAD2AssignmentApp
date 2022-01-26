@@ -11,10 +11,12 @@ import UIKit
 class Feelings {
     var feeling_name:String?
     var feeling_image:String?
+    var feeling_rgb:String?
     var feeling_date:Date?
     
-    init(feeling_name:String, feeling_image:String, feeling_date:Date){
+    init(feeling_name:String, feeling_rgb:String, feeling_image:String, feeling_date:Date){
         self.feeling_name = feeling_name
+        self.feeling_rgb = feeling_rgb
         self.feeling_image = feeling_image
         self.feeling_date = feeling_date
     }

@@ -26,11 +26,11 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
         feelingsList = [
-            Feelings(feeling_name: "Ecstatic", feeling_image: "diary-5", feeling_date: selectedDate!),
-            Feelings(feeling_name: "Happy", feeling_image: "diary-4", feeling_date: selectedDate!),
-            Feelings(feeling_name: "Neutral", feeling_image: "diary-3", feeling_date: selectedDate!),
-            Feelings(feeling_name: "Upset", feeling_image: "diary-2", feeling_date: selectedDate!),
-            Feelings(feeling_name: "Sad", feeling_image: "diary-1", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Ecstatic", feeling_rgb: "FFF09D", feeling_image: "diary-5", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Happy", feeling_rgb:"FFDE8A", feeling_image: "diary-4", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Neutral", feeling_rgb:"FFC691", feeling_image: "diary-3", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Upset", feeling_rgb:"FFA070", feeling_image: "diary-2", feeling_date: selectedDate!),
+            Feelings(feeling_name: "Sad", feeling_rgb:"FF7563", feeling_image: "diary-1", feeling_date: selectedDate!),
         ]
         feelingsCollectionView.reloadData()
         
@@ -65,13 +65,14 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(!(selectedFeeling=="")){
-            diary = Diary(feeling: selectedFeeling, date: selectedDate!)
+            
             var feeling:Feelings?
             var i:Int = 0
             while i < feelingsList.count{
                 if(selectedFeeling == feelingsList[i].feeling_name){feeling=feelingsList[i]}
                 i+=1
             }
+            diary = Diary(feeling: (feeling?.feeling_rgb)!, date: selectedDate!)
             diaryDAL.addDiaryToUser(user: diaryDAL.RetrieveUser(), diary: diary!)
             diaryDAL.addFeelingstoDiary(diary: diary!, feelings: feeling!)
             return true

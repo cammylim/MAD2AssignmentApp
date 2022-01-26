@@ -163,6 +163,7 @@ class DiaryDataAccessLayer {
             cdFeelings.feeling_name = feelings.feeling_name
             cdFeelings.feeling_date = feelings.feeling_date
             cdFeelings.feeling_image = feelings.feeling_image
+            cdFeelings.feeling_rgb = feelings.feeling_rgb
             do{
                 dList = try context.fetch(fetchRequest)
                 let d = dList[0] as! CoreDataDiary
@@ -223,6 +224,25 @@ class DiaryDataAccessLayer {
     }
     
     //Retrieve Predicate Functions
+    func RetrieveDiaryEntriesinUser(user:User)->[Diary]{
+        var diaryList:[Diary] = []
+        var managedDiaryList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
+        fetchRequest.predicate = NSPredicate(format: "ANY existsIn.user_name = %@", user.name!)
+        do{
+            managedDiaryList = try context.fetch(fetchRequest)
+            for m in managedDiaryList{
+                let feeling = m.value(forKeyPath: "diary_feeling") as! String
+                let date = m.value(forKeyPath: "diary_date") as! Date
+                let diary = Diary(feeling: feeling, date: date)
+                diaryList.append(diary)
+            }
+        } catch let error as NSError{
+            print("Could not retrieve diary entries in user. \(error) \(error.userInfo)")
+        }
+        return diaryList
+    }
     
     func RetrieveFeelinginDiary(diary:Diary)->Feelings{
         var feeling:Feelings?
@@ -235,8 +255,9 @@ class DiaryDataAccessLayer {
             let name = managedFeelingList[0].value(forKeyPath: "feeling_name") as! String
             let date = managedFeelingList[0].value(forKeyPath: "feeling_date") as! Date
             let image = managedFeelingList[0].value(forKeyPath: "feeling_image") as! String
+            let rgb = managedFeelingList[0].value(forKeyPath: "feeling_rgb") as! String
             print(name)
-            feeling = Feelings(feeling_name: name, feeling_image: image, feeling_date: date)
+            feeling = Feelings(feeling_name: name, feeling_rgb: rgb, feeling_image: image, feeling_date: date)
         } catch let error as NSError{
             print("Could not fetch. \(error) \(error.userInfo)")
         }
@@ -257,7 +278,7 @@ class DiaryDataAccessLayer {
             do{
                 uList = try context.fetch(fetchRequest)
                 let u = uList[0] as! CoreDataUser
-                u.removeFromHas(cdDiary)
+                context.delete(u)
                 try context.save()
                 
             } catch let error as NSError{

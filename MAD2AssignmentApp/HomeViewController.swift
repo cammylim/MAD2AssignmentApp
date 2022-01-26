@@ -24,13 +24,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var selectedYear:String?
     var totalDays = [String]()
     let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
+    var diaryEntries:[Diary]?
     var quotes = Quote()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home-bg.svg")!);
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home-bg.svg")!)
         dayLabel.text = DiaryCalendar().dayText(date: selectedDate) + ","
         dateLabel.text = DiaryCalendar().monthText(date: selectedDate) + " " + String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
+        diaryEntries = diaryDAL.RetrieveAllDiaryEntries()
         setGreetingView()
         setCellsView()
         setMonthView()
@@ -111,9 +113,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaCell", for: indexPath) as! DiaryCell
+        
         cell.day.text = totalDays[indexPath.item]
         if (totalDays[indexPath.item] != ""){
             cell.layer.cornerRadius = 13.0
+            var i:Int=0
+            while i < diaryEntries!.count{
+                let diaryDate:Date = diaryEntries![i].date!
+                let cellDate:Date = DiaryCalendar().StringtoDate(string: (totalDays[indexPath.item] + "/" +  DiaryCalendar().monthText(date: selectedDate) + "/" + DiaryCalendar().yearText(date: selectedDate)))
+                if(cellDate == diaryDate){
+                    cell.backgroundColor = UIColor(hexString: diaryEntries![i].feeling!)
+                    cell.day.text = ""
+                }
+                i+=1
+            }
         }
         return cell
     }
@@ -155,6 +168,25 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     override open var shouldAutorotate: Bool{
         return false
+    }
+}
+extension UIColor {
+    convenience init(hexString: String) {
+        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int = UInt64()
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (255, 0, 0, 0)
+        }
+        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
 
