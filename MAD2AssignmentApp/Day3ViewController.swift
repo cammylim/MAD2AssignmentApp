@@ -11,9 +11,12 @@ import PhotosUI
 
 class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITextFieldDelegate {
     
+    var selectedDate: Date?
+    var diary: Diary?
     @IBOutlet weak var imageUpload: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var locationField: UITextField!
+    let diaryDAL: DiaryDataAccessLayer = DiaryDataAccessLayer()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +54,13 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
    }
-
     
     // upload image
     @IBAction func uploadBtn(_ sender: Any) {
         showPicker()
     }
     
+    // configure gallery
     func showPicker() {
         var config = PHPickerConfiguration()
         config.filter = .images
@@ -85,4 +88,34 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
             }
         }
     }
+    
+    // to previous page
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // to home or next
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "day3ToHome"){
+            guard segue.destination is HomeViewController else{
+                return
+            }
+            diaryDAL.deleteDiary(diary_date: selectedDate!)
+        } else if (segue.identifier == "goToDay4"){
+            guard let day4VC = segue.destination as? Day4ViewController else{
+                return
+            }
+            day4VC.selectedDate = selectedDate
+            day4VC.diary = diary
+        }
+    }
+    
+    // save to core data
+    @IBAction func saveSpecialBtn(_ sender: Any) {
+        if (captionField.text != "" && locationField.text != "") {
+            let special:Special = Special(special_caption: captionField.text!, special_location: locationField.text!, special_date: selectedDate!, special_image: imageUpload.image!)
+            diaryDAL.addSpecialtoDiary(diary: diary!, special: special)
+        }
+    }
+    
 }

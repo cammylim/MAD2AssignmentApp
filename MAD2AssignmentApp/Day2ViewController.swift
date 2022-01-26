@@ -79,6 +79,12 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
                 return
             }
             diaryDAL.deleteDiary(diary_date: selectedDate!)
+        } else if (segue.identifier == "goToDay3"){
+            guard let day3VC = segue.destination as? Day3ViewConroller else{
+                return
+            }
+            day3VC.selectedDate = selectedDate
+            day3VC.diary = diary
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

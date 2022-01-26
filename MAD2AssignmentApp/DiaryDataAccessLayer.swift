@@ -235,7 +235,6 @@ class DiaryDataAccessLayer {
                 dList = try context.fetch(fetchRequest)
                 let d = dList[0] as! CoreDataDiary
                 d.addToHasSpecial(cdSpecial)
-                
                 try context.save()
             } catch let error as NSError{
                 print("Could not add. \(error) \(error.userInfo)")

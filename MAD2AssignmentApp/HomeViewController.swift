@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -41,7 +42,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setMonthView()
         collectionView.reloadData()
         
-        // quote of the day //TODO: save 1 quote to coredata for each day
+        // quote of the day
         NetworkService.sharedobj.getQuotes { (w) in
             self.quotes = w
             
@@ -112,7 +113,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
             count+=1
         }
-        monthLabel.text = DiaryCalendar().monthText(date: selectedDate)+" "+DiaryCalendar().yearText(date: selectedDate)
+        monthLabel.text = DiaryCalendar().monthText(date: selectedDate)
+        yearLabel.text = DiaryCalendar().yearText(date: selectedDate)
         setCalendarColor()
         collectionView.reloadData()
     }
@@ -175,12 +177,23 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let indexPaths = self.collectionView.indexPathsForSelectedItems!
-        let indexPath = indexPaths[0]
-        if (self.totalDays[indexPath.row] != ""){
+        if (identifier != "viewProfile") {
+            let indexPaths = self.collectionView.indexPathsForSelectedItems!
+            print("???: \(indexPaths)")
+            if (!indexPaths.isEmpty) {
+                let indexPath = indexPaths[0]
+                print("something: \(indexPath) & \(indexPath.row)")
+                if (self.totalDays[indexPath.row] != ""){
+                    return true
+                }
+            } else {
+                return false
+            }
+            
+            return false
+        } else {
             return true
         }
-        return false
     }
     @IBAction func previousMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().minusMonth(date: selectedDate)
