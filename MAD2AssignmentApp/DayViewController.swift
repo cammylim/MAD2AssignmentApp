@@ -73,7 +73,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
                 i+=1
             }
             diaryDAL.addFeelingstoDiary(diary: diary!, feelings: feeling!)
-            
+            print(diaryDAL.RetrieveFeelinginDiary(diary: diary!))
             return true
         }
         return false

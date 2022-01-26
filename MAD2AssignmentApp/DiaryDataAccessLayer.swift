@@ -24,7 +24,7 @@ class DiaryDataAccessLayer {
                 exist = true
             }
         } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            print("Could not fetch user. \(error), \(error.userInfo)")
         }
         print("Any exisitng users? \(exist)")
 
@@ -43,7 +43,7 @@ class DiaryDataAccessLayer {
         do {
             try context.save()
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            print("Could not add user. \(error), \(error.userInfo)")
         }
     }
     
@@ -64,7 +64,7 @@ class DiaryDataAccessLayer {
                 print("Name: \(user.name!); DOB: \(user.dob!); Picture: \(user.picture!)")
             }
         } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
+          print("Could not retrieve user. \(error), \(error.userInfo)")
         }
         return user
     }
@@ -83,7 +83,7 @@ class DiaryDataAccessLayer {
                 diaryList.append(diary)
             }
         } catch let error as NSError{
-            print("Could not fetch. \(error), \(error.userInfo)")
+            print("Could not retrieve all diary entries. \(error), \(error.userInfo)")
         }
         return diaryList
     }
@@ -99,7 +99,7 @@ class DiaryDataAccessLayer {
                     exist = true
                 }
             } catch let error as NSError{
-                print("Could not fetch. \(error), \(error.userInfo)")
+                print("Could not fetch diary exist in user. \(error), \(error.userInfo)")
             }
         }
         return exist
@@ -125,7 +125,7 @@ class DiaryDataAccessLayer {
                 u.addToHas(cdDiary)
                 try context.save()
             } catch let error as NSError{
-                print("Could not add. \(error), \(error.userInfo)")
+                print("Could not add diary to user. \(error), \(error.userInfo)")
             }
         }
     }
@@ -147,7 +147,7 @@ class DiaryDataAccessLayer {
                 d.addToHasActivities(cdActivity)
                 try context.save()
             } catch let error as NSError{
-                print("Could not add. \(error) \(error.userInfo)")
+                print("Could not add activities to diary. \(error) \(error.userInfo)")
             }
         }
     }
@@ -157,7 +157,7 @@ class DiaryDataAccessLayer {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
         if(UserExist()){
-            fetchRequest.predicate = NSPredicate(format: "diary_date == %@", diary.date! as CVarArg)
+            fetchRequest.predicate = NSPredicate(format: "diary_date == %@",  argumentArray: [diary.date!])
             let entity = NSEntityDescription.entity(forEntityName: "CoreDataFeelings", in: context)!
             let cdFeelings = NSManagedObject(entity: entity, insertInto: context) as! CoreDataFeelings
             cdFeelings.feeling_name = feelings.feeling_name
@@ -220,5 +220,26 @@ class DiaryDataAccessLayer {
                 print("Could not add. \(error) \(error.userInfo)")
             }
         }
+    }
+    
+    //Retrieve Predicate Functions
+    
+    func RetrieveFeelinginDiary(diary:Diary)->Feelings{
+        var feeling:Feelings?
+        var managedFeelingList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataFeelings")
+        fetchRequest.predicate = NSPredicate(format: "ANY feelingsExistIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedFeelingList = try context.fetch(fetchRequest)
+            let name = managedFeelingList[0].value(forKeyPath: "feeling_name") as! String
+            let date = managedFeelingList[0].value(forKeyPath: "feeling_date") as! Date
+            let image = managedFeelingList[0].value(forKeyPath: "feeling_image") as! String
+            print(name)
+            feeling = Feelings(feeling_name: name, feeling_image: image, feeling_date: date)
+        } catch let error as NSError{
+            print("Could not fetch. \(error) \(error.userInfo)")
+        }
+        return feeling!
     }
 }
