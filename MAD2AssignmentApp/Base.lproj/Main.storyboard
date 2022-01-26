@@ -714,7 +714,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="Qfg-jd-0dn">
                                             <connections>
-                                                <action selector="closeButton:" destination="zLJ-pF-M91" id="ZTO-nF-ehL"/>
+                                                <segue destination="C0u-lT-0ub" kind="show" identifier="backToHome" id="KaQ-78-0gl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1487,6 +1487,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="KaQ-78-0gl"/>
         <segue reference="Jb4-BW-nCN"/>
     </inferredMetricsTieBreakers>
     <resources>

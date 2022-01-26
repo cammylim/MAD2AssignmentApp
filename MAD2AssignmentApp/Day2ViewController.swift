@@ -15,9 +15,9 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     var tagList:[String]?
     var tagsPressed:[String]=[]
     var newActivity:Activities?
+    var closeButtonPressed:Bool = false
     var selectedDate:Date?
     var diary:Diary?
-    
     
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var otherTagsField: UITextField!
@@ -73,7 +73,16 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             i += 1
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "backToHome"){
+            guard segue.destination is HomeViewController else{
+                return
+            }
+            diaryDAL.DeleteDiaryinUser(user: diaryDAL.RetrieveUser(), diary: diary!)
+        }
+    }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        var boolCheck:Bool = false
         if(tagsPressed.count > 0){
             var i:Int=0
             var act:Activities?
@@ -83,15 +92,15 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
                 diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
                 i+=1
             }
-            return true
+            boolCheck = true
         }
-        return false
-    }
-    @IBAction func closeButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        else if(identifier == "backToHome"){
+            boolCheck = true
+        }
+        return boolCheck
     }
     @IBAction func backButton(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func addOthersButton(_ sender: Any) {
         if (otherTagsField.text != nil){

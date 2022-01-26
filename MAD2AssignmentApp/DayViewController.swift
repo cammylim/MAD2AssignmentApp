@@ -72,8 +72,8 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
                 if(selectedFeeling == feelingsList[i].feeling_name){feeling=feelingsList[i]}
                 i+=1
             }
+            diaryDAL.addDiaryToUser(user: diaryDAL.RetrieveUser(), diary: diary!)
             diaryDAL.addFeelingstoDiary(diary: diary!, feelings: feeling!)
-            print(diaryDAL.RetrieveFeelinginDiary(diary: diary!))
             return true
         }
         return false

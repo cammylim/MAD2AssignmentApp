@@ -114,7 +114,7 @@ class DiaryDataAccessLayer {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
         if(UserExist()){
-            fetchRequest.predicate = NSPredicate(format: "user_id == %@", user.name!)
+            fetchRequest.predicate = NSPredicate(format: "user_name == %@", user.name!)
             let entity = NSEntityDescription.entity(forEntityName: "CoreDataDiary", in: context)!
             let cdDiary = NSManagedObject(entity: entity, insertInto: context) as! CoreDataDiary
             cdDiary.diary_date = diary.date
@@ -157,7 +157,7 @@ class DiaryDataAccessLayer {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
         if(UserExist()){
-            fetchRequest.predicate = NSPredicate(format: "diary_date == %@",  argumentArray: [diary.date!])
+            fetchRequest.predicate = NSPredicate(format: "diary_date == %@", diary.date! as CVarArg)
             let entity = NSEntityDescription.entity(forEntityName: "CoreDataFeelings", in: context)!
             let cdFeelings = NSManagedObject(entity: entity, insertInto: context) as! CoreDataFeelings
             cdFeelings.feeling_name = feelings.feeling_name
@@ -241,5 +241,28 @@ class DiaryDataAccessLayer {
             print("Could not fetch. \(error) \(error.userInfo)")
         }
         return feeling!
+    }
+    
+    //Delete Predicate Functions
+    func DeleteDiaryinUser(user:User, diary:Diary){
+        var uList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
+        if(UserExist()){
+            fetchRequest.predicate = NSPredicate(format: "user_name = %@", user.name!)
+            let entity = NSEntityDescription.entity(forEntityName: "CoreDataDiary", in: context)!
+            let cdDiary = NSManagedObject(entity: entity, insertInto: context) as! CoreDataDiary
+            cdDiary.diary_date = diary.date
+            cdDiary.diary_feeling = diary.feeling
+            do{
+                uList = try context.fetch(fetchRequest)
+                let u = uList[0] as! CoreDataUser
+                u.removeFromHas(cdDiary)
+                try context.save()
+                
+            } catch let error as NSError{
+                print("Could not delete diary from user. \(error) \(error.userInfo)")
+            }
+        }
     }
 }
