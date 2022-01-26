@@ -12,8 +12,8 @@ class Day4ViewController: UIViewController {
     
     var selectedDate: Date?
     var diary: Diary?
-    @IBOutlet weak var titleLabel: UITextField!
-    @IBOutlet weak var bodyLabel: UITextField!
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var bodyField: UITextField!
     let diaryDAL: DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     override func viewDidLoad() {
@@ -31,13 +31,12 @@ class Day4ViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    // to home or next
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "day4ToHome") {
-            guard segue.destination is HomeViewController else{
-                return
-            }
-//            diaryDAL.deleteDiary(diary_date: selectedDate!)
+    // save to core data
+    @IBAction func saveReflectionBtn(_ sender: Any) {
+        if (titleField.text != "" || bodyField.text != "") {
+            let reflection: Reflection = Reflection(ref_title: titleField.text!, ref_body: bodyField.text, ref_date: selectedDate!)
+            diaryDAL.addReflectiontoDiary(diary: diary!, ref: reflection)
         }
     }
+    
 }

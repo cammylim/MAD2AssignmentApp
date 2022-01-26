@@ -78,11 +78,14 @@ extension LoginViewController {
         datePicker.addTarget(self, action: #selector(self.datePickerHandler(datePicker: )), for: .valueChanged)
         datePicker.maximumDate = Date()
         dobField.inputView = datePicker
+        datePicker.setValue(UIColor.white , forKey: "backgroundColor")
+
         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
         let cancelBtn = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBtnTap))
         let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneBtnTap))
         let flexibleBtn = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setValue(UIColor.lightGray, forKey: "backgroundColor")
         
         toolbar.setItems([cancelBtn, flexibleBtn, doneBtn], animated: false)
         dobField.inputAccessoryView = toolbar

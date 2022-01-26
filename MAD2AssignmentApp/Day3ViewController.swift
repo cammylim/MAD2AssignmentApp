@@ -13,6 +13,7 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     
     var selectedDate: Date?
     var diary: Diary?
+    var imageChanged = false
     @IBOutlet weak var imageUpload: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var locationField: UITextField!
@@ -54,9 +55,9 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
    }
-    
+
     // upload image
-    @IBAction func uploadBtn(_ sender: Any) {
+    @IBAction func uploadImageBtn(_ sender: Any) {
         showPicker()
     }
     
@@ -81,6 +82,7 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
                 if let image = image as? UIImage {
                     DispatchQueue.main.async {
                         self.imageUpload.image = image
+                        self.imageChanged = true
                     }
                 } else {
                     print(error?.localizedDescription as Any)
@@ -96,12 +98,7 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     
     // to home or next
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "day3ToHome"){
-            guard segue.destination is HomeViewController else{
-                return
-            }
-            diaryDAL.deleteDiary(diary_date: selectedDate!)
-        } else if (segue.identifier == "goToDay4"){
+        if (segue.identifier == "goToDay4") {
             guard let day4VC = segue.destination as? Day4ViewController else{
                 return
             }
@@ -112,7 +109,7 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     
     // save to core data
     @IBAction func saveSpecialBtn(_ sender: Any) {
-        if (captionField.text != "" && locationField.text != "") {
+        if (imageChanged == true || captionField.text != "" || locationField.text != "") {
             let special:Special = Special(special_caption: captionField.text!, special_location: locationField.text!, special_date: selectedDate!, special_image: imageUpload.image!)
             diaryDAL.addSpecialtoDiary(diary: diary!, special: special)
         }

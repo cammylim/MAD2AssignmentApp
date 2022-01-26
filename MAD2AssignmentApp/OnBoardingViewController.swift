@@ -20,7 +20,6 @@ class OnBoardingViewController: UIViewController {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
                 nextBtn.setTitle("Get Started", for: .normal)
-                nextBtn.titleLabel?.font = UIFont.BalsamiqSansRegular(size: 20)
             } else {
                 nextBtn.setTitle("Next", for: .normal)
             }

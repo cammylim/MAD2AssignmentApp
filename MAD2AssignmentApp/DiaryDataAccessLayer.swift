@@ -67,8 +67,7 @@ class DiaryDataAccessLayer {
         return user
     }
     
-    func EditUser(newUser:User)
-    {
+    func EditUser(newUser:User) {
         var userList:[NSManagedObject] = []
         let context = appDelegate.persistentContainer.viewContext
                 
@@ -235,6 +234,7 @@ class DiaryDataAccessLayer {
                 dList = try context.fetch(fetchRequest)
                 let d = dList[0] as! CoreDataDiary
                 d.addToHasSpecial(cdSpecial)
+                print("special added")
                 try context.save()
             } catch let error as NSError{
                 print("Could not add. \(error) \(error.userInfo)")
