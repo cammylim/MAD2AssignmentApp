@@ -22,9 +22,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var selectedDay:String?
     var selectedMonth:String?
     var selectedYear:String?
+    var legitimateCell:Bool?
     var totalDays = [String]()
     let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     var diaryEntries:[Diary]?
+    var diaryEntriesFilled:[String]?
+    var feelingsFilled:[String]?
     var quotes = Quote()
     
     override func viewDidLoad() {
@@ -36,6 +39,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setGreetingView()
         setCellsView()
         setMonthView()
+        collectionView.reloadData()
         
         // quote of the day //TODO: save 1 quote to coredata for each day
         NetworkService.sharedobj.getQuotes { (w) in
@@ -109,60 +113,75 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             count+=1
         }
         monthLabel.text = DiaryCalendar().monthText(date: selectedDate)+" "+DiaryCalendar().yearText(date: selectedDate)
+        setCalendarColor()
         collectionView.reloadData()
     }
-    
+    func setCalendarColor(){
+        diaryEntriesFilled=[]
+        feelingsFilled=[]
+        var i:Int=0
+        while i < diaryEntries!.count{
+            let diaryDate:Date = diaryEntries![i].date!
+            if(DiaryCalendar().monthText(date: diaryDate) == DiaryCalendar().monthText(date: selectedDate)){
+                diaryEntriesFilled?.append(String(DiaryCalendar().totalDaysOfMonth(date: diaryDate)))
+                feelingsFilled?.append(diaryEntries![i].feeling!)
+            }
+            i+=1
+        }
+    }
     //Collection View Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return totalDays.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaCell", for: indexPath) as! DiaryCell
-        
         cell.day.text = totalDays[indexPath.item]
+        cell.backgroundColor = UIColor.clear
         if (totalDays[indexPath.item] != ""){
             cell.layer.cornerRadius = 13.0
-            var i:Int=0
-            while i < diaryEntries!.count{
-                let diaryDate:Date = diaryEntries![i].date!
-                let cellDate:Date = DiaryCalendar().StringtoDate(string: (totalDays[indexPath.item] + "/" +  DiaryCalendar().monthText(date: selectedDate) + "/" + DiaryCalendar().yearText(date: selectedDate)))
-                if(cellDate == diaryDate){
-                    cell.backgroundColor = UIColor(hexString: diaryEntries![i].feeling!)
-                    cell.day.text = ""
+            cell.day.text = totalDays[indexPath.item]
+            var i:Int = 0
+            while i < diaryEntriesFilled!.count{
+                if (diaryEntriesFilled![i] == totalDays[indexPath.item]){
+                    cell.backgroundColor = UIColor(hexString: feelingsFilled![i])
                 }
                 i+=1
             }
         }
         return cell
     }
+    //TODO: specify which cell is clickable
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "diaryDetail", sender: self)
+        if (self.totalDays[indexPath.row] != ""){
+            self.performSegue(withIdentifier: "diaryDetail", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dayVC = segue.destination as? DayViewController else{
+            return
+        }
         if (segue.identifier == "diaryDetail"){
             let indexPaths = self.collectionView.indexPathsForSelectedItems!
             let indexPath = indexPaths[0]
-            guard let dayVC = segue.destination as? DayViewController else{
-                return
-            }
             dayVC.selectedDay = self.totalDays[indexPath.row]
-            dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
-            dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
             dayVC.selectedDate = DiaryCalendar().StringtoDate(string: (self.totalDays[indexPath.row] + "/" +  DiaryCalendar().monthText(date: selectedDate) + "/" + DiaryCalendar().yearText(date: selectedDate)))
-            
         }
         else if (segue.identifier == "moodDiaryDetail"){
-            guard let dayVC = segue.destination as? DayViewController else{
-                return
-            }
             dayVC.selectedDay = String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
-            dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
-            dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
             dayVC.selectedDate = selectedDate
         }
+        dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
+        dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
     }
-    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let indexPaths = self.collectionView.indexPathsForSelectedItems!
+        let indexPath = indexPaths[0]
+        if (self.totalDays[indexPath.row] != ""){
+            return true
+        }
+        return false
+    }
     @IBAction func previousMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().minusMonth(date: selectedDate)
         setMonthView()

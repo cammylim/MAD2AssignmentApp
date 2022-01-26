@@ -113,6 +113,25 @@ class DiaryDataAccessLayer {
         }
         return diaryList
     }
+    
+    func deleteDiary(diary_date:Date){
+        var diaryList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
+        do{
+            diaryList = try context.fetch(fetchRequest)
+            for d in diaryList{
+                let dDate = d.value(forKeyPath: "diary_date") as! Date
+                if dDate == diary_date{
+                    context.delete(d)
+                }
+                try context.save()
+            }
+        } catch let error as NSError{
+            print("Could not delete. \(error) \(error.userInfo)")
+        }
+    }
+    
     func DiaryExistinUser(user:User, diary:Diary)->Bool{
         var exist:Bool = false
         let context = appDelegate.persistentContainer.viewContext
@@ -286,28 +305,5 @@ class DiaryDataAccessLayer {
             print("Could not fetch. \(error) \(error.userInfo)")
         }
         return feeling!
-    }
-    
-    //Delete Predicate Functions
-    func DeleteDiaryinUser(user:User, diary:Diary){
-        var uList:[NSManagedObject]=[]
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
-        if(UserExist()){
-            fetchRequest.predicate = NSPredicate(format: "user_name = %@", user.name!)
-            let entity = NSEntityDescription.entity(forEntityName: "CoreDataDiary", in: context)!
-            let cdDiary = NSManagedObject(entity: entity, insertInto: context) as! CoreDataDiary
-            cdDiary.diary_date = diary.date
-            cdDiary.diary_feeling = diary.feeling
-            do{
-                uList = try context.fetch(fetchRequest)
-                let u = uList[0] as! CoreDataUser
-                context.delete(u)
-                try context.save()
-                
-            } catch let error as NSError{
-                print("Could not delete diary from user. \(error) \(error.userInfo)")
-            }
-        }
     }
 }
