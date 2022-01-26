@@ -10,10 +10,15 @@ import UIKit
 
 class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDelegate {
     
-    var tagList:[String]?
-    var newActivity:Activities?
     var tag:String?
     var tagView:TagView!
+    var tagList:[String]?
+    var tagsPressed:[String]=[]
+    var newActivity:Activities?
+    var selectedDate:Date?
+    var diary:Diary?
+    
+    
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var otherTagsField: UITextField!
     let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
@@ -23,6 +28,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
         tagListView.delegate = self
         tagListView.textFont = UIFont(name: "BalsamiqSans-Regular", size: 16)!
+        tagsPressed=[]
         setTags()
         
         // keyboard - shift view up
@@ -63,10 +69,23 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         var i = 0
         while i < tagList!.count {
             tagView = tagListView.addTag(tagList![i])
-            self.tagListView.tagPressed(tagView)
             tagView.isSelected = false
             i += 1
         }
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if(tagsPressed.count > 0){
+            var i:Int=0
+            var act:Activities?
+            while i < tagsPressed.count{
+                print(tagsPressed[i])
+                act = Activities(act_name: tagsPressed[i], act_date: selectedDate!)
+                diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
+                i+=1
+            }
+            return true
+        }
+        return false
     }
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -77,7 +96,6 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     @IBAction func addOthersButton(_ sender: Any) {
         if (otherTagsField.text != nil){
             tagView = tagListView.addTag(otherTagsField.text!)
-            self.tagListView.tagPressed(tagView)
             tagView.isSelected = false
             otherTagsField.text = ""
         }
@@ -89,6 +107,25 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag pressed: \(title), \(sender)")
         tagView.isSelected = !tagView.isSelected
+        if(tagView.isSelected){
+            tagsPressed.append(title)
+        }
+        else{
+            var boolCheck = false
+            var position:Int?
+            var i = 0
+            while i < tagsPressed.count{
+                if (tagsPressed[i] == title){
+                    boolCheck = true
+                    position = i
+                }
+                i+=1
+            }
+            if(boolCheck){
+                tagsPressed.remove(at: position!)
+            }
+        }
+        print(tagsPressed)
     }
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")

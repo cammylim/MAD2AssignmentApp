@@ -73,14 +73,26 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
                 i+=1
             }
             diaryDAL.addFeelingstoDiary(diary: diary!, feelings: feeling!)
+            
             return true
         }
         return false
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToDay2"){
+            guard let day2VC = segue.destination as? Day2ViewController else{
+                return
+            }
+            day2VC.selectedDate = selectedDate
+            day2VC.diary = diary
+        }
+    }
 }
-
 extension ViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 141, height: 85)
     }
 }
+
+
+    
