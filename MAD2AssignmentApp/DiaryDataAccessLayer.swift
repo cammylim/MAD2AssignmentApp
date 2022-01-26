@@ -61,7 +61,7 @@ class DiaryDataAccessLayer {
                 user.name = n
                 user.dob = d
                 //TODO: set profile pic
-                print("Name: \(user.name!); DOB: \(user.dob!); Picture: \(user.picture!)")
+                print("Name: \(user.name!); DOB: \(user.dob!);")
             }
         } catch let error as NSError {
           print("Could not retrieve user. \(error), \(error.userInfo)")
