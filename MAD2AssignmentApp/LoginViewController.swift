@@ -47,8 +47,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-            self.openDatePicker()
-        }
+        self.openDatePicker()
+    }
 
     @IBAction func loginBtn(_ sender: Any) {
         if (nameField.text != "" && dobField.text != "") {

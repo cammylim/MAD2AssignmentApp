@@ -56,6 +56,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setGreetingView()
+    }
+    
     @IBAction func moodEntry(_ sender: Any) {
         self.performSegue(withIdentifier: "moodDiaryDetail", sender: self)
         

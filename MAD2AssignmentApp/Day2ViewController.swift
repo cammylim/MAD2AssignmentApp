@@ -103,7 +103,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func addOthersButton(_ sender: Any) {
-        if (otherTagsField.text != nil){
+        if (otherTagsField.text != ""){
             tagView = tagListView.addTag(otherTagsField.text!)
             tagView.isSelected = false
             otherTagsField.text = ""

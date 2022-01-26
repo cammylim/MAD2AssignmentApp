@@ -57,16 +57,42 @@ class DiaryDataAccessLayer {
             for u in userlist {
                 let n = u.value(forKeyPath: "user_name") as! String
                 let d = u.value(forKeyPath: "user_dob") as! Date
-                // TODO: get profile pic
                 user.name = n
                 user.dob = d
-                //TODO: set profile pic
                 print("Name: \(user.name!); DOB: \(user.dob!);")
             }
         } catch let error as NSError {
           print("Could not retrieve user. \(error), \(error.userInfo)")
         }
         return user
+    }
+    
+    func EditUser(newUser:User)
+    {
+        var userList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+                
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
+        do {
+            userList = try context.fetch(fetchRequest)
+            
+            for u in userList {
+                u.setValue(newUser.name, forKeyPath: "user_name")
+                u.setValue(newUser.dob, forKeyPath: "user_dob")
+                // check
+                let name = u.value(forKeyPath: "user_name") as? String
+                let dob = u.value(forKeyPath: "user_dob") as? Date
+                print("Updated: \(name!), \(dob!)")
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Could not update. \(error), \(error.userInfo)")
+        }
     }
     
     //Diary Functions
@@ -104,9 +130,7 @@ class DiaryDataAccessLayer {
         }
         return exist
     }
-    
-    //TODO: addimage/changeimage (profile pic)
-    
+        
     
     //Add Predicate Function - User
     func addDiaryToUser(user:User, diary:Diary){
