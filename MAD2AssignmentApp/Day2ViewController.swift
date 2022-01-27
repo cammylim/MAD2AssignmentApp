@@ -15,6 +15,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     var tagList:[String]?
     var tagsPressed:[String]=[]
     var newActivity:Activities?
+    var tagsActivities:[Activities]?
     var closeButtonPressed:Bool = false
     var selectedDate:Date?
     var diary:Diary?
@@ -30,6 +31,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         tagListView.delegate = self
         tagListView.textFont = UIFont(name: "BalsamiqSans-Regular", size: 16)!
         tagsPressed=[]
+        
         setTags()
         
         // keyboard - shift view up
@@ -66,21 +68,35 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     
     //set the activity tags into view
     func setTags(){
-        tagList = ["Shopping", "Exercising", "Gardening"]
         var i = 0
-        while i < tagList!.count {
-            tagView = tagListView.addTag(tagList![i])
-            tagView.isSelected = false
-            i += 1
+        if(diaryDAL.BoolActivitiesinDiary(diary: diary!)){
+            tagList = []
+            tagsActivities = diaryDAL.RetrieveActivitiesinDiary(diary: diary!)
+            while i < tagsActivities!.count{
+                tagList?.append(tagsActivities![i].act_name!)
+                tagsPressed.append(tagsActivities![i].act_name!)
+                i+=1
+            }
+            i = 0
+            while i < tagList!.count {
+                tagView = tagListView.addTag(tagList![i])
+                tagView.isSelected = true
+                i += 1
+            }
+        }
+        else{
+            tagList = ["Shopping", "Exercising", "Gardening"]
+            while i < tagList!.count {
+                tagView = tagListView.addTag(tagList![i])
+                tagView.isSelected = false
+                i += 1
+            }
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "backToHome"){
             guard segue.destination is HomeViewController else{
                 return
-            }
-            if(!(diaryDAL.BoolActivitiesinDiary(diary: diary!))){
-                diaryDAL.deleteDiary(diary_date: selectedDate!)
             }
         } else if (segue.identifier == "goToDay3"){
             guard let day3VC = segue.destination as? Day3ViewConroller else{
@@ -98,6 +114,9 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             while i < tagsPressed.count{
                 print(tagsPressed[i])
                 act = Activities(act_name: tagsPressed[i], act_date: selectedDate!)
+                if(diaryDAL.BoolActivitiesinDiary(diary: diary!)){
+                    diaryDAL.DeleteActivitiesinDiary(diary: diary!)
+                }
                 diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
                 i+=1
             }

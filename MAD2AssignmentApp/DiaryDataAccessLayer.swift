@@ -304,7 +304,7 @@ class DiaryDataAccessLayer {
     }
     
     func RetrieveActivitiesinDiary(diary:Diary)->[Activities]{
-        var activityList:[Activities]?
+        var activityList:[Activities] = []
         var managedActivityList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataActivities")
@@ -315,12 +315,12 @@ class DiaryDataAccessLayer {
                 let name = m.value(forKeyPath: "act_name") as! String
                 let date = m.value(forKeyPath: "act_date") as! Date
                 let activity = Activities(act_name: name, act_date: date)
-                activityList?.append(activity)
+                activityList.append(activity)
             }
         } catch let error as NSError{
             print("Could not fetch activities in diary. \(error), \(error.userInfo)")
         }
-        return activityList!
+        return activityList
     }
     
     func RetrieveSpecialinDiary(diary:Diary)->Special{
@@ -411,7 +411,6 @@ class DiaryDataAccessLayer {
                 if mDate == diary_date{
                     m.setValue(feeling_name, forKeyPath: "diary_feeling")
                     m.setValue(diary_date, forKeyPath: "diary_date")
-                    print(m.value(forKeyPath: "diary_feeling"))
                 }
             }
             try context.save()
@@ -436,5 +435,23 @@ class DiaryDataAccessLayer {
             print("Could not fetch. \(error) \(error.userInfo)")
         }
     }
+    
+    //DELETE Functions
+    func DeleteActivitiesinDiary(diary:Diary){
+        var managedActList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataActivities")
+        fetchRequest.predicate = NSPredicate(format: "ANY actExistsIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedActList = try context.fetch(fetchRequest)
+            for m in managedActList{
+                context.delete(m)
+            }
+            try context.save()
+        } catch let error as NSError{
+            print("Could not delete activity in diary. \(error) \(error.userInfo)")
+        }
+    }
+    
 }
 
