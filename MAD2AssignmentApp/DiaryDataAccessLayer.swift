@@ -316,10 +316,10 @@ class DiaryDataAccessLayer {
             managedSpecialList = try context.fetch(fetchRequest)
             let caption = managedSpecialList[0].value(forKeyPath: "special_caption") as! String
             let date = managedSpecialList[0].value(forKeyPath: "special_date") as! Date
-            let image = managedSpecialList[0].value(forKeyPath: "special_image") as! UIImage
+            let image =  UIImage(data: managedSpecialList[0].value(forKeyPath: "special_image") as! Data)
             let location = managedSpecialList[0].value(forKeyPath: "special_location") as! String
             print(caption)
-            special = Special(special_caption: caption, special_location: location, special_date: date, special_image: image)
+            special = Special(special_caption: caption, special_location: location, special_date: date, special_image: image!)
         } catch let error as NSError{
             print("Could not fetch special inputs in diary. \(error) \(error.userInfo)")
         }
