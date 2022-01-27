@@ -483,6 +483,22 @@ class DiaryDataAccessLayer {
         }
     }
     
+    func UpdateReflectioninReflection(ref:Reflection, diary_date:Date){
+        var managedRefList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataReflection")
+        fetchRequest.predicate = NSPredicate(format: "ANY refExistsIn.diary_date = %@", diary_date as CVarArg)
+        do{
+            managedRefList = try context.fetch(fetchRequest)
+            managedRefList[0].setValue(ref.ref_body, forKeyPath: "ref_body")
+            managedRefList[0].setValue(ref.ref_date, forKeyPath: "ref_date")
+            managedRefList[0].setValue(ref.ref_title, forKeyPath: "ref_title")
+            try context.save()
+        } catch let error as NSError{
+            print("Could not fetch. \(error) \(error.userInfo)")
+        }
+    }
+    
     //DELETE Functions
     func DeleteActivitiesinDiary(diary:Diary){
         var managedActList:[NSManagedObject]=[]
@@ -499,6 +515,20 @@ class DiaryDataAccessLayer {
             print("Could not delete activity in diary. \(error) \(error.userInfo)")
         }
     }
-    
+    func DeleteSpecialinDiary(diary:Diary){
+        var managedSpeList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataSpecial")
+        fetchRequest.predicate = NSPredicate(format: "ANY speExistsIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedSpeList = try context.fetch(fetchRequest)
+            for m in managedSpeList{
+                context.delete(m)
+            }
+            try context.save()
+        } catch let error as NSError{
+            print("Could not delete activity in diary. \(error) \(error.userInfo)")
+        }
+    }
 }
 

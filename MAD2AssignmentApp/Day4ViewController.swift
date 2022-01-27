@@ -12,6 +12,7 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
     
     var selectedDate: Date?
     var diary: Diary?
+    var reflection:Reflection?
     @IBOutlet weak var titleField: UITextField!
 //    @IBOutlet weak var bodyField: UITextField!
     @IBOutlet weak var bodyField: UITextView!
@@ -28,6 +29,24 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
         bodyField.layer.masksToBounds = true
         bodyField.layer.borderColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1).cgColor
         bodyField.layer.borderWidth = CGFloat(1)
+        prepareReflection()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        prepareReflection()
+    }
+    //prepare reflection inputs
+    func prepareReflection(){
+        if(diaryDAL.BoolReflectioninDiary(diary: diary!)){
+            reflection = diaryDAL.RetrieveReflectioninDiary(diary: diary!)
+            if !(reflection?.ref_title == "Add title here"){
+                titleField.text = reflection?.ref_title
+            }
+            if !(reflection?.ref_body == "Add body here"){
+                bodyField.text = reflection?.ref_body
+                bodyField.textColor = UIColor.black
+            }
+        }
     }
     
     // modify body text field (text view)
@@ -55,11 +74,31 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //perform functions before performing segue
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if(identifier == "day4ToHome"){
+            reflection = Reflection(ref_title: titleField.text!, ref_body: bodyField.text, ref_date: selectedDate!)
+            if(diaryDAL.BoolReflectioninDiary(diary: diary!)){
+                diaryDAL.UpdateReflectioninReflection(ref: reflection!, diary_date: selectedDate!)
+            }
+            else{
+                diaryDAL.DeleteSpecialinDiary(diary: diary!)
+                diaryDAL.DeleteActivitiesinDiary(diary: diary!)
+                diaryDAL.deleteDiary(diary_date: selectedDate!)
+            }
+        }
+        return true
+    }
     // save to core data
     @IBAction func saveReflectionBtn(_ sender: Any) {
         if (titleField.text != "" || bodyField.text != "") {
-            let reflection: Reflection = Reflection(ref_title: titleField.text!, ref_body: bodyField.text, ref_date: selectedDate!)
-            diaryDAL.addReflectiontoDiary(diary: diary!, ref: reflection)
+            reflection = Reflection(ref_title: titleField.text!, ref_body: bodyField.text, ref_date: selectedDate!)
+            if(diaryDAL.BoolReflectioninDiary(diary: diary!)){
+                diaryDAL.UpdateReflectioninReflection(ref: reflection!, diary_date: selectedDate!)
+            }
+            else{
+                diaryDAL.addReflectiontoDiary(diary: diary!, ref: reflection!)
+            }
         }
     }
     
