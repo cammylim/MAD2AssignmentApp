@@ -175,15 +175,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if (segue.identifier == "diaryDetail"){
             let indexPaths = self.collectionView.indexPathsForSelectedItems!
             let indexPath = indexPaths[0]
-            dayVC.selectedDay = self.totalDays[indexPath.row]
-            dayVC.selectedDate = DiaryCalendar().StringtoDate(string: (self.totalDays[indexPath.row] + "/" +  DiaryCalendar().monthText(date: selectedDate) + "/" + DiaryCalendar().yearText(date: selectedDate)))
+            selectedDay = self.totalDays[indexPath.row]
+            dayVC.selectedDay = selectedDay
         }
         else if (segue.identifier == "moodDiaryDetail"){
-            dayVC.selectedDay = String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
-            dayVC.selectedDate = selectedDate
+            selectedDay = String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
+            dayVC.selectedDay = selectedDay
         }
         dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
         dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
+        dayVC.selectedDate = DiaryCalendar().StringtoDate(string: (selectedDay! + "/" +  DiaryCalendar().monthText(date: selectedDate) + "/" + DiaryCalendar().yearText(date: selectedDate)))
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

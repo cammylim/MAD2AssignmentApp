@@ -72,10 +72,12 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             tagList = []
             tagsActivities = diaryDAL.RetrieveActivitiesinDiary(diary: diary!)
             while i < tagsActivities!.count{
+                print(tagsActivities![i].act_name!)
                 tagList?.append(tagsActivities![i].act_name!)
                 tagsPressed.append(tagsActivities![i].act_name!)
                 i+=1
             }
+            
             i = 0
             while i < tagList!.count {
                 tagView = tagListView.addTag(tagList![i])
@@ -107,23 +109,27 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     //perform functions and conditions before segue is performed
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         var boolCheck:Bool?
-        if(tagsPressed.count > 0){
-            var i:Int=0
-            var act:Activities?
-            while i < tagsPressed.count{
-                print(tagsPressed[i])
-                act = Activities(act_name: tagsPressed[i], act_date: selectedDate!)
-                if(diaryDAL.BoolActivitiesinDiary(diary: diary!)){
-                    diaryDAL.DeleteActivitiesinDiary(diary: diary!)
-                }
-                diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
-                i+=1
+        if(identifier == "backToHome"){
+            if(!(diaryDAL.BoolActivitiesinDiary(diary: diary!))){
+                diaryDAL.deleteDiary(diary_date: selectedDate!)
             }
             entryMsg.text = "Entry Completion: 2/4"
             entryMsg.textColor = UIColor(hexString: "1158BF")
             boolCheck = true
         }
-        else if(identifier == "backToHome"){
+        else if(tagsPressed.count > 0){
+            var i:Int=0
+            var act:Activities?
+            if(diaryDAL.BoolActivitiesinDiary(diary: diary!)){
+                diaryDAL.DeleteActivitiesinDiary(diary: diary!)
+            }
+            while i < tagsPressed.count{
+                print(tagsPressed[i])
+                act = Activities(act_name: tagsPressed[i], act_date: selectedDate!)
+                diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
+                i+=1
+            }
+            
             entryMsg.text = "Entry Completion: 2/4"
             entryMsg.textColor = UIColor(hexString: "1158BF")
             boolCheck = true

@@ -12,6 +12,9 @@ import UIKit
 class DiaryDataAccessLayer {
     let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
     
+    //MARK: User Functions
+    
+    //if user exists
     func UserExist() -> Bool {
 
         var exist: Bool = false
@@ -26,11 +29,12 @@ class DiaryDataAccessLayer {
         } catch let error as NSError {
             print("Could not fetch user. \(error), \(error.userInfo)")
         }
-        print("Any exisitng users? \(exist)")
+        print("Any existing users? \(exist)")
 
         return exist
     }
 
+    //add user
     func AddUser(user:User) {
         let context = appDelegate.persistentContainer.viewContext
         let entity:NSEntityDescription = NSEntityDescription.entity(forEntityName: "CoreDataUser", in: context)!
@@ -47,6 +51,7 @@ class DiaryDataAccessLayer {
         }
     }
     
+    //retrieve user
     func RetrieveUser() -> User {
         let user:User = User(name: "", dob: Date())
         let context = appDelegate.persistentContainer.viewContext
@@ -67,6 +72,7 @@ class DiaryDataAccessLayer {
         return user
     }
     
+    //edit user
     func EditUser(newUser:User) {
         var userList:[NSManagedObject] = []
         let context = appDelegate.persistentContainer.viewContext
@@ -94,7 +100,9 @@ class DiaryDataAccessLayer {
         }
     }
     
-    //Diary Functions
+    //MARK: Diary Functions
+    
+    //retrieve all existing diary entries
     func RetrieveAllDiaryEntries()->[Diary]{
         var diaryList:[Diary]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -114,6 +122,7 @@ class DiaryDataAccessLayer {
         return diaryList
     }
     
+    //delete selected diary entry
     func deleteDiary(diary_date:Date){
         var diaryList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -132,7 +141,9 @@ class DiaryDataAccessLayer {
         }
     }
     
-    //Add Predicate Function - User
+    //MARK: Add Predicate Function - User
+    
+    //add diary entry to user
     func addDiaryToUser(user:User, diary:Diary){
         var uList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -154,7 +165,9 @@ class DiaryDataAccessLayer {
         }
     }
     
-    //Add Predicate Functions - Diary
+    //MARK: Add Predicate Functions - Diary
+    
+    //add activity to diary
     func addActivitiestoDiary(diary:Diary, activity:Activities){
         var dList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -176,6 +189,7 @@ class DiaryDataAccessLayer {
         }
     }
     
+    //add feelings to diary
     func addFeelingstoDiary(diary:Diary, feelings:Feelings){
         var dList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -200,6 +214,7 @@ class DiaryDataAccessLayer {
         }
     }
     
+    //add special to diary
     func addSpecialtoDiary(diary:Diary, special:Special){
         var dList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -223,6 +238,7 @@ class DiaryDataAccessLayer {
         }
     }
     
+    //add reflection to diary
     func addReflectiontoDiary(diary:Diary, ref:Reflection){
         var dList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -245,26 +261,9 @@ class DiaryDataAccessLayer {
         }
     }
     
-    //Retrieve Predicate Functions
-    func RetrieveDiaryEntriesinUser(user:User)->[Diary]{
-        var diaryList:[Diary] = []
-        var managedDiaryList:[NSManagedObject]=[]
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
-        fetchRequest.predicate = NSPredicate(format: "ANY existsIn.user_name = %@", user.name!)
-        do{
-            managedDiaryList = try context.fetch(fetchRequest)
-            for m in managedDiaryList{
-                let feeling = m.value(forKeyPath: "diary_feeling") as! String
-                let date = m.value(forKeyPath: "diary_date") as! Date
-                let diary = Diary(feeling: feeling, date: date)
-                diaryList.append(diary)
-            }
-        } catch let error as NSError{
-            print("Could not retrieve diary entries in user. \(error) \(error.userInfo)")
-        }
-        return diaryList
-    }
+    //MARK: Retrieve Predicate Functions
+    
+    //get specific diary entry in user
     func RetrieveDiaryinUser(user:User, diary_date:Date)->Diary{
         var diary:Diary?
         var dList:[NSManagedObject]=[]
@@ -283,6 +282,8 @@ class DiaryDataAccessLayer {
         }
         return diary!
     }
+    
+    //get feeling in diary
     func RetrieveFeelinginDiary(diary:Diary)->Feelings{
         var feeling:Feelings?
         var managedFeelingList:[NSManagedObject] = []
@@ -302,6 +303,7 @@ class DiaryDataAccessLayer {
         return feeling!
     }
     
+    //get activities in diary
     func RetrieveActivitiesinDiary(diary:Diary)->[Activities]{
         var activityList:[Activities] = []
         var managedActivityList:[NSManagedObject]=[]
@@ -322,6 +324,7 @@ class DiaryDataAccessLayer {
         return activityList
     }
     
+    //get special in diary
     func RetrieveSpecialinDiary(diary:Diary)->Special{
         var special:Special?
         var managedSpecialList:[NSManagedObject]=[]
@@ -341,6 +344,7 @@ class DiaryDataAccessLayer {
         return special!
     }
     
+    //get reflection in diary
     func RetrieveReflectioninDiary(diary:Diary)->Reflection{
         var reflect:Reflection?
         var managedReflectList:[NSManagedObject] = []
@@ -359,7 +363,9 @@ class DiaryDataAccessLayer {
         return reflect!
     }
     
-    //Check IF exists
+    //MARK: Check IF (blank) exists
+    
+    //if diary exists in user
     func DiaryExistinUser(user:User, diary_date:Date)->Bool{
         var exist:Bool = false
         let context = appDelegate.persistentContainer.viewContext
@@ -378,6 +384,7 @@ class DiaryDataAccessLayer {
         return exist
     }
     
+    //if activities exist in diary
     func BoolActivitiesinDiary(diary:Diary)->Bool{
         var activityBool:Bool = false
         var managedActivityList:[NSManagedObject]=[]
@@ -395,6 +402,7 @@ class DiaryDataAccessLayer {
         return activityBool
     }
     
+    //if Special exists in diary
     func BoolSpecialinDiary(diary:Diary)->Bool{
         var specBool:Bool = false
         var managedSpecialList:[NSManagedObject]=[]
@@ -412,6 +420,7 @@ class DiaryDataAccessLayer {
         return specBool
     }
     
+    //if Reflection exists in diary
     func BoolReflectioninDiary(diary:Diary)->Bool{
         var refBool:Bool = false
         var managedRefList:[NSManagedObject]=[]
@@ -429,7 +438,7 @@ class DiaryDataAccessLayer {
         return refBool
     }
     
-    //Update Functions
+    //MARK: Update Functions
     func UpdateFeelinginDiary(feeling_name:String, diary_date:Date){
         var managedDiaryList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext
@@ -499,7 +508,7 @@ class DiaryDataAccessLayer {
         }
     }
     
-    //DELETE Functions
+    //MARK: DELETE Functions
     func DeleteActivitiesinDiary(diary:Diary){
         var managedActList:[NSManagedObject]=[]
         let context = appDelegate.persistentContainer.viewContext

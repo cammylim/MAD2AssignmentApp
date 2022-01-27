@@ -1224,25 +1224,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNP-5l-4AC">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" red="0.83921568627450982" green="0.89803921568627454" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <items>
-                                    <navigationItem id="9Y1-0E-vca">
-                                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="ROO-6w-Zz2">
-                                            <connections>
-                                                <action selector="backBtn:" destination="KXE-S8-JQb" id="uPj-a2-dSr"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="iQl-Od-uUH">
-                                            <connections>
-                                                <segue destination="C0u-lT-0ub" kind="show" id="P9O-NI-RO5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEO-IT-Fv5">
                                 <rect key="frame" x="24" y="714" width="327" height="64"/>
                                 <constraints>
@@ -1263,19 +1244,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary-done" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-99-nC9">
                                 <rect key="frame" x="37" y="206" width="300" height="300"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open your diary entry again to edit!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIO-0g-WU3">
+                                <rect key="frame" x="70" y="514" width="235" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="8dK-oe-pdG"/>
+                                    <constraint firstAttribute="width" constant="235" id="xcC-UX-74t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nVT-Y5-TCa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4e2-99-nC9" firstAttribute="leading" secondItem="nVT-Y5-TCa" secondAttribute="leading" constant="37" id="7ca-Zr-zwU"/>
                             <constraint firstItem="aEO-IT-Fv5" firstAttribute="leading" secondItem="nVT-Y5-TCa" secondAttribute="leading" constant="24" id="9iT-8D-Q7U"/>
-                            <constraint firstItem="4e2-99-nC9" firstAttribute="top" secondItem="BNP-5l-4AC" secondAttribute="bottom" constant="118" id="O9w-m0-xPp"/>
-                            <constraint firstItem="BNP-5l-4AC" firstAttribute="top" secondItem="nVT-Y5-TCa" secondAttribute="top" id="Tuk-sg-8OK"/>
+                            <constraint firstItem="rIO-0g-WU3" firstAttribute="leading" secondItem="nVT-Y5-TCa" secondAttribute="leading" constant="70" id="QYO-DV-a0T"/>
                             <constraint firstItem="nVT-Y5-TCa" firstAttribute="trailing" secondItem="aEO-IT-Fv5" secondAttribute="trailing" constant="24" id="eaJ-TH-OzG"/>
-                            <constraint firstItem="BNP-5l-4AC" firstAttribute="trailing" secondItem="nVT-Y5-TCa" secondAttribute="trailing" id="m61-vy-ELx"/>
-                            <constraint firstItem="BNP-5l-4AC" firstAttribute="leading" secondItem="nVT-Y5-TCa" secondAttribute="leading" id="nHK-Ct-vNS"/>
+                            <constraint firstItem="4e2-99-nC9" firstAttribute="top" secondItem="nVT-Y5-TCa" secondAttribute="top" constant="162" id="hXm-q3-eup"/>
                             <constraint firstItem="aEO-IT-Fv5" firstAttribute="bottom" secondItem="nVT-Y5-TCa" secondAttribute="bottom" id="sWi-1P-5DM"/>
                             <constraint firstItem="nVT-Y5-TCa" firstAttribute="trailing" secondItem="4e2-99-nC9" secondAttribute="trailing" constant="38" id="uAw-tm-4C4"/>
+                            <constraint firstItem="nVT-Y5-TCa" firstAttribute="trailing" secondItem="rIO-0g-WU3" secondAttribute="trailing" constant="70" id="ugq-ct-vVw"/>
+                            <constraint firstItem="rIO-0g-WU3" firstAttribute="top" secondItem="nVT-Y5-TCa" secondAttribute="top" constant="470" id="uq6-Dg-3SN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L54-4i-mZv"/>
@@ -1523,7 +1514,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
-        <segue reference="gxM-zT-mP8"/>
+        <segue reference="KaQ-78-0gl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
