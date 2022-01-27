@@ -331,7 +331,7 @@ class DiaryDataAccessLayer {
         var managedReflectList:[NSManagedObject] = []
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataReflection")
-        fetchRequest.predicate = NSPredicate(format: "ANY refExistIn.diary_date = %@", argumentArray: [diary.date!])
+        fetchRequest.predicate = NSPredicate(format: "ANY refExistsIn.diary_date = %@", argumentArray: [diary.date!])
         do{
             managedReflectList = try context.fetch(fetchRequest)
             let title = managedReflectList[0].value(forKeyPath: "ref_title") as! String

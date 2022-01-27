@@ -144,6 +144,19 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     }
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")
+        var boolCheck = false
+        var position:Int?
+        var i = 0
+        while i < tagsPressed.count {
+            if (tagsPressed[i] == title){
+                boolCheck = true
+                position = i
+            }
+            i+=1
+        }
+        if (boolCheck) {
+            tagsPressed.remove(at: position!)
+        }
         sender.removeTagView(tagView)
     }
 }
