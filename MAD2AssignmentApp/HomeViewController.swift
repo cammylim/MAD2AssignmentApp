@@ -33,13 +33,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set background image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home-bg.svg")!)
+        
+        //set day and date labels
         dayLabel.text = DiaryCalendar().dayText(date: selectedDate) + ","
-        dateLabel.text = DiaryCalendar().monthText(date: selectedDate) + " " + String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
+        dateLabel.text = DiaryCalendar().monthText(date: selectedDate) + " " + String(DiaryCalendar().dayOfMonth(date: selectedDate))
+        
+        //configure the rest of the page
         diaryEntries = diaryDAL.RetrieveAllDiaryEntries()
         setGreetingView()
         setCellsView()
         setMonthView()
+        
+        //update collectionview
         collectionView.reloadData()
         
         // quote of the day
@@ -63,17 +70,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //update the page
         diaryEntries = diaryDAL.RetrieveAllDiaryEntries()
         setGreetingView()
         setCalendarColor()
         collectionView.reloadData()
     }
     
+    //when "Enter Mood" button is clicked
     @IBAction func moodEntry(_ sender: Any) {
         self.performSegue(withIdentifier: "moodDiaryDetail", sender: self)
-        
     }
     
+    //set the greeting view
     func setGreetingView(){
         var greetTime:String = ""
         var greetName:String = ""
@@ -93,6 +102,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         greetingLabel.text = greetTime + greetName
     }
     
+    //set the size of the cells
     func setCellsView(){
         let width = (collectionView.frame.size.width - 2) / 8
         let height = (collectionView.frame.size.height - 2) / 8
@@ -102,6 +112,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
+    //set the month and year labels, set the totalDays value for cell numbers allocation
     func setMonthView(){
         totalDays.removeAll()
         let totalDaysInMonth = DiaryCalendar().totalDaysInMonth(date:selectedDate)
@@ -125,6 +136,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.reloadData()
     }
     
+    //set the list of feeling-colors on the calendar
     func setCalendarColor(){
         diaryEntriesFilled=[]
         feelingsFilled=[]
@@ -132,7 +144,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         while i < diaryEntries!.count{
             let diaryDate:Date = diaryEntries![i].date!
             if(DiaryCalendar().monthText(date: diaryDate) == DiaryCalendar().monthText(date: selectedDate)){
-                diaryEntriesFilled?.append(String(DiaryCalendar().totalDaysOfMonth(date: diaryDate)))
+                diaryEntriesFilled?.append(String(DiaryCalendar().dayOfMonth(date: diaryDate)))
                 feelingsFilled?.append(diaryEntries![i].feeling!)
             }
             i+=1
@@ -140,12 +152,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     //Collection View Functions
+    //set number of items in the collectionview
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return totalDays.count
     }
     
+    //set view for each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaCell", for: indexPath) as! DiaryCell
+        
+        //set cell design
         cell.day.text = totalDays[indexPath.item]
         cell.backgroundColor = UIColor.clear
         if (totalDays[indexPath.item] != ""){
@@ -154,6 +170,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             var i:Int = 0
             while i < diaryEntriesFilled!.count{
                 if (diaryEntriesFilled![i] == totalDays[indexPath.item]){
+                    //set the backgroundcolor of the cell
                     cell.backgroundColor = UIColor(hexString: feelingsFilled![i])
                 }
                 i+=1
@@ -162,12 +179,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
+    //if cell/day is selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (self.totalDays[indexPath.row] != ""){
             self.performSegue(withIdentifier: "diaryDetail", sender: self)
         }
     }
     
+    //prepare values for the next viewcontroller in the respective segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let dayVC = segue.destination as? DayViewController else{
             return
@@ -179,7 +198,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dayVC.selectedDay = selectedDay
         }
         else if (segue.identifier == "moodDiaryDetail"){
-            selectedDay = String(DiaryCalendar().totalDaysOfMonth(date: selectedDate))
+            selectedDay = String(DiaryCalendar().dayOfMonth(date: selectedDate))
             dayVC.selectedDay = selectedDay
         }
         dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
@@ -187,6 +206,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         dayVC.selectedDate = DiaryCalendar().StringtoDate(string: (selectedDay! + "/" +  DiaryCalendar().monthText(date: selectedDate) + "/" + DiaryCalendar().yearText(date: selectedDate)))
     }
     
+    //perform functions before performing segue
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier != "viewProfile") {
             let indexPaths = self.collectionView.indexPathsForSelectedItems!
@@ -204,11 +224,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    //when previousMonth button is clicked, minus the month
     @IBAction func previousMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().minusMonth(date: selectedDate)
         setMonthView()
     }
     
+    //when nextMonth button is clicked, add the month
     @IBAction func nextMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().addMonth(date: selectedDate)
         setMonthView()
@@ -219,6 +241,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 }
 
+//customization of UIColors via hex values
 extension UIColor {
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
