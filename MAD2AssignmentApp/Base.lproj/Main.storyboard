@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9nP-ji-EBk">
-                                <rect key="frame" x="131.33333333333334" y="673" width="112.66666666666666" height="25"/>
+                                <rect key="frame" x="110.33333333333333" y="673" width="154.66666666666669" height="25"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
@@ -124,7 +124,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2ku-UD-S5R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BcO-jB-DjM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2ku-UD-S5R" secondAttribute="trailing" constant="24" id="MSR-3O-aXe"/>
                             <constraint firstItem="9nP-ji-EBk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WIi-m9-beM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2ku-UD-S5R" secondAttribute="bottom" id="c0v-KF-P2F"/>
@@ -172,13 +171,13 @@
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your date of birth?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hf-CI-Bsn">
-                                <rect key="frame" x="24" y="539" width="327" height="24"/>
+                                <rect key="frame" x="24" y="552" width="327" height="24"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                 <color key="textColor" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 01-01-1999" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM8-uO-mgu">
-                                <rect key="frame" x="24" y="571" width="327" height="48"/>
+                                <rect key="frame" x="24" y="584" width="327" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="kFf-E7-PRc"/>
@@ -210,6 +209,18 @@
                                     <constraint firstAttribute="width" constant="272" id="wcY-LF-640"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYN-Dd-VtM">
+                                <rect key="frame" x="24" y="523" width="327" height="17"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGb-uH-K1R">
+                                <rect key="frame" x="24" y="636" width="327" height="17"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NOk-DB-yWL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -217,14 +228,17 @@
                             <constraint firstItem="ZZ4-J0-2QR" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="2H0-p8-vli"/>
                             <constraint firstItem="alT-3b-fMY" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="2cO-Ag-f7k"/>
                             <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="alT-3b-fMY" secondAttribute="trailing" constant="24" id="4L8-eP-ocg"/>
+                            <constraint firstItem="TYN-Dd-VtM" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="5qX-Ab-K3t"/>
                             <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="ukN-mB-FjC" secondAttribute="trailing" constant="24" id="7Zs-Jc-Yfj"/>
                             <constraint firstItem="3Hf-CI-Bsn" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="ASV-tj-RqW"/>
-                            <constraint firstItem="3Hf-CI-Bsn" firstAttribute="top" secondItem="ukN-mB-FjC" secondAttribute="bottom" constant="20" id="NM0-ZD-ZS9"/>
+                            <constraint firstItem="3Hf-CI-Bsn" firstAttribute="top" secondItem="TYN-Dd-VtM" secondAttribute="bottom" constant="12" id="NM0-ZD-ZS9"/>
                             <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="ZZ4-J0-2QR" secondAttribute="trailing" constant="24" id="TsX-Mj-AZq"/>
+                            <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="TYN-Dd-VtM" secondAttribute="trailing" constant="24" id="UIz-sP-Dg6"/>
                             <constraint firstItem="zfV-JY-Ieg" firstAttribute="top" secondItem="NOk-DB-yWL" secondAttribute="top" constant="32" id="Vl2-Dq-If6"/>
                             <constraint firstItem="alT-3b-fMY" firstAttribute="top" secondItem="c8p-kX-oPe" secondAttribute="bottom" constant="50" id="WTX-Cp-l8L"/>
                             <constraint firstItem="NOk-DB-yWL" firstAttribute="bottom" secondItem="ZZ4-J0-2QR" secondAttribute="bottom" id="ZFq-cZ-f5G"/>
                             <constraint firstItem="YM8-uO-mgu" firstAttribute="top" secondItem="3Hf-CI-Bsn" secondAttribute="bottom" constant="8" id="b9U-66-KUN"/>
+                            <constraint firstItem="HGb-uH-K1R" firstAttribute="top" secondItem="YM8-uO-mgu" secondAttribute="bottom" constant="4" id="jur-cO-lVN"/>
                             <constraint firstItem="c8p-kX-oPe" firstAttribute="top" secondItem="zfV-JY-Ieg" secondAttribute="bottom" constant="26" id="jxx-e5-khZ"/>
                             <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="YM8-uO-mgu" secondAttribute="trailing" constant="24" id="lSY-aS-Sg3"/>
                             <constraint firstItem="zfV-JY-Ieg" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="lii-d0-OkA"/>
@@ -234,11 +248,16 @@
                             <constraint firstItem="c8p-kX-oPe" firstAttribute="centerX" secondItem="d6Q-Ie-y7j" secondAttribute="centerX" id="oVN-tA-c0U"/>
                             <constraint firstItem="YM8-uO-mgu" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="tgH-vD-8ih"/>
                             <constraint firstItem="ukN-mB-FjC" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="uzT-Jv-79i"/>
+                            <constraint firstItem="TYN-Dd-VtM" firstAttribute="top" secondItem="ukN-mB-FjC" secondAttribute="bottom" constant="4" id="vXs-m4-PmI"/>
+                            <constraint firstItem="NOk-DB-yWL" firstAttribute="trailing" secondItem="HGb-uH-K1R" secondAttribute="trailing" constant="24" id="wdd-3b-7Qn"/>
+                            <constraint firstItem="HGb-uH-K1R" firstAttribute="leading" secondItem="NOk-DB-yWL" secondAttribute="leading" constant="24" id="yOU-nQ-BFE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dobField" destination="YM8-uO-mgu" id="OZh-RP-loM"/>
+                        <outlet property="dobMsg" destination="HGb-uH-K1R" id="wMz-Fb-hbe"/>
                         <outlet property="nameField" destination="ukN-mB-FjC" id="WZZ-6D-3QJ"/>
+                        <outlet property="nameMsg" destination="TYN-Dd-VtM" id="qKX-KM-I42"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGe-bW-wuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,13 +292,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 11." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHu-hE-xVg">
-                                <rect key="frame" x="26" y="114" width="147.33333333333334" height="36"/>
+                                <rect key="frame" x="26" y="114" width="156.33333333333334" height="35"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good evening, user." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ype-ez-jVy">
-                                <rect key="frame" x="26" y="158" width="314" height="24"/>
+                                <rect key="frame" x="26" y="158" width="314" height="23.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="era-Av-Nw6"/>
                                 </constraints>
@@ -291,19 +310,19 @@
                                 <rect key="frame" x="37" y="189" width="301" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote of the Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaZ-au-att">
-                                        <rect key="frame" x="0.0" y="12" width="301" height="18"/>
+                                        <rect key="frame" x="0.0" y="12.000000000000002" width="301" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
                                         <color key="textColor" red="0.91423324083055557" green="0.62514513332127175" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djq-qI-1Wq">
-                                        <rect key="frame" x="8" y="42" width="285" height="17"/>
+                                        <rect key="frame" x="8" y="41.666666666666657" width="285" height="16.333333333333329"/>
                                         <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX0-bS-wVs">
-                                        <rect key="frame" x="8" y="65" width="285" height="14.666666666666671"/>
+                                        <rect key="frame" x="8" y="64" width="285" height="14"/>
                                         <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="12"/>
                                         <color key="textColor" red="0.2473189831" green="0.23745346070000001" blue="0.32943052049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -408,7 +427,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-kE-wWf">
-                                                    <rect key="frame" x="59.666666666666657" y="55" width="9" height="18"/>
+                                                    <rect key="frame" x="59.666666666666664" y="55.333333333333336" width="8.6666666666666643" height="17.666666666666664"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -482,7 +501,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hB-io-bq8">
-                                <rect key="frame" x="24" y="322.66666666666669" width="327" height="19.333333333333314"/>
+                                <rect key="frame" x="24" y="323.33333333333331" width="327" height="18.666666666666686"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -953,7 +972,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwQ-g7-HH3">
-                                <rect key="frame" x="29" y="555" width="66" height="18"/>
+                                <rect key="frame" x="29" y="553.33333333333337" width="66" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="ydP-iw-Emg"/>
                                 </constraints>
@@ -962,7 +981,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Egg Sandwitch for Breakfast" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-YP-sPM">
-                                <rect key="frame" x="29" y="495" width="317" height="48"/>
+                                <rect key="frame" x="29" y="493.33333333333326" width="317" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="M4E-zQ-8ES"/>
@@ -971,7 +990,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1T-SI-sHn">
-                                <rect key="frame" x="29" y="473" width="59" height="18"/>
+                                <rect key="frame" x="29" y="471.33333333333331" width="59" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="2Fk-Kn-bT8"/>
                                 </constraints>
@@ -980,7 +999,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jV1-LL-l24">
-                                <rect key="frame" x="29" y="215" width="317" height="233"/>
+                                <rect key="frame" x="29" y="213.33333333333337" width="317" height="233"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="317" id="SeO-CS-5St"/>
@@ -995,13 +1014,13 @@
                                 </imageReference>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any special moments? Add a picture!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xh-aQ-cmH">
-                                <rect key="frame" x="29" y="125" width="317" height="60"/>
+                                <rect key="frame" x="29" y="124.99999999999999" width="317" height="58.333333333333329"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="25"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Woodlands" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W54-mf-big">
-                                <rect key="frame" x="29" y="577" width="317" height="48"/>
+                                <rect key="frame" x="29" y="575.33333333333337" width="317" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="VyB-P4-SGJ"/>
@@ -1029,7 +1048,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-q6-6oz">
-                                <rect key="frame" x="29" y="215" width="317" height="233"/>
+                                <rect key="frame" x="29" y="213.33333333333337" width="317" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="233" id="sTM-2j-2DO"/>
                                 </constraints>
@@ -1121,19 +1140,19 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Reflection (Optional)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvG-Zp-dMW">
-                                <rect key="frame" x="29" y="125" width="317" height="60"/>
+                                <rect key="frame" x="29" y="124.99999999999999" width="317" height="58.333333333333329"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="25"/>
                                 <color key="textColor" red="0.19741320609999999" green="0.42728644609999999" blue="0.76477223630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv2-z9-wPc">
-                                <rect key="frame" x="29" y="215" width="29.333333333333329" height="18"/>
+                                <rect key="frame" x="29" y="213.33333333333334" width="29.333333333333329" height="18"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
                                 <color key="textColor" red="0.19741320609999999" green="0.42728644609999999" blue="0.76477223630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGN-hP-j3T">
-                                <rect key="frame" x="29" y="297" width="35" height="18"/>
+                                <rect key="frame" x="29" y="295.33333333333331" width="35" height="18"/>
                                 <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
                                 <color key="textColor" red="0.19741320609999999" green="0.42728644609999999" blue="0.76477223630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -1163,7 +1182,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add title here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xcd-Kc-Uy9">
-                                <rect key="frame" x="29" y="237" width="317" height="48"/>
+                                <rect key="frame" x="29" y="235.33333333333337" width="317" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="zYx-0B-H75"/>
                                 </constraints>
@@ -1171,7 +1190,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Add body here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-ID-dFq">
-                                <rect key="frame" x="29" y="319" width="317" height="180"/>
+                                <rect key="frame" x="29" y="317.33333333333331" width="317" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="FKq-PC-d1c"/>
                                 </constraints>
@@ -1502,6 +1521,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="bsN-zZ-T8X"/>
         <segue reference="AJj-m6-9HT"/>
         <segue reference="28c-J8-IoM"/>
     </inferredMetricsTieBreakers>
@@ -1529,6 +1549,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>

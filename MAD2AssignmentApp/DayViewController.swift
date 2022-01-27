@@ -50,19 +50,35 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         return cell
     }
     
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        if (diaryDAL.IfDiaryExist(date: selectedDate!)) {
+//            diary = diaryDAL.RetrieveDiaryToday(date: selectedDate!)
+//
+//            // select existing feeling
+//            if (diaryDAL.IfFeelingExist(diary: diary!)) {
+//                let f: Feelings = diaryDAL.RetrieveFeelinginDiary(diary: diary!)
+//                selectedFeeling = f.feeling_name!
+//                cell.layer.cornerRadius = 8
+//                cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
+//            }
+//        }
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! FeelingsCell
-        if (cell.backgroundColor == UIColor.clear){
-            if(selectedFeeling==""){
+        
+        if (cell.backgroundColor == UIColor.clear){            
+            if (selectedFeeling==""){
                 selectedFeeling = cell.feelingsLabel.text!
                 cell.layer.cornerRadius = 8
                 cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
             }
-        }else{
+        } else {
             cell.backgroundColor = UIColor.clear
             selectedFeeling = ""
         }
     }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(!(selectedFeeling=="")){
             
@@ -79,6 +95,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         }
         return false
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goToDay2"){
             guard let day2VC = segue.destination as? Day2ViewController else{
@@ -89,6 +106,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         }
     }
 }
+
 extension ViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 141, height: 85)

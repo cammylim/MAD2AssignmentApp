@@ -70,6 +70,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.performSegue(withIdentifier: "moodDiaryDetail", sender: self)
         
     }
+    
     func setGreetingView(){
         var greetTime:String = ""
         var greetName:String = ""
@@ -88,6 +89,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         greetName = diaryDAL.RetrieveUser().name!
         greetingLabel.text = greetTime + greetName
     }
+    
     func setCellsView(){
         let width = (collectionView.frame.size.width - 2) / 8
         let height = (collectionView.frame.size.height - 2) / 8
@@ -96,6 +98,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         flowLayout.itemSize = CGSize(width: width, height: height)
         
     }
+    
     func setMonthView(){
         totalDays.removeAll()
         let totalDaysInMonth = DiaryCalendar().totalDaysInMonth(date:selectedDate)
@@ -118,6 +121,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setCalendarColor()
         collectionView.reloadData()
     }
+    
     func setCalendarColor(){
         diaryEntriesFilled=[]
         feelingsFilled=[]
@@ -131,10 +135,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             i+=1
         }
     }
+    
     //Collection View Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return totalDays.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaCell", for: indexPath) as! DiaryCell
         cell.day.text = totalDays[indexPath.item]
@@ -152,6 +158,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         return cell
     }
+    
     //TODO: specify which cell is clickable
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (self.totalDays[indexPath.row] != ""){
@@ -176,6 +183,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         dayVC.selectedMonth = DiaryCalendar().monthText(date: selectedDate)
         dayVC.selectedYear = DiaryCalendar().yearText(date: selectedDate)
     }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier != "viewProfile") {
             let indexPaths = self.collectionView.indexPathsForSelectedItems!
@@ -195,18 +203,22 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return true
         }
     }
+    
     @IBAction func previousMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().minusMonth(date: selectedDate)
         setMonthView()
     }
+    
     @IBAction func nextMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().addMonth(date: selectedDate)
         setMonthView()
     }
+    
     override open var shouldAutorotate: Bool{
         return false
     }
 }
+
 extension UIColor {
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
