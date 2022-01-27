@@ -63,7 +63,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        diaryEntries = diaryDAL.RetrieveAllDiaryEntries()
         setGreetingView()
+        setCalendarColor()
+        collectionView.reloadData()
     }
     
     @IBAction func moodEntry(_ sender: Any) {
@@ -118,7 +121,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         monthLabel.text = DiaryCalendar().monthText(date: selectedDate)
         yearLabel.text = DiaryCalendar().yearText(date: selectedDate)
-        setCalendarColor()
+        
         collectionView.reloadData()
     }
     
@@ -159,7 +162,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    //TODO: specify which cell is clickable
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (self.totalDays[indexPath.row] != ""){
             self.performSegue(withIdentifier: "diaryDetail", sender: self)
@@ -197,7 +199,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             } else {
                 return false
             }
-            
             return false
         } else {
             return true

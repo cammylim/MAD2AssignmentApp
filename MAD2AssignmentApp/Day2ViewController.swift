@@ -102,12 +102,12 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
                 i+=1
             }
             entryMsg.text = "Entry Completion: 2/4"
-            entryMsg.textColor = UIColor(hexString: "#1158BF")
+            entryMsg.textColor = UIColor(hexString: "1158BF")
             boolCheck = true
         }
         else if(identifier == "backToHome"){
             entryMsg.text = "Entry Completion: 2/4"
-            entryMsg.textColor = UIColor(hexString: "#1158BF")
+            entryMsg.textColor = UIColor(hexString: "1158BF")
             boolCheck = true
         }
         else{

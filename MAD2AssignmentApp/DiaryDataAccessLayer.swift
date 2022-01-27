@@ -107,6 +107,7 @@ class DiaryDataAccessLayer {
                 let diary:Diary = Diary(feeling: feeling, date: date)
                 diaryList.append(diary)
             }
+            try context.save()
         } catch let error as NSError{
             print("Could not retrieve all diary entries. \(error), \(error.userInfo)")
         }
@@ -130,25 +131,6 @@ class DiaryDataAccessLayer {
             print("Could not delete. \(error) \(error.userInfo)")
         }
     }
-    
-    func DiaryExistinUser(user:User, diary:Diary)->Bool{
-        var exist:Bool = false
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
-        if(UserExist()){
-            fetchRequest.predicate = NSPredicate(format: "ANY existsIn.diary_date == %@ AND user_name == %@", diary.date! as CVarArg, user.name!)
-            do{
-                let dList:[NSManagedObject] = try context.fetch(fetchRequest)
-                if !(dList.isEmpty){
-                    exist = true
-                }
-            } catch let error as NSError{
-                print("Could not fetch diary exist in user. \(error), \(error.userInfo)")
-            }
-        }
-        return exist
-    }
-        
     
     //Add Predicate Function - User
     func addDiaryToUser(user:User, diary:Diary){
@@ -234,7 +216,6 @@ class DiaryDataAccessLayer {
                 dList = try context.fetch(fetchRequest)
                 let d = dList[0] as! CoreDataDiary
                 d.addToHasSpecial(cdSpecial)
-                print("special added")
                 try context.save()
             } catch let error as NSError{
                 print("Could not add. \(error) \(error.userInfo)")
@@ -257,7 +238,6 @@ class DiaryDataAccessLayer {
                 dList = try context.fetch(fetchRequest)
                 let d = dList[0] as! CoreDataDiary
                 d.addToHasReflect(cdRef)
-                print("reflect added")
                 try context.save()
             } catch let error as NSError{
                 print("Could not add. \(error) \(error.userInfo)")
@@ -285,7 +265,24 @@ class DiaryDataAccessLayer {
         }
         return diaryList
     }
-    
+    func RetrieveDiaryinUser(user:User, diary_date:Date)->Diary{
+        var diary:Diary?
+        var dList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
+        if(UserExist()){
+            fetchRequest.predicate = NSPredicate(format: "ANY existsIn.user_name == %@ AND diary_date == %@", user.name!, diary_date as CVarArg)
+            do{
+                dList = try context.fetch(fetchRequest)
+                let feeling = dList[0].value(forKeyPath: "diary_feeling") as! String
+                let date = dList[0].value(forKeyPath: "diary_date") as! Date
+                diary = Diary(feeling: feeling, date: date)
+            } catch let error as NSError{
+                print("Could not retrieve diary entry in user. \(error) \(error.userInfo)")
+            }
+        }
+        return diary!
+    }
     func RetrieveFeelinginDiary(diary:Diary)->Feelings{
         var feeling:Feelings?
         var managedFeelingList:[NSManagedObject] = []
@@ -366,6 +363,24 @@ class DiaryDataAccessLayer {
     }
     
     //Check IF exists
+    func DiaryExistinUser(user:User, diary_date:Date)->Bool{
+        var exist:Bool = false
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
+        if(UserExist()){
+            fetchRequest.predicate = NSPredicate(format: "ANY existsIn.user_name == %@ AND diary_date == %@", user.name!, diary_date as CVarArg)
+            do{
+                let dList:[NSManagedObject] = try context.fetch(fetchRequest)
+                if !(dList.isEmpty){
+                    exist = true
+                }
+            } catch let error as NSError{
+                print("Could not fetch diary exist in user. \(error), \(error.userInfo)")
+            }
+        }
+        return exist
+    }
+    
     func BoolActivitiesinDiary(diary:Diary)->Bool{
         var activityBool:Bool = false
         var managedActivityList:[NSManagedObject]=[]
@@ -383,4 +398,43 @@ class DiaryDataAccessLayer {
         }
         return activityBool
     }
+    
+    //Update Functions
+    func UpdateFeelinginDiary(feeling_name:String, diary_date:Date){
+        var managedDiaryList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataDiary")
+        do{
+            managedDiaryList = try context.fetch(fetchRequest)
+            for m in managedDiaryList{
+                let mDate = m.value(forKeyPath: "diary_date") as! Date
+                if mDate == diary_date{
+                    m.setValue(feeling_name, forKeyPath: "diary_feeling")
+                    m.setValue(diary_date, forKeyPath: "diary_date")
+                    print(m.value(forKeyPath: "diary_feeling"))
+                }
+            }
+            try context.save()
+        } catch let error as NSError{
+            print("Could not update feeling in diary. \(error) \(error.userInfo)")
+        }
+    }
+    
+    func UpdateFeelinginFeeling(feeling:Feelings, diary_date:Date){
+        var managedFeelingList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataFeelings")
+        fetchRequest.predicate = NSPredicate(format: "ANY feelingsExistIn.diary_date = %@", diary_date as CVarArg)
+        do{
+            managedFeelingList = try context.fetch(fetchRequest)
+            managedFeelingList[0].setValue(feeling.feeling_name, forKeyPath: "feeling_name")
+            managedFeelingList[0].setValue(feeling.feeling_rgb, forKeyPath: "feeling_rgb")
+            managedFeelingList[0].setValue(feeling.feeling_date, forKeyPath: "feeling_date")
+            managedFeelingList[0].setValue(feeling.feeling_image, forKeyPath: "feeling_image")
+            try context.save()
+        } catch let error as NSError{
+            print("Could not fetch. \(error) \(error.userInfo)")
+        }
+    }
 }
+

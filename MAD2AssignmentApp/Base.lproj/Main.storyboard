@@ -1522,6 +1522,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="bsN-zZ-T8X"/>
         <segue reference="AJj-m6-9HT"/>
         <segue reference="KaQ-78-0gl"/>
     </inferredMetricsTieBreakers>
