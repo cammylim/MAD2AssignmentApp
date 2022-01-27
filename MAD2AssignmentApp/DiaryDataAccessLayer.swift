@@ -306,6 +306,26 @@ class DiaryDataAccessLayer {
         return feeling!
     }
     
+    func RetrieveActivitiesinDiary(diary:Diary)->[Activities]{
+        var activityList:[Activities]?
+        var managedActivityList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataActivities")
+        fetchRequest.predicate = NSPredicate(format: "ANY actExistsIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedActivityList = try context.fetch(fetchRequest)
+            for m in managedActivityList{
+                let name = m.value(forKeyPath: "act_name") as! String
+                let date = m.value(forKeyPath: "act_date") as! Date
+                let activity = Activities(act_name: name, act_date: date)
+                activityList?.append(activity)
+            }
+        } catch let error as NSError{
+            print("Could not fetch activities in diary. \(error), \(error.userInfo)")
+        }
+        return activityList!
+    }
+    
     func RetrieveSpecialinDiary(diary:Diary)->Special{
         var special:Special?
         var managedSpecialList:[NSManagedObject]=[]
@@ -343,5 +363,24 @@ class DiaryDataAccessLayer {
             print("Could not fetch. \(error) \(error.userInfo)")
         }
         return reflect!
+    }
+    
+    //Check IF exists
+    func BoolActivitiesinDiary(diary:Diary)->Bool{
+        var activityBool:Bool = false
+        var managedActivityList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataActivities")
+        fetchRequest.predicate = NSPredicate(format: "ANY actExistsIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedActivityList = try context.fetch(fetchRequest)
+            print(managedActivityList.count)
+            if(managedActivityList.count > 0){
+                activityBool = true
+            }
+        } catch let error as NSError{
+            print("Could not fetch activities in diary. \(error), \(error.userInfo)")
+        }
+        return activityBool
     }
 }

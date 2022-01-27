@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9nP-ji-EBk">
-                                <rect key="frame" x="110.33333333333333" y="673" width="154.66666666666669" height="25"/>
+                                <rect key="frame" x="131.33333333333334" y="673" width="112.66666666666666" height="25"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
@@ -700,6 +700,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="L3O-pi-Wec"/>
                     <connections>
+                        <outlet property="entryMsg" destination="cCh-l2-NUE" id="Ifj-BM-lrb"/>
                         <outlet property="feelingsCollectionView" destination="0ys-pb-PyL" id="Gze-Nl-HSI"/>
                     </connections>
                 </viewController>
@@ -905,6 +906,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l02-ZA-GX7"/>
                     <connections>
+                        <outlet property="entryMsg" destination="mja-9e-HO8" id="1yR-9j-1zB"/>
                         <outlet property="otherTagsField" destination="RA4-KC-4OD" id="FBi-nV-s4c"/>
                         <outlet property="tagListView" destination="OfL-2t-BGB" id="Lg0-S2-NBN"/>
                     </connections>
@@ -1521,7 +1523,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
-        <segue reference="28c-J8-IoM"/>
+        <segue reference="KaQ-78-0gl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>

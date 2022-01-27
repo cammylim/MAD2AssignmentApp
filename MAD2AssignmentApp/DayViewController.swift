@@ -16,11 +16,13 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     var selectedDate:Date?
     var feelingsList:[Feelings] = []
     var selectedFeeling:String = ""
+    var selectedFeelingCell:UICollectionViewCell?
     var diary:Diary?
     
     var diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     @IBOutlet weak var feelingsCollectionView: UICollectionView!
+    @IBOutlet weak var entryMsg: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,29 +52,18 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if (diaryDAL.IfDiaryExist(date: selectedDate!)) {
-//            diary = diaryDAL.RetrieveDiaryToday(date: selectedDate!)
-//
-//            // select existing feeling
-//            if (diaryDAL.IfFeelingExist(diary: diary!)) {
-//                let f: Feelings = diaryDAL.RetrieveFeelinginDiary(diary: diary!)
-//                selectedFeeling = f.feeling_name!
-//                cell.layer.cornerRadius = 8
-//                cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
-//            }
-//        }
-//    }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! FeelingsCell
         
         if (cell.backgroundColor == UIColor.clear){            
-            if (selectedFeeling==""){
-                selectedFeeling = cell.feelingsLabel.text!
-                cell.layer.cornerRadius = 8
-                cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
+            if (!(selectedFeeling=="")){
+                selectedFeelingCell!.backgroundColor = UIColor.clear
             }
+            selectedFeeling = cell.feelingsLabel.text!
+            selectedFeelingCell = cell
+            cell.layer.cornerRadius = 8
+            cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
         } else {
             cell.backgroundColor = UIColor.clear
             selectedFeeling = ""
@@ -81,7 +72,6 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(!(selectedFeeling=="")){
-            
             var feeling:Feelings?
             var i:Int = 0
             while i < feelingsList.count{
@@ -91,8 +81,12 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
             diary = Diary(feeling: (feeling?.feeling_rgb)!, date: selectedDate!)
             diaryDAL.addDiaryToUser(user: diaryDAL.RetrieveUser(), diary: diary!)
             diaryDAL.addFeelingstoDiary(diary: diary!, feelings: feeling!)
+            entryMsg.text = "Entry Completion: 1/4"
+            entryMsg.textColor = UIColor(hexString: "#1158BF")
             return true
         }
+        entryMsg.text = "How did you feel today?"
+        entryMsg.textColor = UIColor.red
         return false
     }
     

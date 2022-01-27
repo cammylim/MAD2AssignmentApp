@@ -21,6 +21,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var otherTagsField: UITextField!
+    @IBOutlet weak var entryMsg: UILabel!
     let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     override func viewDidLoad() {
@@ -78,7 +79,9 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             guard segue.destination is HomeViewController else{
                 return
             }
-            diaryDAL.deleteDiary(diary_date: selectedDate!)
+            if(!(diaryDAL.BoolActivitiesinDiary(diary: diary!))){
+                diaryDAL.deleteDiary(diary_date: selectedDate!)
+            }
         } else if (segue.identifier == "goToDay3"){
             guard let day3VC = segue.destination as? Day3ViewConroller else{
                 return
@@ -88,7 +91,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        var boolCheck:Bool = false
+        var boolCheck:Bool?
         if(tagsPressed.count > 0){
             var i:Int=0
             var act:Activities?
@@ -98,12 +101,21 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
                 diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
                 i+=1
             }
+            entryMsg.text = "Entry Completion: 2/4"
+            entryMsg.textColor = UIColor(hexString: "#1158BF")
             boolCheck = true
         }
         else if(identifier == "backToHome"){
+            entryMsg.text = "Entry Completion: 2/4"
+            entryMsg.textColor = UIColor(hexString: "#1158BF")
             boolCheck = true
         }
-        return boolCheck
+        else{
+            entryMsg.text = "What did you do today?"
+            entryMsg.textColor = UIColor.red
+            boolCheck = false
+        }
+        return boolCheck!
     }
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
