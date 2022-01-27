@@ -189,10 +189,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier != "viewProfile") {
             let indexPaths = self.collectionView.indexPathsForSelectedItems!
-            print("???: \(indexPaths)")
             if (!indexPaths.isEmpty) {
                 let indexPath = indexPaths[0]
-                print("something: \(indexPath) & \(indexPath.row)")
                 if (self.totalDays[indexPath.row] != ""){
                     return true
                 }
