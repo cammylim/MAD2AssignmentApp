@@ -112,6 +112,9 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
         if (imageChanged == true || captionField.text != "" || locationField.text != "") {
             let special:Special = Special(special_caption: captionField.text!, special_location: locationField.text!, special_date: selectedDate!, special_image: imageUpload.image!)
             diaryDAL.addSpecialtoDiary(diary: diary!, special: special)
+            let spec = diaryDAL.RetrieveSpecialinDiary(diary: diary!)
+            print(spec.special_caption)
+            print(spec.special_date)
         }
     }
     

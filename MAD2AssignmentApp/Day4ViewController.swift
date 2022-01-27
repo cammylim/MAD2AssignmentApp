@@ -36,6 +36,9 @@ class Day4ViewController: UIViewController {
         if (titleField.text != "" || bodyField.text != "") {
             let reflection: Reflection = Reflection(ref_title: titleField.text!, ref_body: bodyField.text, ref_date: selectedDate!)
             diaryDAL.addReflectiontoDiary(diary: diary!, ref: reflection)
+            let reflect = diaryDAL.RetrieveReflectioninDiary(diary: diary!)
+            print(reflect.ref_title)
+            print(reflect.ref_date)
         }
     }
     

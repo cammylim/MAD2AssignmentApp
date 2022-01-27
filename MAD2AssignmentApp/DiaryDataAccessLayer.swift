@@ -257,7 +257,7 @@ class DiaryDataAccessLayer {
                 dList = try context.fetch(fetchRequest)
                 let d = dList[0] as! CoreDataDiary
                 d.addToHasReflect(cdRef)
-                
+                print("reflect added")
                 try context.save()
             } catch let error as NSError{
                 print("Could not add. \(error) \(error.userInfo)")
@@ -304,5 +304,44 @@ class DiaryDataAccessLayer {
             print("Could not fetch. \(error) \(error.userInfo)")
         }
         return feeling!
+    }
+    
+    func RetrieveSpecialinDiary(diary:Diary)->Special{
+        var special:Special?
+        var managedSpecialList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataSpecial")
+        fetchRequest.predicate = NSPredicate(format: "ANY speExistsIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedSpecialList = try context.fetch(fetchRequest)
+            let caption = managedSpecialList[0].value(forKeyPath: "special_caption") as! String
+            let date = managedSpecialList[0].value(forKeyPath: "special_date") as! Date
+            let image = managedSpecialList[0].value(forKeyPath: "special_image") as! UIImage
+            let location = managedSpecialList[0].value(forKeyPath: "special_location") as! String
+            print(caption)
+            special = Special(special_caption: caption, special_location: location, special_date: date, special_image: image)
+        } catch let error as NSError{
+            print("Could not fetch special inputs in diary. \(error) \(error.userInfo)")
+        }
+        return special!
+    }
+    
+    func RetrieveReflectioninDiary(diary:Diary)->Reflection{
+        var reflect:Reflection?
+        var managedReflectList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataReflection")
+        fetchRequest.predicate = NSPredicate(format: "ANY refExistIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedReflectList = try context.fetch(fetchRequest)
+            let title = managedReflectList[0].value(forKeyPath: "ref_title") as! String
+            let date = managedReflectList[0].value(forKeyPath: "ref_date") as! Date
+            let body = managedReflectList[0].value(forKeyPath: "ref_body") as! String
+            print(title)
+            reflect = Reflection(ref_title: title, ref_body: body, ref_date: date)
+        } catch let error as NSError{
+            print("Could not fetch. \(error) \(error.userInfo)")
+        }
+        return reflect!
     }
 }
