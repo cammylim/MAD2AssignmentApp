@@ -295,7 +295,6 @@ class DiaryDataAccessLayer {
             let date = managedFeelingList[0].value(forKeyPath: "feeling_date") as! Date
             let image = managedFeelingList[0].value(forKeyPath: "feeling_image") as! String
             let rgb = managedFeelingList[0].value(forKeyPath: "feeling_rgb") as! String
-            print(name)
             feeling = Feelings(feeling_name: name, feeling_rgb: rgb, feeling_image: image, feeling_date: date)
         } catch let error as NSError{
             print("Could not fetch. \(error) \(error.userInfo)")
@@ -335,7 +334,6 @@ class DiaryDataAccessLayer {
             let date = managedSpecialList[0].value(forKeyPath: "special_date") as! Date
             let image =  UIImage(data: managedSpecialList[0].value(forKeyPath: "special_image") as! Data)
             let location = managedSpecialList[0].value(forKeyPath: "special_location") as! String
-            print(caption)
             special = Special(special_caption: caption, special_location: location, special_date: date, special_image: image!)
         } catch let error as NSError{
             print("Could not fetch special inputs in diary. \(error) \(error.userInfo)")
@@ -354,7 +352,6 @@ class DiaryDataAccessLayer {
             let title = managedReflectList[0].value(forKeyPath: "ref_title") as! String
             let date = managedReflectList[0].value(forKeyPath: "ref_date") as! Date
             let body = managedReflectList[0].value(forKeyPath: "ref_body") as! String
-            print(title)
             reflect = Reflection(ref_title: title, ref_body: body, ref_date: date)
         } catch let error as NSError{
             print("Could not fetch. \(error) \(error.userInfo)")
@@ -389,7 +386,6 @@ class DiaryDataAccessLayer {
         fetchRequest.predicate = NSPredicate(format: "ANY actExistsIn.diary_date = %@", argumentArray: [diary.date!])
         do{
             managedActivityList = try context.fetch(fetchRequest)
-            print(managedActivityList.count)
             if(managedActivityList.count > 0){
                 activityBool = true
             }
@@ -397,6 +393,40 @@ class DiaryDataAccessLayer {
             print("Could not fetch activities in diary. \(error), \(error.userInfo)")
         }
         return activityBool
+    }
+    
+    func BoolSpecialinDiary(diary:Diary)->Bool{
+        var specBool:Bool = false
+        var managedSpecialList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataSpecial")
+        fetchRequest.predicate = NSPredicate(format: "ANY speExistsIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedSpecialList = try context.fetch(fetchRequest)
+            if(managedSpecialList.count > 0){
+                specBool = true
+            }
+        } catch let error as NSError{
+            print("Could not fetch activities in diary. \(error), \(error.userInfo)")
+        }
+        return specBool
+    }
+    
+    func BoolReflectioninDiary(diary:Diary)->Bool{
+        var refBool:Bool = false
+        var managedRefList:[NSManagedObject]=[]
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataReflection")
+        fetchRequest.predicate = NSPredicate(format: "ANY refExistsIn.diary_date = %@", argumentArray: [diary.date!])
+        do{
+            managedRefList = try context.fetch(fetchRequest)
+            if(managedRefList.count > 0){
+                refBool = true
+            }
+        } catch let error as NSError{
+            print("Could not fetch activities in diary. \(error), \(error.userInfo)")
+        }
+        return refBool
     }
     
     //Update Functions
@@ -430,6 +460,23 @@ class DiaryDataAccessLayer {
             managedFeelingList[0].setValue(feeling.feeling_rgb, forKeyPath: "feeling_rgb")
             managedFeelingList[0].setValue(feeling.feeling_date, forKeyPath: "feeling_date")
             managedFeelingList[0].setValue(feeling.feeling_image, forKeyPath: "feeling_image")
+            try context.save()
+        } catch let error as NSError{
+            print("Could not fetch. \(error) \(error.userInfo)")
+        }
+    }
+    
+    func UpdateSpecialinSpecial(special:Special, diary_date:Date){
+        var managedSpecialList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataSpecial")
+        fetchRequest.predicate = NSPredicate(format: "ANY speExistsIn.diary_date = %@", diary_date as CVarArg)
+        do{
+            managedSpecialList = try context.fetch(fetchRequest)
+            managedSpecialList[0].setValue(special.special_caption, forKeyPath: "special_caption")
+            managedSpecialList[0].setValue(special.special_date, forKeyPath: "special_date")
+            managedSpecialList[0].setValue(special.special_location, forKeyPath: "special_location")
+            managedSpecialList[0].setValue(special.special_image?.pngData(), forKeyPath: "special_image")
             try context.save()
         } catch let error as NSError{
             print("Could not fetch. \(error) \(error.userInfo)")

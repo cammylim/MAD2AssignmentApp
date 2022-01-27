@@ -14,6 +14,7 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     var selectedDate: Date?
     var diary: Diary?
     var imageChanged = false
+    var special:Special?
     @IBOutlet weak var imageUpload: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var locationField: UITextField!
@@ -21,9 +22,19 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
-        
+        if(diaryDAL.BoolSpecialinDiary(diary: diary!)){
+            special = diaryDAL.RetrieveSpecialinDiary(diary: diary!)
+            if !(special?.special_caption == nil){
+                captionField.text = special?.special_caption
+            }
+            if !(special?.special_location == nil){
+                locationField.text = special?.special_location
+            }
+            if !(special?.special_image == nil){
+                imageUpload.image = special?.special_image
+            }
+        }
         // keyboard - shift view up
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -71,7 +82,6 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
-    
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true, completion: nil)
                     
@@ -106,15 +116,30 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
             day4VC.diary = diary
         }
     }
+    // perform required Special functions before performing segue
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if(identifier == "day3ToHome"){
+            if(diaryDAL.BoolSpecialinDiary(diary: diary!)){
+                diaryDAL.UpdateSpecialinSpecial(special: special!, diary_date: selectedDate!)
+            }
+            else{
+                diaryDAL.DeleteActivitiesinDiary(diary: diary!)
+                diaryDAL.deleteDiary(diary_date: selectedDate!)
+            }
+        }
+        return true
+    }
     
     // save to core data
     @IBAction func saveSpecialBtn(_ sender: Any) {
         if (imageChanged == true || captionField.text != "" || locationField.text != "") {
-            let special:Special = Special(special_caption: captionField.text!, special_location: locationField.text!, special_date: selectedDate!, special_image: imageUpload.image!)
-            diaryDAL.addSpecialtoDiary(diary: diary!, special: special)
-            let spec = diaryDAL.RetrieveSpecialinDiary(diary: diary!)
-            print(spec.special_caption)
-            print(spec.special_date)
+            special = Special(special_caption: captionField.text!, special_location: locationField.text!, special_date: selectedDate!, special_image: imageUpload.image!)
+            if(diaryDAL.BoolSpecialinDiary(diary: diary!)){
+                diaryDAL.UpdateSpecialinSpecial(special: special!, diary_date: selectedDate!)
+            }
+            else{
+                diaryDAL.addSpecialtoDiary(diary: diary!, special: special!)
+            }
         }
     }
     

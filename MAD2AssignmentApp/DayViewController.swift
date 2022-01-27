@@ -29,7 +29,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!)
-        diaryUpdate()
+        getDiaryAndFeeling()
         feelingsList = [
             Feelings(feeling_name: "Ecstatic", feeling_rgb: "FFF09D", feeling_image: "diary-5", feeling_date: selectedDate!),
             Feelings(feeling_name: "Happy", feeling_rgb:"FFDE8A", feeling_image: "diary-4", feeling_date: selectedDate!),
@@ -39,12 +39,16 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         ]
         feelingsCollectionView.reloadData()
     }
+    
+    // update the view everytime it appears
     override func viewWillAppear(_ animated: Bool) {
-        diaryUpdate()
+        getDiaryAndFeeling()
         selectFeeling()
         feelingsCollectionView.reloadData()
     }
-    func diaryUpdate(){
+    
+    // get diary and Feeling values
+    func getDiaryAndFeeling(){
         diaryExists = diaryDAL.DiaryExistinUser(user: diaryDAL.RetrieveUser(), diary_date: selectedDate!)
         if (diaryExists!){
             diary = diaryDAL.RetrieveDiaryinUser(user: diaryDAL.RetrieveUser(), diary_date: selectedDate!)
@@ -52,6 +56,8 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
             selectedFeelingString = selectedFeeling!.feeling_name!
         }
     }
+    
+    // update selectedFeeling value
     func selectFeeling(){
         var i = 0
         while i < feelingsList.count{
@@ -61,10 +67,14 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
             i+=1
         }
     }
+    
+    // update feeling values in diary
     func updateDiary(){
         diaryDAL.UpdateFeelinginDiary(feeling_name: (selectedFeeling?.feeling_rgb)!, diary_date: selectedDate!)
         diaryDAL.UpdateFeelinginFeeling(feeling: selectedFeeling!, diary_date: selectedDate!)
     }
+    
+    // when close button is pressed
     @IBAction func closeDiary(_ sender: Any) {
         if(diaryExists!){
             updateDiary()
@@ -72,10 +82,14 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Collection View functions
+    
+    // number of items in collectionview
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return feelingsList.count
     }
     
+    //for each cell in collectionview
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeelingsCollectionViewCell", for: indexPath) as! FeelingsCell
         cell.setup(with: feelingsList[indexPath.row])
@@ -87,7 +101,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         return cell
     }
     
-
+    //when a cell is selected in collectionview
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! FeelingsCell
         if (cell.backgroundColor == UIColor.clear){            
@@ -105,6 +119,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         }
     }
     
+    //perform functions before performing segue
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(!(selectedFeelingString=="")){
             if(diaryExists!){
@@ -125,6 +140,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         return false
     }
     
+    //prepare values for the next viewcontroller when segue is performed
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goToDay2"){
             guard let day2VC = segue.destination as? Day2ViewController else{
@@ -136,6 +152,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     }
 }
 
+//customized collectionview layout
 extension ViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 141, height: 85)

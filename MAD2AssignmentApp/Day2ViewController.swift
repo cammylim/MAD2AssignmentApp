@@ -31,7 +31,6 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         tagListView.delegate = self
         tagListView.textFont = UIFont(name: "BalsamiqSans-Regular", size: 16)!
         tagsPressed=[]
-        
         setTags()
         
         // keyboard - shift view up
@@ -93,12 +92,10 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             }
         }
     }
+    
+    //prepare values for the next segue before performing segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "backToHome"){
-            guard segue.destination is HomeViewController else{
-                return
-            }
-        } else if (segue.identifier == "goToDay3"){
+        if (segue.identifier == "goToDay3"){
             guard let day3VC = segue.destination as? Day3ViewConroller else{
                 return
             }
@@ -106,6 +103,8 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             day3VC.diary = diary
         }
     }
+        
+    //perform functions and conditions before segue is performed
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         var boolCheck:Bool?
         if(tagsPressed.count > 0){
@@ -136,9 +135,13 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         }
         return boolCheck!
     }
+    
+    //when back button is pressed
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    //when Add button is pressed
     @IBAction func addOthersButton(_ sender: Any) {
         if (otherTagsField.text != ""){
             tagView = tagListView.addTag(otherTagsField.text!)
@@ -146,10 +149,13 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             otherTagsField.text = ""
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //when an activity tag is pressed
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag pressed: \(title), \(sender)")
         tagView.isSelected = !tagView.isSelected
@@ -173,6 +179,8 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         }
         print(tagsPressed)
     }
+    
+    //when a tag is removed
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")
         var boolCheck = false
