@@ -228,12 +228,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func previousMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().minusMonth(date: selectedDate)
         setMonthView()
+        setCalendarColor()
     }
     
     //when nextMonth button is clicked, add the month
     @IBAction func nextMonth(_ sender: Any) {
         selectedDate = DiaryCalendar().addMonth(date: selectedDate)
         setMonthView()
+        setCalendarColor()
     }
     
     override open var shouldAutorotate: Bool{
