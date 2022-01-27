@@ -11,11 +11,15 @@ import UIKit
 class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dobField: UITextField!
+    @IBOutlet weak var nameMsg: UILabel!
+    @IBOutlet weak var dobMsg: UILabel!
     let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "profile-bg.svg")!);
+        nameMsg.text = ""
+        dobMsg.text = ""
         dobField.delegate = self
 
         // get user information
@@ -34,7 +38,16 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func updateProfile(_ sender: Any) {
-        if (nameField.text != "" && dobField.text != "") {
+        if (nameField.text == "" && dobField.text == "") { // validation
+            nameMsg.text = "Please enter your name."
+            dobMsg.text = "Please select your date of birth."
+        } else if (nameField.text == "" && dobField.text != "") { // validation
+            nameMsg.text = "Please enter your name."
+            dobMsg.text = ""
+        } else if (nameField.text != "" && dobField.text == "") { // validation
+            nameMsg.text = ""
+            dobMsg.text = "Please select your date of birth."
+        } else if (nameField.text != "" && dobField.text != "") {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd-MM-yyyy"
 

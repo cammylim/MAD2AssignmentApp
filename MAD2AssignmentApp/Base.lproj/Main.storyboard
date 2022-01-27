@@ -167,7 +167,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="myQ-C7-IXC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your date of birth?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hf-CI-Bsn">
@@ -182,7 +182,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="kFf-E7-PRc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ4-J0-2QR">
@@ -1330,13 +1330,13 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoq-eL-CT7">
-                                <rect key="frame" x="24" y="118" width="327" height="18"/>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <rect key="frame" x="24" y="118" width="327" height="24"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdQ-yR-dkH">
-                                <rect key="frame" x="24" y="140" width="327" height="48"/>
+                                <rect key="frame" x="24" y="146" width="327" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="MlC-mU-nxg"/>
                                 </constraints>
@@ -1344,13 +1344,13 @@
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feJ-Kk-ql7">
-                                <rect key="frame" x="24" y="200" width="327" height="18"/>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <rect key="frame" x="24" y="206" width="327" height="24"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01-01-1999" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-Zy-lCi">
-                                <rect key="frame" x="24" y="222" width="327" height="48"/>
+                                <rect key="frame" x="24" y="234" width="327" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="TTA-yK-DgI"/>
                                 </constraints>
@@ -1434,13 +1434,13 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3c-Rb-9QA">
-                                <rect key="frame" x="24" y="118" width="327" height="18"/>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <rect key="frame" x="24" y="118" width="327" height="24"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ql-qJ-N6q">
-                                <rect key="frame" x="24" y="140" width="327" height="48"/>
+                                <rect key="frame" x="24" y="146" width="327" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="HrF-3H-uIi"/>
@@ -1449,13 +1449,13 @@
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-eD-izh">
-                                <rect key="frame" x="24" y="200" width="327" height="18"/>
-                                <fontDescription key="fontDescription" name="BalsamiqSans-Bold" family="Balsamiq Sans" pointSize="15"/>
+                                <rect key="frame" x="24" y="234" width="327" height="24"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="20"/>
                                 <color key="textColor" red="0.1974906921" green="0.42715483900000001" blue="0.76869440079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01-01-1999" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4av-7M-7B2">
-                                <rect key="frame" x="24" y="222" width="327" height="48"/>
+                                <rect key="frame" x="24" y="262" width="327" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Ao3-Oy-wDS"/>
@@ -1480,17 +1480,31 @@
                                     <action selector="updateProfile:" destination="4UB-gA-88h" eventType="touchUpInside" id="6Gg-dQ-MYS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-kI-VEd">
+                                <rect key="frame" x="24" y="198" width="327" height="17"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdS-oM-wwH">
+                                <rect key="frame" x="24" y="314" width="327" height="17"/>
+                                <fontDescription key="fontDescription" name="BalsamiqSans-Regular" family="Balsamiq Sans" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lR8-TC-LS4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="L3c-Rb-9QA" firstAttribute="top" secondItem="T81-sY-O6R" secondAttribute="bottom" constant="30" id="3sW-ac-RUi"/>
                             <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="L3c-Rb-9QA" secondAttribute="trailing" constant="24" id="Fo0-zo-qBQ"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="TdS-oM-wwH" secondAttribute="trailing" constant="24" id="Gez-es-d7X"/>
                             <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="sxh-eD-izh" secondAttribute="trailing" constant="24" id="HSC-8g-u3e"/>
+                            <constraint firstItem="TdS-oM-wwH" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="Hk4-9t-7lV"/>
                             <constraint firstItem="T81-sY-O6R" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" id="I3X-Fr-y09"/>
                             <constraint firstItem="4Ql-qJ-N6q" firstAttribute="top" secondItem="L3c-Rb-9QA" secondAttribute="bottom" constant="4" id="KhE-Zy-eBP"/>
                             <constraint firstItem="T81-sY-O6R" firstAttribute="trailing" secondItem="lR8-TC-LS4" secondAttribute="trailing" id="Mfl-At-7rM"/>
-                            <constraint firstItem="sxh-eD-izh" firstAttribute="top" secondItem="4Ql-qJ-N6q" secondAttribute="bottom" constant="12" id="QA4-bw-Wjd"/>
+                            <constraint firstItem="sxh-eD-izh" firstAttribute="top" secondItem="4Ql-qJ-N6q" secondAttribute="bottom" constant="40" id="QA4-bw-Wjd"/>
                             <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="4av-7M-7B2" secondAttribute="trailing" constant="24" id="StU-1Z-Vph"/>
                             <constraint firstItem="4Ql-qJ-N6q" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="VM6-KL-gv8"/>
                             <constraint firstItem="4av-7M-7B2" firstAttribute="top" secondItem="sxh-eD-izh" secondAttribute="bottom" constant="4" id="WWB-vt-PAG"/>
@@ -1500,14 +1514,20 @@
                             <constraint firstItem="Zwx-Ss-mvW" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="guL-qM-Y8F"/>
                             <constraint firstItem="4av-7M-7B2" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="ib0-ps-frZ"/>
                             <constraint firstItem="T81-sY-O6R" firstAttribute="top" secondItem="lR8-TC-LS4" secondAttribute="top" id="icF-PC-tsZ"/>
+                            <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="W2O-kI-VEd" secondAttribute="trailing" constant="24" id="lf8-jV-KTL"/>
                             <constraint firstItem="lR8-TC-LS4" firstAttribute="bottom" secondItem="Zwx-Ss-mvW" secondAttribute="bottom" id="p8Z-O9-7cy"/>
+                            <constraint firstItem="W2O-kI-VEd" firstAttribute="top" secondItem="4Ql-qJ-N6q" secondAttribute="bottom" constant="4" id="sN5-7x-3z6"/>
                             <constraint firstItem="lR8-TC-LS4" firstAttribute="trailing" secondItem="4Ql-qJ-N6q" secondAttribute="trailing" constant="24" id="tUs-zX-5js"/>
+                            <constraint firstItem="TdS-oM-wwH" firstAttribute="top" secondItem="4av-7M-7B2" secondAttribute="bottom" constant="4" id="wcf-Bb-3hz"/>
+                            <constraint firstItem="W2O-kI-VEd" firstAttribute="leading" secondItem="lR8-TC-LS4" secondAttribute="leading" constant="24" id="x9z-8N-1au"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Czs-DG-Ooy"/>
                     <connections>
                         <outlet property="dobField" destination="4av-7M-7B2" id="uOW-DK-fQu"/>
+                        <outlet property="dobMsg" destination="TdS-oM-wwH" id="QfM-zf-hpN"/>
                         <outlet property="nameField" destination="4Ql-qJ-N6q" id="S3Q-qU-oqi"/>
+                        <outlet property="nameMsg" destination="W2O-kI-VEd" id="CDe-Ta-Lfm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aQ-Pr-9TQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1515,11 +1535,6 @@
             <point key="canvasLocation" x="1734" y="791"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="OfL-2t-BGB">
-            <size key="intrinsicContentSize" width="300" height="28"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="bsN-zZ-T8X"/>
         <segue reference="AJj-m6-9HT"/>
