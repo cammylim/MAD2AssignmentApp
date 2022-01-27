@@ -61,10 +61,13 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
             i+=1
         }
     }
+    func updateDiary(){
+        diaryDAL.UpdateFeelinginDiary(feeling_name: (selectedFeeling?.feeling_rgb)!, diary_date: selectedDate!)
+        diaryDAL.UpdateFeelinginFeeling(feeling: selectedFeeling!, diary_date: selectedDate!)
+    }
     @IBAction func closeDiary(_ sender: Any) {
         if(diaryExists!){
-            diaryDAL.UpdateFeelinginDiary(feeling_name: (selectedFeeling?.feeling_rgb)!, diary_date: selectedDate!)
-            diaryDAL.UpdateFeelinginFeeling(feeling: selectedFeeling!, diary_date: selectedDate!)
+            updateDiary()
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -104,9 +107,15 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(!(selectedFeelingString=="")){
-            diary = Diary(feeling: (selectedFeeling?.feeling_rgb)!, date: selectedDate!)
-            diaryDAL.addDiaryToUser(user: diaryDAL.RetrieveUser(), diary: diary!)
-            diaryDAL.addFeelingstoDiary(diary: diary!, feelings: selectedFeeling!)
+            if(diaryExists!){
+                updateDiary()
+            }
+            else{
+                diary = Diary(feeling: (selectedFeeling?.feeling_rgb)!, date: selectedDate!)
+                diaryDAL.addDiaryToUser(user: diaryDAL.RetrieveUser(), diary: diary!)
+                diaryDAL.addFeelingstoDiary(diary: diary!, feelings: selectedFeeling!)
+            }
+            
             entryMsg.text = "Entry Completion: 1/4"
             entryMsg.textColor = UIColor(hexString: "1158BF")
             return true
