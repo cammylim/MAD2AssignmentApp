@@ -44,13 +44,31 @@ Click [here](https://www.youtube.com/watch?v=p3Ytm3coKLE) to see a demo of diary
 
 <img src="https://user-images.githubusercontent.com/64238413/151480850-d3192da9-13a1-46d5-ba60-589e4da80761.png" alt="profile" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151480860-67442d90-8d39-48d0-ac0a-7e2241afa243.png" alt="edit profile" width="200"/> 
 
+### Diary Entry
 
+#### Mood
 
+<img src="https://user-images.githubusercontent.com/64238413/151481036-95bcd5f6-a462-4f72-97c5-3bb343057b9a.png" alt="diary entry 1" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481032-33f87c5a-7551-4a08-924f-0333da3d6ac3.png" alt="diary entry 1" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481021-fa3324e1-46de-4d7b-adc2-5e2ea6fcc148.png" alt="diary entry 1" width="200"/> 
+
+#### Activities
+
+<img src="https://user-images.githubusercontent.com/64238413/151481197-5fdc5542-d7ee-4e15-ab3d-7b704f6979b1.png" alt="diary entry 2" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481194-a4a243df-f9d3-41ff-bd0b-fbfac95995c8.png" alt="diary entry 2" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481186-2e525e5e-891f-43c7-a7c5-4b38bf841b7a.png" alt="diary entry 2" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481191-ab683d3f-2c7a-4a9c-9c76-c14c08334937.png" alt="diary entry 2" width="200"/> 
+
+#### Moments (Optional)
+
+<img src="https://user-images.githubusercontent.com/64238413/151481211-8a48ffb6-aff2-4a18-b560-95b2dc33addd.png" alt="diary entry 3" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481205-f280df61-f4aa-4186-ab90-914270dd7e81.png" alt="diary entry 3" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481202-3d2a1012-9bb1-4607-a32f-cbe299793d7f.png" alt="diary entry 3" width="200"/> 
+
+#### Reflection (Optional)
+
+<img src="https://user-images.githubusercontent.com/64238413/151481215-e3e06f4d-6ab6-4857-9aab-8cba7e44a689.png" alt="diary entry 4" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151481213-1a4d96ad-f186-4d23-80b9-afc50bae9bf6.png" alt="diary entry 4" width="200"/> 
+
+#### Complete
+
+<img src="https://user-images.githubusercontent.com/64238413/151481302-70c205d1-c937-4c48-b482-7b24e1fecca3.png" alt="diary entry done" width="200"/> 
 
 
 <!-- 
-Done: 
-
+Screenshots: 
 ![Onboarding Pg1](https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png) 
 ![Onboarding Pg2](https://user-images.githubusercontent.com/64238413/151478931-b2b9ded3-4206-4232-83a6-89a73d4be879.png)
 ![Onboarding Pg3](https://user-images.githubusercontent.com/64238413/151478935-5a380c37-3565-4b2e-85e3-ffec84f64591.png) 
@@ -62,9 +80,6 @@ Done:
 ![Home](https://user-images.githubusercontent.com/64238413/151480836-66787406-476d-4da3-9e88-1e64caa5499c.png)
 ![Profile](https://user-images.githubusercontent.com/64238413/151480850-d3192da9-13a1-46d5-ba60-589e4da80761.png)
 ![Edit Profile](https://user-images.githubusercontent.com/64238413/151480860-67442d90-8d39-48d0-ac0a-7e2241afa243.png)
-
-Not done:
-
 ![Diary Entry Pg1 Selected](https://user-images.githubusercontent.com/64238413/151481021-fa3324e1-46de-4d7b-adc2-5e2ea6fcc148.png)
 ![Diary Entry Pg1 Validation](https://user-images.githubusercontent.com/64238413/151481032-33f87c5a-7551-4a08-924f-0333da3d6ac3.png)
 ![Diary Entry Pg1](https://user-images.githubusercontent.com/64238413/151481036-95bcd5f6-a462-4f72-97c5-3bb343057b9a.png)
