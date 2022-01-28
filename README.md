@@ -16,12 +16,36 @@ Save a record of what you have done and what you have been feeling everyday all 
 
 
 
-### Demo
+## Demo
 
-Click [here](https://www.youtube.com/) to see a demo of diaryme. 
+Click [here](https://www.youtube.com/watch?v=p3Ytm3coKLE) to see a demo of diaryme. Remember to turn on the captions! 
 
 
 
-### Credits (CocoaPods)
+## Screenshots
 
-**TagListView** by **ElaWorkshop** - https://github.com/ElaWorkshop/TagListView 
+### Splash Screen
+
+<img src="https://user-images.githubusercontent.com/64238413/151480182-6ec2ceb6-fe1b-42bb-b1df-2db0396646ed.png" alt="splash screen" width="200"/> 
+
+### Onboarding Pages
+
+<img src="https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png" alt="onboarding page 1" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png" alt="onboarding page 2" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151478935-5a380c37-3565-4b2e-85e3-ffec84f64591.png" alt="onboarding page 3" width="200"/>
+
+<!-- ![Onboarding Pg1](https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png) 
+![Onboarding Pg2](https://user-images.githubusercontent.com/64238413/151478931-b2b9ded3-4206-4232-83a6-89a73d4be879.png)
+![Onboarding Pg3](https://user-images.githubusercontent.com/64238413/151478935-5a380c37-3565-4b2e-85e3-ffec84f64591.png) 
+
+![Splash Screen](https://user-images.githubusercontent.com/64238413/151480182-6ec2ceb6-fe1b-42bb-b1df-2db0396646ed.png)
+
+
+-->
+
+
+
+
+## Credits
+
+**TagListView** by **ElaWorkshop** (CocoaPods) - https://github.com/ElaWorkshop/TagListView 
+
+**Quotes API** - https://type.fit/api/quotes
