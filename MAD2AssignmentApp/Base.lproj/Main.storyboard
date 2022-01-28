@@ -1507,11 +1507,6 @@
             <point key="canvasLocation" x="1734" y="791"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="OfL-2t-BGB">
-            <size key="intrinsicContentSize" width="327" height="28"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
         <segue reference="KaQ-78-0gl"/>

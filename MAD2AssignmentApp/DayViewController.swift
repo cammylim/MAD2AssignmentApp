@@ -96,7 +96,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         if (cell.feelingsLabel.text == selectedFeelingString){
             selectedFeelingCell = cell
             cell.layer.cornerRadius = 8
-            cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
+            cell.backgroundColor = UIColor(red: 0.925, green: 0.947, blue: 1, alpha: 1)
         }
         return cell
     }
@@ -112,7 +112,7 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
             selectedFeelingCell = cell
             selectFeeling()
             cell.layer.cornerRadius = 8
-            cell.backgroundColor = UIColor(red: 0.829, green: 0.897, blue: 1, alpha: 1)
+            cell.backgroundColor = UIColor(red: 0.925, green: 0.947, blue: 1, alpha: 1)
         } else {
             cell.backgroundColor = UIColor.clear
             selectedFeelingString = ""
