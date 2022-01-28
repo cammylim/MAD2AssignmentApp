@@ -18,7 +18,7 @@ Save a record of what you have done and what you have been feeling everyday all 
 
 ### Demo
 
-Click [here](https://www.youtube.com/) to see a demo of diaryme.
+Click <a href="https://www.youtube.com/" target="_blank">here</a> to see a demo of diaryme. 
 
 
 
