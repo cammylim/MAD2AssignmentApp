@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9nP-ji-EBk">
-                                <rect key="frame" x="131.33333333333334" y="673" width="112.66666666666666" height="25"/>
+                                <rect key="frame" x="110.33333333333333" y="673" width="154.66666666666669" height="25"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
@@ -882,8 +882,8 @@
                             <constraint firstItem="bg6-rU-Rzz" firstAttribute="top" secondItem="O9M-nu-W1H" secondAttribute="bottom" constant="30" id="8Eb-4n-K6N"/>
                             <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="LPv-Tp-y0H" secondAttribute="trailing" constant="24" id="9Zf-fo-jaR"/>
                             <constraint firstItem="O9M-nu-W1H" firstAttribute="top" secondItem="CYO-Ej-Kum" secondAttribute="top" id="Nu2-XN-Xty"/>
+                            <constraint firstItem="Vqw-MQ-Rwt" firstAttribute="top" secondItem="O9M-nu-W1H" secondAttribute="bottom" constant="626" id="QZQ-Bn-beN"/>
                             <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="OfL-2t-BGB" secondAttribute="trailing" constant="24" id="R14-2D-WKG"/>
-                            <constraint firstItem="Vqw-MQ-Rwt" firstAttribute="bottom" secondItem="CYO-Ej-Kum" secondAttribute="bottom" id="U1f-M9-CIW"/>
                             <constraint firstItem="mja-9e-HO8" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="24" id="VC0-pi-Evr"/>
                             <constraint firstItem="Vqw-MQ-Rwt" firstAttribute="leading" secondItem="CYO-Ej-Kum" secondAttribute="leading" constant="24" id="Vs3-uJ-zFm"/>
                             <constraint firstItem="CYO-Ej-Kum" firstAttribute="trailing" secondItem="RA4-KC-4OD" secondAttribute="trailing" constant="24" id="adb-hl-l2Y"/>
