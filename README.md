@@ -30,13 +30,28 @@ Click [here](https://www.youtube.com/watch?v=p3Ytm3coKLE) to see a demo of diary
 
 ### Onboarding Pages
 
-<img src="https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png" alt="onboarding page 1" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png" alt="onboarding page 2" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151478935-5a380c37-3565-4b2e-85e3-ffec84f64591.png" alt="onboarding page 3" width="200"/>
+<img src="https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png" alt="onboarding page 1" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151478931-b2b9ded3-4206-4232-83a6-89a73d4be879.png" alt="onboarding page 2" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151478935-5a380c37-3565-4b2e-85e3-ffec84f64591.png" alt="onboarding page 3" width="200"/>
+
+### Login Page
+
+<img src="https://user-images.githubusercontent.com/64238413/151480479-0cffa356-fc51-472a-b787-9d18f6ef1cb4.png" alt="login" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151480600-620006a9-04ba-43e7-9801-6e28377bb90b.png" alt="login" width="200"/> <img src="https://user-images.githubusercontent.com/64238413/151480604-6252e4c3-8d16-4e61-8b50-05e4e922bfb0.png" alt="login" width="200"/> 
+
+
+
 
 <!-- ![Onboarding Pg1](https://user-images.githubusercontent.com/64238413/151478926-175363a9-727a-415b-96bb-0d6ba23d90bb.png) 
 ![Onboarding Pg2](https://user-images.githubusercontent.com/64238413/151478931-b2b9ded3-4206-4232-83a6-89a73d4be879.png)
 ![Onboarding Pg3](https://user-images.githubusercontent.com/64238413/151478935-5a380c37-3565-4b2e-85e3-ffec84f64591.png) 
-
 ![Splash Screen](https://user-images.githubusercontent.com/64238413/151480182-6ec2ceb6-fe1b-42bb-b1df-2db0396646ed.png)
+![Login](https://user-images.githubusercontent.com/64238413/151480479-0cffa356-fc51-472a-b787-9d18f6ef1cb4.png)
+
+![Login Validation](https://user-images.githubusercontent.com/64238413/151480600-620006a9-04ba-43e7-9801-6e28377bb90b.png)
+![Login Filled](https://user-images.githubusercontent.com/64238413/151480604-6252e4c3-8d16-4e61-8b50-05e4e922bfb0.png)
+
+
+
+
+
 
 
 -->
