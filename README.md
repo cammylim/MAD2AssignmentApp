@@ -14,3 +14,6 @@ Save a record of what you have done and what you have been feeling everyday all 
 
 **A line of random-ness** - quotes by famous or unknown people are shared to spark or inspire you throughout your journey with diaryme.
 
+---
+
+Click [here](https://www.youtube.com/) to see a demo of diaryme.
