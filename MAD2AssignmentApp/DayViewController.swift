@@ -40,13 +40,6 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
         feelingsCollectionView.reloadData()
     }
     
-    // update the view everytime it appears
-    override func viewWillAppear(_ animated: Bool) {
-        getDiaryAndFeeling()
-        selectFeeling()
-        feelingsCollectionView.reloadData()
-    }
-    
     // get diary and Feeling values
     func getDiaryAndFeeling(){
         diaryExists = diaryDAL.DiaryExistinUser(user: diaryDAL.RetrieveUser(), diary_date: selectedDate!)
