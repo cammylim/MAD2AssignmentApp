@@ -1,4 +1,4 @@
-# diaryme
+# ![appicon-small](https://user-images.githubusercontent.com/64238413/151474192-a1f4dd0e-2fdc-4b30-9675-34717686e860.svg) diaryme
 
 Save a record of what you have done and what you have been feeling everyday all in one place. Diaryme is a diary-like application allowing you to record simple parts of their day-to-day life and organize them like diary entries. 
 
@@ -13,3 +13,4 @@ Save a record of what you have done and what you have been feeling everyday all 
 **Towards a better me** - reflect on your day. At the end of the day, reflect on the ups and downs that you have been through. Jot down the laughs and cries that you have shared with your friends and family to remember them fondly down the road.
 
 **A line of random-ness** - quotes by famous or unknown people are shared to spark or inspire you throughout your journey with diaryme.
+
