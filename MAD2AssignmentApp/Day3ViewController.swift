@@ -103,6 +103,11 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
     
     // to previous page
     @IBAction func backBtn(_ sender: Any) {
+        if(diaryDAL.BoolSpecialinDiary(diary: diary!)){
+            diaryDAL.UpdateSpecialinSpecial(special: special!, diary_date: selectedDate!)
+        } else {
+            saveSpec()
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -116,6 +121,7 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
             day4VC.diary = diary
         }
     }
+    
     // perform required Special functions before performing segue
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(identifier == "day3ToHome"){
@@ -123,6 +129,7 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
                 diaryDAL.UpdateSpecialinSpecial(special: special!, diary_date: selectedDate!)
             }
             else{
+                closeEntryAlert()
                 diaryDAL.DeleteActivitiesinDiary(diary: diary!)
                 diaryDAL.deleteDiary(diary_date: selectedDate!)
             }
@@ -130,8 +137,28 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
         return true
     }
     
+    // ask user if they want to close as entry will be deleted
+    func closeEntryAlert() {
+        let alertView = UIAlertController(title: "Close Entry",
+                                          message: "If you close this entry, all your previous input will be deleted. Do you want to close anyway?",
+                                          preferredStyle: UIAlertController.Style.alert)
+        alertView.addAction(UIAlertAction(title: "Cancel",
+                                          style: UIAlertAction.Style.cancel,
+                                          handler: { (_) in print("cancel close entry")
+        }))
+        alertView.addAction(UIAlertAction(title: "Close",
+                                          style: UIAlertAction.Style.default,
+                                          handler: {_ in self.performSegue(withIdentifier: "day3ToHome", sender: nil)
+        }))
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
     // save to core data
     @IBAction func saveSpecialBtn(_ sender: Any) {
+        saveSpec()
+    }
+    
+    func saveSpec() {
         if (imageChanged == true || captionField.text != "" || locationField.text != "") {
             special = Special(special_caption: captionField.text!, special_location: locationField.text!, special_date: selectedDate!, special_image: imageUpload.image!)
             if(diaryDAL.BoolSpecialinDiary(diary: diary!)){

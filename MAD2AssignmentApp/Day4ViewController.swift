@@ -71,6 +71,11 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
     
     // to previous page
     @IBAction func backBtn(_ sender: Any) {
+        if(diaryDAL.BoolReflectioninDiary(diary: diary!)){
+            diaryDAL.UpdateReflectioninReflection(ref: reflection!, diary_date: selectedDate!)
+        } else {
+            saveRef()
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -82,6 +87,7 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
                 diaryDAL.UpdateReflectioninReflection(ref: reflection!, diary_date: selectedDate!)
             }
             else{
+                closeEntryAlert()
                 diaryDAL.DeleteSpecialinDiary(diary: diary!)
                 diaryDAL.DeleteActivitiesinDiary(diary: diary!)
                 diaryDAL.deleteDiary(diary_date: selectedDate!)
@@ -89,8 +95,29 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
         }
         return true
     }
+    
+    // ask user if they want to close as entry will be deleted
+    func closeEntryAlert() {
+        let alertView = UIAlertController(title: "Close Entry",
+                                          message: "If you close this entry, all your previous input will be deleted. Do you want to close anyway?",
+                                          preferredStyle: UIAlertController.Style.alert)
+        alertView.addAction(UIAlertAction(title: "Cancel",
+                                          style: UIAlertAction.Style.cancel,
+                                          handler: { (_) in print("cancel close entry")
+        }))
+        alertView.addAction(UIAlertAction(title: "Close",
+                                          style: UIAlertAction.Style.default,
+                                          handler: {_ in self.performSegue(withIdentifier: "day3ToHome", sender: nil)
+        }))
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
     // save to core data
     @IBAction func saveReflectionBtn(_ sender: Any) {
+        saveRef()
+    }
+    
+    func saveRef() {
         if (titleField.text != "" || bodyField.text != "") {
             reflection = Reflection(ref_title: titleField.text!, ref_body: bodyField.text, ref_date: selectedDate!)
             if(diaryDAL.BoolReflectioninDiary(diary: diary!)){

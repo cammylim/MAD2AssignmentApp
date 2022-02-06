@@ -19,6 +19,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     var closeButtonPressed:Bool = false
     var selectedDate:Date?
     var diary:Diary?
+    var close:Bool = false
     
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var otherTagsField: UITextField!
@@ -110,6 +111,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         var boolCheck:Bool?
         if(identifier == "backToHome"){
+            closeEntryAlert()
             if(!(diaryDAL.BoolActivitiesinDiary(diary: diary!))){
                 diaryDAL.deleteDiary(diary_date: selectedDate!)
             }
@@ -118,17 +120,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             boolCheck = true
         }
         else if(tagsPressed.count > 0){
-            var i:Int=0
-            var act:Activities?
-            if(diaryDAL.BoolActivitiesinDiary(diary: diary!)){
-                diaryDAL.DeleteActivitiesinDiary(diary: diary!)
-            }
-            while i < tagsPressed.count{
-                print(tagsPressed[i])
-                act = Activities(act_name: tagsPressed[i], act_date: selectedDate!)
-                diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
-                i+=1
-            }
+            saveAct()
             
             entryMsg.text = "Entry Completion: 2/4"
             entryMsg.textColor = UIColor(hexString: "1158BF")
@@ -142,8 +134,25 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         return boolCheck!
     }
     
+    // ask user if they want to close as entry will be deleted
+    func closeEntryAlert() {
+        let alertView = UIAlertController(title: "Close Entry",
+                                          message: "If you close this entry, all your previous input and changes will be deleted. Do you want to close anyway?",
+                                          preferredStyle: UIAlertController.Style.alert)
+        alertView.addAction(UIAlertAction(title: "Cancel",
+                                          style: UIAlertAction.Style.cancel,
+                                          handler: { (_) in print("cancel close entry")
+        }))
+        alertView.addAction(UIAlertAction(title: "Close",
+                                          style: UIAlertAction.Style.default,
+                                          handler: {_ in self.performSegue(withIdentifier: "backToHome", sender: nil)
+        }))
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
     //when back button is pressed
     @IBAction func backButton(_ sender: Any) {
+        saveAct()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -203,6 +212,23 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             tagsPressed.remove(at: position!)
         }
         sender.removeTagView(tagView)
+    }
+    
+    // save activities to core data
+    func saveAct() {
+        if(tagsPressed.count > 0){
+            var i:Int=0
+            var act:Activities?
+            if(diaryDAL.BoolActivitiesinDiary(diary: diary!)){
+                diaryDAL.DeleteActivitiesinDiary(diary: diary!)
+            }
+            while i < tagsPressed.count{
+                print(tagsPressed[i])
+                act = Activities(act_name: tagsPressed[i], act_date: selectedDate!)
+                diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
+                i+=1
+            }
+        }
     }
 }
 
