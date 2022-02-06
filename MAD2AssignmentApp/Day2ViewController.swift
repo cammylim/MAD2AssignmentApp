@@ -160,7 +160,15 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     //when back button is pressed
     @IBAction func backButton(_ sender: Any) {
         saveAct()
-        self.dismiss(animated: true, completion: nil)
+        
+        let transition: CATransition = CATransition()
+        transition.duration = 0.25
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+
+        self.dismiss(animated: false, completion: nil)
     }
     
     //when Add button is pressed

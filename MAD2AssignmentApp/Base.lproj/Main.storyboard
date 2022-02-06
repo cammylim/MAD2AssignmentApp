@@ -281,7 +281,7 @@
                                     <imageReference key="backgroundImage" image="profile-placeholder" renderingMode="original"/>
                                 </state>
                                 <connections>
-                                    <segue destination="z3q-mf-Ojq" kind="show" identifier="viewProfile" id="ovg-MZ-K3I"/>
+                                    <segue destination="z3q-mf-Ojq" kind="show" identifier="viewProfile" customClass="slideRightLeftSegue" customModule="MAD2AssignmentApp" customModuleProvider="target" id="ovg-MZ-K3I"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tuesday," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv0-sT-PYx">
@@ -667,7 +667,7 @@
                                     <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="zLJ-pF-M91" kind="show" identifier="goToDay2" id="bsN-zZ-T8X"/>
+                                    <segue destination="zLJ-pF-M91" kind="show" identifier="goToDay2" customClass="slideRightLeftSegue" customModule="MAD2AssignmentApp" customModuleProvider="target" id="bsN-zZ-T8X"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 1/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-l2-NUE">
@@ -863,7 +863,7 @@
                                     <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="gRo-Pj-wwX" kind="show" identifier="goToDay3" id="3Vj-3W-ult"/>
+                                    <segue destination="gRo-Pj-wwX" kind="show" identifier="goToDay3" customClass="slideRightLeftSegue" customModule="MAD2AssignmentApp" customModuleProvider="target" id="3Vj-3W-ult"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Completion: 2/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mja-9e-HO8">
@@ -1031,7 +1031,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveSpecialBtn:" destination="gRo-Pj-wwX" eventType="touchUpInside" id="i9J-ch-QYQ"/>
-                                    <segue destination="zVL-Iv-Vwf" kind="show" identifier="goToDay4" id="AIB-XH-ef4"/>
+                                    <segue destination="zVL-Iv-Vwf" kind="show" identifier="goToDay4" customClass="slideRightLeftSegue" customModule="MAD2AssignmentApp" customModuleProvider="target" id="AIB-XH-ef4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-q6-6oz">
@@ -1292,7 +1292,7 @@
                                     <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="C0u-lT-0ub" kind="show" id="VD6-x9-dVZ"/>
+                                    <segue destination="C0u-lT-0ub" kind="show" customClass="slideDownSegue" customModule="MAD2AssignmentApp" customModuleProvider="target" id="VD6-x9-dVZ"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary-done" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-99-nC9">
@@ -1397,7 +1397,7 @@
                                     <color key="baseForegroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="4UB-gA-88h" kind="show" identifier="editProfile" id="B3p-JJ-wwE"/>
+                                    <segue destination="4UB-gA-88h" kind="show" identifier="editProfile" customClass="slideRightLeftSegue" customModule="MAD2AssignmentApp" customModuleProvider="target" id="B3p-JJ-wwE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1568,7 +1568,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
-        <segue reference="28c-J8-IoM"/>
+        <segue reference="KaQ-78-0gl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>

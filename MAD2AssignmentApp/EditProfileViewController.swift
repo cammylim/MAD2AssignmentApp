@@ -34,7 +34,14 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func backToProfile(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let transition: CATransition = CATransition()
+        transition.duration = 0.25
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+
+        self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func updateProfile(_ sender: Any) {

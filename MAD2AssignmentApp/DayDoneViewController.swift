@@ -14,8 +14,4 @@ class DayDoneViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-done-bg.svg")!);
     }
     
-    // to prev page
-    @IBAction func backBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
 }

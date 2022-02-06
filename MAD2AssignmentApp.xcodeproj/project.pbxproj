@@ -36,6 +36,8 @@
 		D655E9CE279F172800768087 /* Day4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D655E9CD279F172800768087 /* Day4ViewController.swift */; };
 		D656EC22279D8F6100BE6FCE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */; };
 		D656EC24279D8FC700BE6FCE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */; };
+		D668369E27AFCADF00164158 /* slideDownSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668369D27AFCADF00164158 /* slideDownSegue.swift */; };
+		D66836A027AFCB8700164158 /* slideRightLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668369F27AFCB8700164158 /* slideRightLeftSegue.swift */; };
 		D67C5C92279EAE4000806D36 /* Day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67C5C91279EAE4000806D36 /* Day3ViewController.swift */; };
 		D6CD867A279D203600E934BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CD8679279D203600E934BD /* User.swift */; };
 		D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1EFF52790723800FE3AEE /* LoginViewController.swift */; };
@@ -80,6 +82,8 @@
 		D655E9CD279F172800768087 /* Day4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4ViewController.swift; sourceTree = "<group>"; };
 		D656EC21279D8F6100BE6FCE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D656EC23279D8FC700BE6FCE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		D668369D27AFCADF00164158 /* slideDownSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideDownSegue.swift; sourceTree = "<group>"; };
+		D668369F27AFCB8700164158 /* slideRightLeftSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideRightLeftSegue.swift; sourceTree = "<group>"; };
 		D67C5C91279EAE4000806D36 /* Day3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3ViewController.swift; sourceTree = "<group>"; };
 		D6CD8679279D203600E934BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6D1EFF52790723800FE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				D6489DE627909DB700B485EB /* fonts */,
+				D668369D27AFCADF00164158 /* slideDownSegue.swift */,
+				D668369F27AFCB8700164158 /* slideRightLeftSegue.swift */,
 				C1A0D974279059A7002DF70E /* AppDelegate.swift */,
 				C1A0D976279059A7002DF70E /* SceneDelegate.swift */,
 				C1A0D978279059A7002DF70E /* ViewController.swift */,
@@ -254,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D668369E27AFCADF00164158 /* slideDownSegue.swift in Sources */,
 				C13FB7A72799659700838B18 /* FeelingsCell.swift in Sources */,
 				D6D1EFF62790723800FE3AEE /* LoginViewController.swift in Sources */,
 				C1935EFF2795BB53009C18A9 /* DiaryCalendar.swift in Sources */,
@@ -287,6 +294,7 @@
 				C1F0800727A05E4B009E2089 /* Special.swift in Sources */,
 				D643BABF279D635A001066E7 /* OnBoardingViewController.swift in Sources */,
 				C16F2F96279D5B7A00DCA4D2 /* TagListView.swift in Sources */,
+				D66836A027AFCB8700164158 /* slideRightLeftSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

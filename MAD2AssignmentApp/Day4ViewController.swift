@@ -39,6 +39,7 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         prepareReflection()
     }
+    
     //prepare reflection inputs
     func prepareReflection(){
         if(diaryDAL.BoolReflectioninDiary(diary: diary!)){
@@ -80,7 +81,14 @@ class Day4ViewController: UIViewController, UITextViewDelegate {
         } else {
             saveRef()
         }
-        self.dismiss(animated: true, completion: nil)
+        let transition: CATransition = CATransition()
+        transition.duration = 0.25
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+
+        self.dismiss(animated: false, completion: nil)
     }
     
     //perform functions before performing segue

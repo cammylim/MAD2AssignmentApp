@@ -113,7 +113,15 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
         } else {
             saveSpec()
         }
-        self.dismiss(animated: true, completion: nil)
+        
+        let transition: CATransition = CATransition()
+        transition.duration = 0.25
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+
+        self.dismiss(animated: false, completion: nil)
     }
     
     // to next
