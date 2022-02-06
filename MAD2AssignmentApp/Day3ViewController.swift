@@ -12,17 +12,22 @@ import PhotosUI
 class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITextFieldDelegate {
     
     var selectedDate: Date?
+    var selectedDay:String?
+    var selectedMonth:String?
+    var selectedYear:String?
     var diary: Diary?
     var imageChanged = false
     var special:Special?
     @IBOutlet weak var imageUpload: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var locationField: UITextField!
+    @IBOutlet weak var entryDate: UILabel!
     let diaryDAL: DiaryDataAccessLayer = DiaryDataAccessLayer()
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!)
+        entryDate.text = "\(selectedDay!) \(selectedMonth!) \(selectedYear!)"
         if(diaryDAL.BoolSpecialinDiary(diary: diary!)){
             special = diaryDAL.RetrieveSpecialinDiary(diary: diary!)
             if !(special?.special_caption == nil){
@@ -111,12 +116,15 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
         self.dismiss(animated: true, completion: nil)
     }
     
-    // to home or next
+    // to next
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goToDay4") {
             guard let day4VC = segue.destination as? Day4ViewController else{
                 return
             }
+            day4VC.selectedDay = selectedDay
+            day4VC.selectedMonth = selectedMonth
+            day4VC.selectedYear = selectedYear
             day4VC.selectedDate = selectedDate
             day4VC.diary = diary
         }
@@ -128,30 +136,30 @@ class Day3ViewConroller: UIViewController, PHPickerViewControllerDelegate, UITex
             if(diaryDAL.BoolSpecialinDiary(diary: diary!)){
                 diaryDAL.UpdateSpecialinSpecial(special: special!, diary_date: selectedDate!)
             }
-            else{
-                closeEntryAlert()
-                diaryDAL.DeleteActivitiesinDiary(diary: diary!)
-                diaryDAL.deleteDiary(diary_date: selectedDate!)
-            }
+//            else{
+//                closeEntryAlert()
+//                diaryDAL.DeleteActivitiesinDiary(diary: diary!)
+//                diaryDAL.deleteDiary(diary_date: selectedDate!)
+//            }
         }
         return true
     }
     
     // ask user if they want to close as entry will be deleted
-    func closeEntryAlert() {
-        let alertView = UIAlertController(title: "Close Entry",
-                                          message: "If you close this entry, all your previous input will be deleted. Do you want to close anyway?",
-                                          preferredStyle: UIAlertController.Style.alert)
-        alertView.addAction(UIAlertAction(title: "Cancel",
-                                          style: UIAlertAction.Style.cancel,
-                                          handler: { (_) in print("cancel close entry")
-        }))
-        alertView.addAction(UIAlertAction(title: "Close",
-                                          style: UIAlertAction.Style.default,
-                                          handler: {_ in self.performSegue(withIdentifier: "day3ToHome", sender: nil)
-        }))
-        self.present(alertView, animated: true, completion: nil)
-    }
+//    func closeEntryAlert() {
+//        let alertView = UIAlertController(title: "Close Entry",
+//                                          message: "If you close this entry, all your previous input will be deleted. Do you want to close anyway?",
+//                                          preferredStyle: UIAlertController.Style.alert)
+//        alertView.addAction(UIAlertAction(title: "Cancel",
+//                                          style: UIAlertAction.Style.cancel,
+//                                          handler: { (_) in print("cancel close entry")
+//        }))
+//        alertView.addAction(UIAlertAction(title: "Close",
+//                                          style: UIAlertAction.Style.default,
+//                                          handler: {_ in self.performSegue(withIdentifier: "day3ToHome", sender: nil)
+//        }))
+//        self.present(alertView, animated: true, completion: nil)
+//    }
     
     // save to core data
     @IBAction func saveSpecialBtn(_ sender: Any) {

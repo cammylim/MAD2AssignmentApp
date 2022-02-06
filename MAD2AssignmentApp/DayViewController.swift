@@ -25,10 +25,12 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
     
     @IBOutlet weak var feelingsCollectionView: UICollectionView!
     @IBOutlet weak var entryMsg: UILabel!
+    @IBOutlet weak var entryDate: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!)
+        entryDate.text = "\(selectedDay!) \(selectedMonth!) \(selectedYear!)"
         getDiaryAndFeeling()
         feelingsList = [
             Feelings(feeling_name: "Ecstatic", feeling_rgb: "FFF09D", feeling_image: "diary-5", feeling_date: selectedDate!),
@@ -139,6 +141,9 @@ class DayViewController:UIViewController, UICollectionViewDelegate, UICollection
             guard let day2VC = segue.destination as? Day2ViewController else{
                 return
             }
+            day2VC.selectedDay = selectedDay
+            day2VC.selectedMonth = selectedMonth
+            day2VC.selectedYear = selectedYear
             day2VC.selectedDate = selectedDate
             day2VC.diary = diary
         }

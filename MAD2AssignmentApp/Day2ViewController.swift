@@ -18,17 +18,21 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     var tagsActivities:[Activities]?
     var closeButtonPressed:Bool = false
     var selectedDate:Date?
+    var selectedDay:String?
+    var selectedMonth:String?
+    var selectedYear:String?
     var diary:Diary?
-    var close:Bool = false
     
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var otherTagsField: UITextField!
     @IBOutlet weak var entryMsg: UILabel!
+    @IBOutlet weak var entryDate: UILabel!
     let diaryDAL:DiaryDataAccessLayer = DiaryDataAccessLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!);
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "diary-bg.svg")!)
+        entryDate.text = "\(selectedDay!) \(selectedMonth!) \(selectedYear!)"
         tagListView.delegate = self
         tagListView.textFont = UIFont(name: "BalsamiqSans-Regular", size: 16)!
         tagsPressed=[]
@@ -102,6 +106,9 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             guard let day3VC = segue.destination as? Day3ViewConroller else{
                 return
             }
+            day3VC.selectedDay = selectedDay
+            day3VC.selectedMonth = selectedMonth
+            day3VC.selectedYear = selectedYear
             day3VC.selectedDate = selectedDate
             day3VC.diary = diary
         }
@@ -111,8 +118,8 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         var boolCheck:Bool?
         if(identifier == "backToHome"){
-            closeEntryAlert()
             if(!(diaryDAL.BoolActivitiesinDiary(diary: diary!))){
+                closeEntryAlert()
                 diaryDAL.deleteDiary(diary_date: selectedDate!)
             }
             entryMsg.text = "Entry Completion: 2/4"
