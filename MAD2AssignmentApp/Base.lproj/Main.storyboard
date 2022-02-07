@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -116,7 +117,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9nP-ji-EBk">
-                                <rect key="frame" x="110.33333333333333" y="673" width="154.66666666666669" height="25"/>
+                                <rect key="frame" x="131.33333333333334" y="673" width="112.66666666666666" height="25"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
@@ -579,7 +580,8 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Diary Entry" id="yDe-YO-cMb">
-                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="7Kp-P3-VRi">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="7Kp-P3-VRi">
+                                            <color key="tintColor" red="0.066666666669999999" green="0.34509803919999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="closeDiary:" destination="tqt-yz-tRq" id="mLP-Df-1RF"/>
                                             </connections>
@@ -741,7 +743,8 @@
                                                 <action selector="backButton:" destination="zLJ-pF-M91" id="mqP-a8-bc0"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="Qfg-jd-0dn">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Qfg-jd-0dn">
+                                            <color key="tintColor" name="AccentColor"/>
                                             <connections>
                                                 <action selector="closeDiary:" destination="zLJ-pF-M91" id="Mlf-zk-OgV"/>
                                                 <segue destination="C0u-lT-0ub" kind="show" identifier="backToHome" id="KaQ-78-0gl"/>
@@ -958,7 +961,8 @@
                                                 <action selector="backBtn:" destination="gRo-Pj-wwX" id="9Ks-IP-nrT"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="uHo-db-avv">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="uHo-db-avv">
+                                            <color key="tintColor" name="AccentColor"/>
                                             <connections>
                                                 <segue destination="C0u-lT-0ub" kind="show" identifier="day3ToHome" id="28c-J8-IoM"/>
                                             </connections>
@@ -1143,7 +1147,8 @@
                                                 <action selector="backBtn:" destination="zVL-Iv-Vwf" id="Sdp-5e-jD3"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="TnE-kL-Fqw">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="TnE-kL-Fqw">
+                                            <color key="tintColor" name="AccentColor"/>
                                             <connections>
                                                 <segue destination="C0u-lT-0ub" kind="show" identifier="day4ToHome" id="gxM-zT-mP8"/>
                                             </connections>
@@ -1568,7 +1573,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AJj-m6-9HT"/>
-        <segue reference="KaQ-78-0gl"/>
+        <segue reference="gxM-zT-mP8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
@@ -1578,7 +1583,9 @@
         <image name="photo-placeholder-v2" width="317" height="233"/>
         <image name="profile-placeholder" width="50" height="50"/>
         <image name="welcome" width="1445" height="1417"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
