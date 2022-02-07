@@ -42,6 +42,7 @@ class DiaryDataAccessLayer {
 
         cduser.setValue(user.name, forKeyPath:"user_name")
         cduser.setValue(user.dob, forKeyPath:"user_dob")
+        cduser.setValue(user.act, forKeyPath: "user_act")
         
 
         do {
@@ -53,7 +54,7 @@ class DiaryDataAccessLayer {
     
     //retrieve user
     func RetrieveUser() -> User {
-        let user:User = User(name: "", dob: Date())
+        let user:User = User(name: "", dob: Date(), act: [])
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
         do {
@@ -62,9 +63,11 @@ class DiaryDataAccessLayer {
             for u in userlist {
                 let n = u.value(forKeyPath: "user_name") as! String
                 let d = u.value(forKeyPath: "user_dob") as! Date
+                let a = u.value(forKeyPath: "user_act") as! [String]
                 user.name = n
                 user.dob = d
-                print("Name: \(user.name!); DOB: \(user.dob!);")
+                user.act = a
+                print("Name: \(user.name!); DOB: \(user.dob!); ACT: \(user.act!);")
             }
         } catch let error as NSError {
           print("Could not retrieve user. \(error), \(error.userInfo)")
@@ -98,6 +101,20 @@ class DiaryDataAccessLayer {
         } catch let error as NSError {
             print("Could not update. \(error), \(error.userInfo)")
         }
+    }
+    
+    func RetrieveActivitiesFromUser()->[String]{
+        var actList:[String] = []
+        var userList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
+        do {
+            userList = try context.fetch(fetchRequest)
+            actList = userList[0].value(forKeyPath: "user_act") as! [String]
+        } catch let error as NSError{
+            print("Could not fetch feelings. \(error), \(error.userInfo)")
+        }
+        return actList
     }
     
     //MARK: Diary Functions
@@ -162,6 +179,56 @@ class DiaryDataAccessLayer {
             } catch let error as NSError{
                 print("Could not add diary to user. \(error), \(error.userInfo)")
             }
+        }
+    }
+    
+    func addActivitiestoUser(activities:[String]){
+        var userList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+                
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
+        do {
+            userList = try context.fetch(fetchRequest)
+            var act = userList[0].value(forKeyPath: "user_act") as? [String]
+            var i:Int = 0
+            while i < activities.count{
+                print(activities[i])
+                if !(act!.contains(activities[i])){
+                    print(activities[i])
+                    act?.append(activities[i])
+                }
+                i+=1
+            }
+            userList[0].setValue(act, forKeyPath: "user_act")
+            // check
+            print("Updated: \(act!)")
+            try context.save()
+        } catch let error as NSError {
+            print("Could not update. \(error), \(error.userInfo)")
+        }
+    }
+    func removeActivityinUser(act:String){
+        var userList:[NSManagedObject] = []
+        let context = appDelegate.persistentContainer.viewContext
+                
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreDataUser")
+        do {
+            userList = try context.fetch(fetchRequest)
+            var actList = userList[0].value(forKeyPath: "user_act") as! [String]
+            var index:Int?
+            var i:Int = 0
+            while i < actList.count{
+                if (actList[i] == act){
+                    index = i
+                }
+                i+=1
+            }
+            actList.remove(at: index!)
+            // check
+            userList[0].setValue(actList, forKeyPath: "user_act")
+            try context.save()
+        } catch let error as NSError {
+            print("Could not update. \(error), \(error.userInfo)")
         }
     }
     

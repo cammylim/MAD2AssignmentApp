@@ -22,6 +22,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     var selectedMonth:String?
     var selectedYear:String?
     var diary:Diary?
+
     
     @IBOutlet weak var tagListView: TagListView!
     @IBOutlet weak var otherTagsField: UITextField!
@@ -91,9 +92,9 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
             }
         }
         else{
-            tagList = ["Shopping", "Exercising", "Gardening"]
+            tagList = diaryDAL.RetrieveActivitiesFromUser()
             while i < tagList!.count {
-                tagView = tagListView.addTag(tagList![i])
+                tagView = tagListView.addTag(tagList![i] as String)
                 tagView.isSelected = false
                 i += 1
             }
@@ -173,10 +174,18 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
     
     //when Add button is pressed
     @IBAction func addOthersButton(_ sender: Any) {
-        if (otherTagsField.text != ""){
+        if (otherTagsField.text != "" && !((tagList?.contains(otherTagsField.text!))!)){
             tagView = tagListView.addTag(otherTagsField.text!)
+            tagList?.append(otherTagsField.text!)
+            diaryDAL.addActivitiestoUser(activities: tagList!)
             tagView.isSelected = false
             otherTagsField.text = ""
+            entryMsg.text = "Entry Completion: 2/4"
+            entryMsg.textColor = UIColor(hexString: "1158BF")
+        }
+        else{
+            entryMsg.text = "Unable to add tag."
+            entryMsg.textColor = UIColor.red
         }
     }
     
@@ -226,6 +235,15 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
         if (boolCheck) {
             tagsPressed.remove(at: position!)
         }
+        i = 0
+        while i < tagList!.count{
+            if(tagList![i] == title){
+                tagList?.remove(at: i)
+                diaryDAL.removeActivityinUser(act: title)
+            }
+            i+=1
+        }
+        
         sender.removeTagView(tagView)
     }
     
@@ -243,6 +261,7 @@ class Day2ViewController:UIViewController, TagListViewDelegate, UITextFieldDeleg
                 diaryDAL.addActivitiestoDiary(diary: diary!, activity: act!)
                 i+=1
             }
+            diaryDAL.addActivitiestoUser(activities: tagsPressed)
         }
     }
 }

@@ -58,7 +58,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd-MM-yyyy"
 
-            let newUser:User = User(name: nameField.text!, dob: dateFormatter.date(from: dobField.text!)!)
+            let newUser:User = User(name: nameField.text!, dob: dateFormatter.date(from: dobField.text!)!, act: diaryDAL.RetrieveActivitiesFromUser())
             diaryDAL.EditUser(newUser: newUser)
             dismiss(animated: true, completion: nil)
         }

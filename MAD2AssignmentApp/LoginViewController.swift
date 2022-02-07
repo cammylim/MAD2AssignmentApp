@@ -72,7 +72,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             dateFormatter.dateFormat = "dd-MM-yyyy"
             
             // add user to coredata
-            let user = User(name: nameField.text!, dob: dateFormatter.date(from: dobField.text!)!)
+            let defaultAct:[String] = ["Shopping", "Exercising"]
+            let user = User(name: nameField.text!, dob: dateFormatter.date(from: dobField.text!)!, act: defaultAct)
             diaryDAL.AddUser(user: user)
             UserDefaults.standard.hasOnboarded = true
             

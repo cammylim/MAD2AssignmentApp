@@ -35,6 +35,7 @@
         <relationship name="speExistsIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="hasSpecial" inverseEntity="CoreDataDiary"/>
     </entity>
     <entity name="CoreDataUser" representedClassName="CoreDataUser" syncable="YES" codeGenerationType="class">
+        <attribute name="user_act" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="user_dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="user_name" optional="YES" attributeType="String"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataDiary" inverseName="existsIn" inverseEntity="CoreDataDiary"/>
@@ -45,6 +46,6 @@
         <element name="CoreDataFeelings" positionX="189.6980590820312" positionY="-351.7327728271484" width="128" height="104"/>
         <element name="CoreDataReflection" positionX="-236.237060546875" positionY="-314.5416412353516" width="128" height="103"/>
         <element name="CoreDataSpecial" positionX="-26.97674560546881" positionY="-173.4721374511718" width="128" height="118"/>
-        <element name="CoreDataUser" positionX="187.4158020019531" positionY="-508.4071807861329" width="128" height="88"/>
+        <element name="CoreDataUser" positionX="187.4158020019531" positionY="-508.4071807861329" width="128" height="89"/>
     </elements>
 </model>

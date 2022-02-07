@@ -11,11 +11,11 @@ import UIKit
 class User {
     var name:String?
     var dob:Date?
-//    var picture:UIImage?
+    var act:[String]?
     
-    init(name:String, dob:Date) {
+    init(name:String, dob:Date, act:[String]) {
         self.name = name
         self.dob = dob
-//        self.picture = UIImage(named: "home-profile.svg")
+        self.act = act
     }
 }
