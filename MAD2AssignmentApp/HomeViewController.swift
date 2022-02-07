@@ -143,7 +143,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         var i:Int=0
         while i < diaryEntries!.count{
             let diaryDate:Date = diaryEntries![i].date!
-            if(DiaryCalendar().monthText(date: diaryDate) == DiaryCalendar().monthText(date: selectedDate)){
+            if(DiaryCalendar().monthText(date: diaryDate) == DiaryCalendar().monthText(date: selectedDate)
+               && DiaryCalendar().yearText(date: diaryDate) == DiaryCalendar().yearText(date: selectedDate)){
                 diaryEntriesFilled?.append(String(DiaryCalendar().dayOfMonth(date: diaryDate)))
                 feelingsFilled?.append(diaryEntries![i].feeling!)
             }
