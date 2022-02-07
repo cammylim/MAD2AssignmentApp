@@ -65,6 +65,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 else { self.quoteLabel.text = text2 }
             } else { self.quoteLabel.text = text }
             self.authorLabel.text = "by The 'Diaryme' Team"
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "birthday-bg.svg")!)
         }else{
             //random quote
             NetworkService.sharedobj.getQuotes { (w) in
