@@ -50,23 +50,40 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.reloadData()
         
         // quote of the day
-        NetworkService.sharedobj.getQuotes { (w) in
-            self.quotes = w
-            
-            if var randomquote = self.quotes.randomElement()
-            {
-                while randomquote.text.count > 70 {
-                    randomquote = self.quotes.randomElement()!
-                }
-                self.quoteLabel.text = "\(randomquote.text)"
-                if (randomquote.author == nil) {
-                    self.authorLabel.text = "by anonymous"
-                } else {
-                    self.authorLabel.text = "by \(randomquote.author!)"
+        let birthdate:Date = diaryDAL.RetrieveUser().dob!
+        let birthday = DiaryCalendar().dayText(date: birthdate)
+        let birthmonth = DiaryCalendar().monthText(date: birthdate)
+        let todaysday = DiaryCalendar().dayText(date: Date())
+        let todaysmonth = DiaryCalendar().monthText(date: Date())
+        //birthday message algorithm
+        if(birthday == todaysday && birthmonth == todaysmonth){
+            let text = "Happy Birthday, \(diaryDAL.RetrieveUser().name!)! May today be your happiest day."
+            let text2 = "Happy Birthday, \(diaryDAL.RetrieveUser().name!)!"
+            let text3 = "Happy Birthday!"
+            if (text.count > 70){
+                if(text2.count > 70){ self.quoteLabel.text = text3 }
+                else { self.quoteLabel.text = text2 }
+            } else { self.quoteLabel.text = text }
+            self.authorLabel.text = "by The 'Diaryme' Team"
+        }else{
+            //random quote
+            NetworkService.sharedobj.getQuotes { (w) in
+                self.quotes = w
+                
+                if var randomquote = self.quotes.randomElement()
+                {
+                    while randomquote.text.count > 70 {
+                        randomquote = self.quotes.randomElement()!
+                    }
+                    self.quoteLabel.text = "\(randomquote.text)"
+                    if (randomquote.author == nil) {
+                        self.authorLabel.text = "by anonymous"
+                    } else {
+                        self.authorLabel.text = "by \(randomquote.author!)"
+                    }
                 }
             }
         }
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
