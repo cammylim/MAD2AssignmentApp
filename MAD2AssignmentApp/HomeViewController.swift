@@ -183,7 +183,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //if cell/day is selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (self.totalDays[indexPath.row] != ""){
-            self.performSegue(withIdentifier: "diaryDetail", sender: self)
+            let checkDay = self.totalDays[indexPath.row]
+            let checkMonth = DiaryCalendar().monthText(date: selectedDate)
+            let checkYear = DiaryCalendar().yearText(date: selectedDate)
+            let checkDate = DiaryCalendar().StringtoDate(string: (checkDay + "/" +  checkMonth + "/" + checkYear))
+            print(checkDate)
+            if(Date().compare(checkDate) == .orderedDescending){
+                self.performSegue(withIdentifier: "diaryDetail", sender: self)
+            }
+            
         }
     }
     
@@ -214,10 +222,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if (!indexPaths.isEmpty) {
                 let indexPath = indexPaths[0]
                 if (self.totalDays[indexPath.row] != ""){
-                    return true
+                    let checkDay = self.totalDays[indexPath.row]
+                    let checkMonth = DiaryCalendar().monthText(date: selectedDate)
+                    let checkYear = DiaryCalendar().yearText(date: selectedDate)
+                    let checkDate = DiaryCalendar().StringtoDate(string: (checkDay + "/" +  checkMonth + "/" + checkYear))
+                    if(Date().compare(checkDate) == .orderedDescending){
+                        return true
+                        
+                    }
                 }
-            } else {
-                return false
             }
             return false
         } else {
